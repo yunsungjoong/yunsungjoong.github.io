@@ -23,7 +23,8 @@ banner:
 ## GitHub 가입하기
 
 ***
-GitHub 에 접속하면 보이는 첫 화면입니다.
+GitHub 에 접속하면 보이는 첫 화면입니다.dddd
+GitHub 에 접속하면 보이는 첫 화면입니다.dddd
 
 <img src="/assets/images/img/Gitblog_img/github_blog_new_login_main.png">
 

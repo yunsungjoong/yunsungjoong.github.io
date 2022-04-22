@@ -1,0 +1,9 @@
+I"p<h3 id="1-spring-boot란-">1. Spring boot란 ?</h3>
+<hr />
+<p><code class="language-plaintext highlighter-rouge">Spring Framwork</code> 기반 프로젝트를 복잡한 설정없이 쉽고 빠르게 만들 수 있는 라이브러리다.
+개발자가 하나하나 모든 설정을 하지 않아도 자주 사용되는 기본 설정을 알아서 해준다.
+스프링 부트는 실행만 하면 스프링기반 사용화가 가능한 애플리케이션을 쉽게 만들기 위해 단독 실행 가능하도록 해주는
+스프링 프로젝트이다.
+스프링 부트는 스프링을 쉽게 사용할 수 있도록 필요한 여러가지 복잡한 설정을 대부분 미리 세팅 해놓았을 뿐 아니라 WAS도 별도의 설정없이
+바로 웹개발에 들어갈 수 있도록 만들어 놓은게 <code class="language-plaintext highlighter-rouge">Springboot</code> 이다.</p>
+:ET

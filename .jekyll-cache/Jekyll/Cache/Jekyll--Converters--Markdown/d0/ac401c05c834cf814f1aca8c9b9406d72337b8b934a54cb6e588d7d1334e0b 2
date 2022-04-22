@@ -1,4 +1,4 @@
-I"�<h3 id="1-이미지-삽입img">1. 이미지 삽입(img)</h3>
+I"�<h3 id="1-이미지-삽입img">1. 이미지 삽입(img)</h3>
 
 <hr />
 
@@ -100,6 +100,4 @@ _parent -&gt; 부모 프레임에서 링크된 문서를 엶
 2) 이미지맵 -&gt; 하나의 이미지에 여러 링크 영역을 지정</li>
   <li><code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> 태그의 usemap 속성, <code class="language-plaintext highlighter-rouge">&lt;map&gt;</code> , <code class="language-plaintext highlighter-rouge">&lt;area&gt;</code></li>
 </ul>
-
-<p>[이곳에 Universal Embed Code 가 들어간다.]</p>
 :ET

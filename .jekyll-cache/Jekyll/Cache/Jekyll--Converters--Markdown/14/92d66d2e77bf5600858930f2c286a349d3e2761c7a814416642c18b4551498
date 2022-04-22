@@ -1,0 +1,10 @@
+I"�<p><img src="/assets/images/img/Gitblog_img/2022_04_15/HTTP_01.PNG" /></p>
+<h3 id="1-http란-">1. HTTP란 ?</h3>
+<hr />
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">HyperText Transper Protocol</code> 의 준말, 하이퍼텍스트 트랜스퍼란 링크 기반으로 데이터를 요청하고 받겠다는 것</li>
+  <li>클라이언트와 서버가 요청을 하고 응답을 하기위해 따르는 프로토콜이다.</li>
+  <li><code class="language-plaintext highlighter-rouge">HTML</code> 문서를 주고 받을 수 있음, 뿐만 아니라 이미지, 동영상, 오디오, 텍스트 문서 등을 주고 받을 수 있다.</li>
+  <li></li>
+</ul>
+:ET

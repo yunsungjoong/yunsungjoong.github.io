@@ -1,0 +1,103 @@
+I"�<h3 id="1-이미지-삽입img">1. 이미지 삽입(img)</h3>
+
+<hr />
+
+<h4 id="1img-태그와-속성을-활용할-수-있다">1)<code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> 태그와 속성을 활용할 수 있다.</h4>
+
+<p><b>속성</b></p>
+<ul>
+  <li>src = “이미지 파일” -&gt; 문서에 표시할 이미지 파일을 지정</li>
+  <li>width = “숫자” -&gt; 이미지의 폭 지정 (픽셀, %)</li>
+  <li>height = height = “숫자” -&gt; 이미지의 높이 지정 (픽셀, %)</li>
+  <li>alt = “내용” -&gt; 이미지가 표시되지 않을 때 대체될 텍스트 지정</li>
+  <li>usemap = “#맵이름” -&gt; 클라이언트 측의 이미지맵 지정</li>
+</ul>
+
+<h4 id="2-img-src-속성">2) <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> src 속성</h4>
+<ul>
+  <li>HTML문서에 표시할 이미지 파일의 이름/경로 지정 (필수속성)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
+&lt;!-- (1) HTML 문서와 같은 폴더에 있는 경우 --&gt;
+&lt;img src="flower.jpg"&gt; 
+
+&lt;!-- (2) 절대 경로의 경우 --&gt;
+&lt;img src="C:\html\img\flower.jpg"&gt;
+
+&lt;!-- (3) 상대 경로 (현재 위치가 C:\htmlEx인 경우)
+&lt;img src="img\flower.jpg"&gt;
+</code></pre></div></div>
+
+<h4 id="일반적인-이미지-파일-형식">일반적인 이미지 파일 형식</h4>
+<ul>
+  <li>GIF(Graphics Interchange Format) : 256색상 지원 , 투명 배경 처리 , 용량이 작음, 로고나 클립아트, 형태의 이미지에 적합</li>
+  <li>JPG(Joint Photographic coding Experts Groups) : 트루컬러 지원 , 좋은 압축률 -&gt; 용량이 작음 , 사진 이미지에 적합</li>
+  <li>PNG(Portable Network Graphics) : 트루컬러 지원 , 투명 배경 처리 , 웹 전용 이미지 파일(빠른화면 표시 속도), 
+클립하트와 같이 적은 색상을 가진 이미지에 적합</li>
+</ul>
+
+<h3 id="2-하이퍼링크-삽입a">2. 하이퍼링크 삽입(a)</h3>
+<hr />
+
+<h4 id="하이퍼링크를-지정하는-a-태그--를-다양한-방법으로-활용할-수-있다">하이퍼링크를 지정하는 <code class="language-plaintext highlighter-rouge">&lt;a&gt; 태그 </code> 를 다양한 방법으로 활용할 수 있다.</h4>
+<p>1) <b>속성</b></p>
+
+<p>(1)href : URL -&gt;링크를 통해 이동하려는 곳의 경로/주소 지정</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a href="이동할 위치"&gt; 링크를 걸어 줄 내용물(텍스트, 이미지)&lt;/a&gt;
+
+ 
+&lt;body&gt;
+&lt;a href="http://www.naver.com"&gt;네이버&lt;/a&gt;
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;a href="http://www.naver.com" title="네이버 입니다."&gt; 
+    &lt;img src="knou-logo.gif"&gt;
+&lt;/a&gt;
+
+&lt;a href="http://www.naver.com"&gt; 
+    여기를 클릭하세요 &lt;img src="naver-logo.gif"&gt;
+&lt;/a&gt;
+
+&lt;br/&gt;&lt;br/&gt;
+
+원래 크기로 그림을 보려면 여기를 
+&lt;a href="flower.jpg"&gt;
+
+&lt;img src="flower.jpg" width="50"&gt;&lt;/a&gt; 클릭! &lt;/body&gt;
+
+</code></pre></div></div>
+
+<p>(2)target : 창이름 -&gt; 링크된 내용이 표시될 창을 지정</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_blank -&gt; 새로운 창(탭)에서 링크된 문서를 엶
+_self -&gt; (기본값). 현재의 창(탭)에서 링크된 문서를 엶
+_top -&gt; 현재의 창이 프레임으로 구성된 경우 모든 프레임이 사라지고 하나의 화면에서 엶
+_parent -&gt; 부모 프레임에서 링크된 문서를 엶
+프레임명 -&gt; 링크된 문서를 표시할 프레임의 이름을 직접 지정 
+</code></pre></div></div>
+
+<p>(3) download -&gt; href 속성에 의해 지정된 파일을 직접 다운로드</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;body&gt;
+꽃 그림을 다운로드 받으려면~
+&lt;a href="flower.jpg" download&gt;
+&lt;img src="flower.jpg" width="100" &gt;
+&lt;/a&gt; 클릭!
+&lt;br/&gt;&lt;br/&gt;
+&lt;a&gt; &lt;/a&gt;
+&lt;/body&gt;
+</code></pre></div></div>
+<p>2) 특정 위치로의 이동 -&gt; id 속성 사용</p>
+
+<p>3) 이메일 링크, 자바스크립트 링크, 파일 링크</p>
+
+<h3 id="3-iframe태그와-이미지맵">3. <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code>태그와 이미지맵</h3>
+
+<hr />
+
+<p>1) <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> -&gt; 현재 페이지 안에 창을 삽입</p>
+<ul>
+  <li>속성 -&gt; <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">src</code>, <code class="language-plaintext highlighter-rouge">srcdoc</code>, <code class="language-plaintext highlighter-rouge">width</code>, <code class="language-plaintext highlighter-rouge">height</code>
+2) 이미지맵 -&gt; 하나의 이미지에 여러 링크 영역을 지정</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> 태그의 usemap 속성, <code class="language-plaintext highlighter-rouge">&lt;map&gt;</code> , <code class="language-plaintext highlighter-rouge">&lt;area&gt;</code></li>
+</ul>
+:ET

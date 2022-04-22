@@ -5,3 +5,7 @@ gemspec
 
 
 gem "webrick", "~> 1.7"
+
+gem "rake", "~> 12.3"
+
+gem "gem", "~> 0.0.1.alpha"

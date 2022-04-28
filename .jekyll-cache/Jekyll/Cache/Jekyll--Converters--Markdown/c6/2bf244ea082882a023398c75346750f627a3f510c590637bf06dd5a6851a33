@@ -1,0 +1,72 @@
+I"�<h2 id="html에서-멀티미디어-표현">HTML에서 멀티미디어 표현</h2>
+
+<p>HTML 오디오 / 비디오 재생</p>
+
+<h3 id="1-audio-요소">1. audio 요소</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>: 태그 명 :</th>
+      <th>:태그 역할:</th>
+      <th>:특이사항:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>: embed :</td>
+      <td>: 외부 애플리케이션이나 상호작용 컨텐츠를 위한 컨테이너 :</td>
+      <td>: HTML4에서 미 지원:</td>
+    </tr>
+    <tr>
+      <td>: audio :</td>
+      <td>: 브라우저에서 간단히 오디오 재생 :</td>
+      <td>: :</td>
+    </tr>
+    <tr>
+      <td>: source :</td>
+      <td>:하나의 소스파일에 대해 서로 다른 형식을 갖는 여러 파일을 동시에 지정하기 위한 태그:</td>
+      <td>:  audio, embed 태그의 src 속성의   역할을 대신 수행 :</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2-video-오소">2. video 오소</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>: 속성 명 :</th>
+      <th>: 표현 형태:</th>
+      <th>: 속성 역할 :</th>
+      <th>: 특이사항 :</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>: src :</td>
+      <td>: src="URL :</td>
+      <td>: HTML4에서 미 지원:</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>: height :</td>
+      <td>: height="픽셀" :</td>
+      <td>: 내장되는 콘텐츠의 높이 :</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>: width = "픽셀"</td>
+      <td>:내장되는 콘텐츠의너비:</td>
+      <td>:  내장되는 콘텐츠의 너비 :</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>: type :</td>
+      <td>: type= " type= "미디어타입":</td>
+      <td>: 내장되는 콘텐츠의 미디어타입 :</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

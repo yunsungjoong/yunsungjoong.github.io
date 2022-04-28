@@ -1,0 +1,167 @@
+I"<h2 id="html에서-멀티미디어-표현">HTML에서 멀티미디어 표현</h2>
+<hr />
+<p>HTML 오디오 / 비디오 재생</p>
+
+<h3 id="1-audio-요소">1. audio 요소</h3>
+<hr />
+<ol>
+  <li>mp3(.mp3)
+    <ul>
+      <li>MPEG-1 오디오 규칙 (MPEG-1 Audio Layer-3) 으로 개발된 오디오 압축 기술</li>
+    </ul>
+  </li>
+  <li>Wav(.wav&gt;
+    <ul>
+      <li>윈도우에서  오디오 재생을 위해 MS와 IBm이 개발한 비압축 방식)</li>
+    </ul>
+  </li>
+  <li>OGG(.ogg/.oga)
+    <ul>
+      <li>MP3 대안으로 개발되어 스트리밍 방식으로 멀티미디어 표현을 위한 공개 소스기반의 파일 형식</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="/assets/images/img/Gitblog_img/22/04/27/oudio.png" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;HTML&gt;
+  &lt;head&gt;
+    &lt;title&gt;오디오/비디오 재생&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;embed src"...URL..."&gt;
+  &lt;/body&gt;
+&lt;/HTML&gt;
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>: 태그 명 :</th>
+      <th>:태그 역할:</th>
+      <th>:특이사항:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>: embed :</td>
+      <td>: 외부 애플리케이션이나 상호작용 컨텐츠를 위한 컨테이너 :</td>
+      <td>: HTML4에서 미 지원:</td>
+    </tr>
+    <tr>
+      <td>: audio :</td>
+      <td>: 브라우저에서 간단히 오디오 재생 :</td>
+      <td>: :</td>
+    </tr>
+    <tr>
+      <td>: source :</td>
+      <td>:하나의 소스파일에 대해 서로 다른 형식을 갖는 여러 파일을 동시에 지정하기 위한 태그:</td>
+      <td>:  audio, embed 태그의 src 속성의   역할을 대신 수행 :</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2-video-요소">2. video 요소</h3>
+<hr />
+
+<h4 id="비디오-파일-형식">비디오 파일 형식</h4>
+<p>웹에서 주로 사용되는 비디오 형식
+01) MP4</p>
+<ul>
+  <li>MPEG-4 에서 규정된 비디오 파일형식</li>
+  <li>H.264 비디오 코덱</li>
+  <li>AAC 오디오 코덱</li>
+</ul>
+
+<p>02) WebM(*.webm)</p>
+<ul>
+  <li>구글이 개발한 고화질 영상 압축형식</li>
+  <li>VP8 비디오 코덱</li>
+  <li>Vorbis 오디오 코덱</li>
+</ul>
+
+<p>03) Ogg(*.ogv)</p>
+<ul>
+  <li>멀티미디어 표현을 위한 공개 소스 기반의 파일 형식</li>
+  <li>Theora 비디오 코덱</li>
+  <li>Vorbis 오디오 코덱</li>
+</ul>
+
+<p><img src="/assets/images/img/Gitblog_img/22/04/27/video.png" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;audio&gt;태그의 속성을 그대로 사용
+- src, autoplay, controls, loop, buted, preload
+
+- width= "픽셀" , height = "픽셀"
+   ㄴ  비디오 컨텐츠가 표시될 영역의 크기 ( 폭, 넓이)
+
+Poster = "URL"
+ -&gt; 지정한 비디오 데이터가 설정되어 있지 않거나 비디오가 로딩되는 동안에 보여줄 이미지 지정
+
+------------------------
+ex) 
+
+&lt;body&gt;
+비디오 재생: &lt;br/&gt;&lt;br/&gt;
+&lt;video src="bunny.mp4" controls
+width="400" height="300"
+poster="bunny_poster.jpg"&gt;
+현재의 브라우저는 video 요소를 지원하지 않습니다.
+&lt;/video&gt;
+&lt;/body&gt;
+
+
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>: 속성 명 :</th>
+      <th>: 표현 형태:</th>
+      <th>: 속성 역할 :</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>: src :</td>
+      <td>: src="URL :</td>
+      <td>: HTML4에서 미 지원:</td>
+    </tr>
+    <tr>
+      <td>: height :</td>
+      <td>: height="픽셀" :</td>
+      <td>: 내장되는 콘텐츠의 높이 :</td>
+    </tr>
+    <tr>
+      <td>: width = "픽셀"</td>
+      <td>:내장되는 콘텐츠의너비:</td>
+      <td>:  내장되는 콘텐츠의 너비 :</td>
+    </tr>
+    <tr>
+      <td>: type :</td>
+      <td>: type= " type= "미디어타입":</td>
+      <td>: 내장되는 콘텐츠의 미디어타입 :</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;video src="bunny.mp4" controls&gt;
+&lt;embed src="bunny.mp4"&gt;
+&lt;/video&gt;
+</code></pre></div></div>
+
+<h3 id="3-source-태그">3. source 태그</h3>
+<p>1) 하나의 소스 파일에 대해 서로 다른 형식을 갖는
+여러 파일을 동시에 지정하기 위한 태그</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;audio&gt;와 &lt;video&gt; 태그의 src 속성의 역할을 대신한다.
+&lt;audio&gt;와 &lt;video) 태그의 내에서 여러개 지정&gt;
+  ㄴ 가장 위의 (source) 태그부터 지원하는 형식을 찾아서 재생
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src = "URL" -&gt; 내장되는 외부 파일의 주소 이름 
+height = "픽셀" -&gt; 내장되는 콘텐츠의 높이 
+width = "픽셀" -&gt; 내장되는 콘텐츠의 폭
+type = "미디어타입" -&gt; 내장되는 콘텐츠의 미디어타입 
+</code></pre></div></div>
+:ET

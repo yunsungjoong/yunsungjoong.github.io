@@ -1,0 +1,47 @@
+I"�
+<h2 id="인덱스index란-무엇인가">인덱스(Index)란 무엇인가?</h2>
+<p>인덱스는 데이터베이스 테이블에 있는 데이터를 빨리 찾기 위한 용도의 데이터베이스 객체이며 일종의 색인기술이다.
+테이블에 index를 생성하게 되면 index Table을 생성해 관리한다. 인덱스는 테이블에 있는 하나 이상의 컬럼으로
+만들 수 있다. 가장 일반적인 B-tree 인덱스는 인덱스 키(인덱스로 만들 테이블의 컬럼 값)와 이 키에 해당하는 컬럼 값을 가진
+테이블의 로우가 지정된 주소 값으로 구성된다.</p>
+
+<h3 id="인덱스index-사용예시">인덱스(Index) 사용예시</h3>
+
+<h4 id="인덱스-생성">인덱스 생성</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>문법
+CREATE INDEX [인덱스명] ON [테이블명](컬럼 1, 컬럼2, 컬럼3 .....)
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREATE INDEX EX_INDEX ON CUSTOMERS(NAME,ADDRESS); 
+
+--예제 컬럼 중복 X
+CREATE[UNIQUE] INDEX EX_INDEX ON CUSTOMERS(NAME,ADDRESS); 
+</code></pre></div></div>
+
+<p>쿼리문을 작성하면 INDEX를 생성할 수 있다. UNIQUE 키워드를 붙이면 컬럼값에 중복값을 허용되지 않는다는 뜻이다.</p>
+
+<h4 id="인덱스-조회">인덱스 조회</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM USER_INDEXES WHERE TABLE_NAME = 'CUSTOMERS';
+
+SELECT * FROM ALL_IND_COLUMNS WHERE TABLE_NAME = 'CUSTOMERS';
+</code></pre></div></div>
+
+<h4 id="인덱스-삭제">인덱스 삭제</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>문법 
+DROP INDEX [인덱스 명}
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DROP INDEX EX_INDEX;
+</code></pre></div></div>
+
+<p>인덱스는 조회할때 성능을 극대로 확대하기 위해 만든 객체인데 너무 많이 만들면
+index, delete, update 시에 부하가 발생해 전체적인 데이터베이스
+성능을 저하 시키려고 한다. 그럼 안쓰는 인덱스는 삭제하는것이 좋다.</p>
+
+<h4 id="인덱스-수정">인덱스 수정</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>문법
+DROP INDEX [기존 인덱스 명]
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ALTER INX EX_INDEW RENAME TO EX_INDEX_  
+</code></pre></div></div>
+:ET

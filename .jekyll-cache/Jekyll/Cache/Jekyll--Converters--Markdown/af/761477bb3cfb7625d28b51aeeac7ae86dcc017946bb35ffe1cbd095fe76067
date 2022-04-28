@@ -1,0 +1,85 @@
+I"|<h3 id="fetch-api">Fetch API</h3>
+
+<hr />
+
+<p>웹 개발할때 , Ajax 라는 비동기적인 통신 방법을 통해서 클라이언트 족에서 서버에 추가 정보를 요청하여
+가져올 수 있게 한다.
+fetch API는 그런 Ajax 통신 기술의 일종 별도 라이브러리 추가하지 않더라도 최신 브라우저 내장되어
+있기 때문에 , 함수를 JavaScript에서 호출하는 것으로 손수비게 사용가능하다.</p>
+
+<h4 id="fetch의-기본-스펙은-jqueryajax-와-기본적으로-다른-두가지">fetch()의 기본 스펙은 Jquery.ajax() 와 기본적으로 다른 두가지.</h4>
+<ul>
+  <li>
+    <ol>
+      <li>fetch() 로 부터 반환되는 Promise 객체는 HTTP error 상태를 reject 하지않는다 
+(HTTP 상태코드가 404 나 500이더라도 안한다) 대신 ok 상태가 false 인 resolve 가 반환되며 네트워크 장애나 요청이 완료되지 못한상태에는 reject가 반환된다.</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>fetch는 쿠키를 보내거나 받지 않는다 사이트에서 사용자 세션을 유지 관리해야 하는 경우 인증되지 않은 요청이 발생한다. 
+쿠키를 전송하기 위해서는 자격증명(credentials) 옵션으로 반드시 설정해야 한다.</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="fetch-로-비동기-http-get-하기">Fetch 로 비동기 HTTP GET 하기</h3>
+
+<p>Fetch API 이용하면 HTTP 파이프라인을 구성하는것이 가능하다 .</p>
+
+<p>fetch() (en-US) 메서드를 이용하여 비동기 네트워크 통신을 알기 쉽게 기술할 수 있다.</p>
+
+<h4 id="get-이란-">GET 이란 ?</h4>
+<p>GET은 데이터를 읽거나(Read) , 검색(Retrieve)할 때에 사용되는 method라고 할 수 있겠다.
+GET은 요청을 전송할 때 URL 주소 끝에 파라미터로 포함되어 전송되며, 이 부분을 쿼리 스트링이라고 부른다.</p>
+
+<h4 id="get방식">GET방식</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fetch('TARGET URL') // url 입력, GET메서드임
+    .then(res =&gt; res.json())  //응답 결과를 json으로 파싱
+    .then(data =&gt; { 
+    
+    		//***여기서 응답 결과로 실행할 동작을 정의하면 됨***
+            // [ data.키값 ] 이런 형태로 value 추출 가능 
+            
+            console.log(data); //응답 결과를 console 창에 출력
+             
+    })
+    .catch(err =&gt; { // 오류 발생시 오류를 담아서 보여줌
+        console.log('Fetch Error', err);
+    });
+</code></pre></div></div>
+
+<h4 id="post란-">POST란 ?</h4>
+<p>Get과 달리 전송해야될 데이터를 HTTP 메시지의 Body에 담아 전송한다.
+HTTP 메시지의 Body 길이의 제한없이 데이터를 전송할 수 있다. 그래서 POST 요청은 GET과 달리 대용량 데이터를 전송할 수 있는 이유도 있다.</p>
+
+<h4 id="post방식">POST방식</h4>
+
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//POST 메서드로 전송할 데이터
+let formData = new FormData(); 
+formData.append('key', value); // key-value (키-값)의 형태로 데이터 추가함
+
+//page 시작할 때 마다, db에 portfolio 데이터 요청
+fetch('TARGET URL', { // url 입력 및 [options] 값 설정
+    method: 'post', 
+    body: formData  //전송할 데이터 body에 추가
+	})
+    .then(res =&gt; res.json()) //응답 결과를 json으로 파싱
+    .then(data =&gt; {
+    
+    		//***여기서 응답 결과로 실행할 동작을 정의하면 됨***
+            // [ data.키값 ] 이런 형태로 value 추출 가능 
+            
+            console.log(data); //응답 결과를 console 창에 출력
+              
+    })
+    .catch(err =&gt; { // 오류 발생시 오류를 담아서 보여줌
+        console.log('Fetch Error', err);
+    });
+</code></pre></div></div>
+
+<h4 id="json-데이터-가공">Json 데이터 가공</h4>
+
+:ET

@@ -1,0 +1,95 @@
+I"O<h2 id="인덱스index란-무엇인가">인덱스(Index)란 무엇인가?</h2>
+<p>인덱스는 데이터베이스 테이블에 있는 데이터를 빨리 찾기 위한 용도의 데이터베이스 객체이며 일종의 색인기술이다.
+테이블에 index를 생성하게 되면 index Table을 생성해 관리한다. 인덱스는 테이블에 있는 하나 이상의 컬럼으로
+만들 수 있다. 가장 일반적인 B-tree 인덱스는 인덱스 키(인덱스로 만들 테이블의 컬럼 값)와 이 키에 해당하는 컬럼 값을 가진
+테이블의 로우가 지정된 주소 값으로 구성된다.</p>
+
+<h3 id="인덱스index를-사용하는-이유">인덱스(Index)를 사용하는 이유</h3>
+<hr />
+<p>인덱스의 가장 큰 특징은 데이터들이 정렬이 되어있다는 점이다. 
+이 특징으로 조건 검색이라는 영역에서 굉장한 장점이 된다. (찾기 편하다)</p>
+
+<h4 id="조건-검색-where-절의-효율성">조건 검색 Where 절의 효율성</h4>
+<p>테이블을 만들고 안에 데이터가 쌓이게 되면 내부적으로 순서가 없이 뒤죽박죽으로 저장된다. 
+이렇게 되면 <code class="language-plaintext highlighter-rouge">where</code>절에 특정 조건에 맞는 데이터들을 찾아낼때도 처음부터 끝까지 다 읽어서 검색 조건과 맞는지 비교한다. (검색속도가 느리다)
+이것을 풀 테이블 스캔이라고 한다.  인덱스 테이블은 테이블들이 정렬되어 저장되어 있기 떄문에 해당 조건(Where)에 맞는
+데이터들을 빠르게 찾아낼 수 있다. 이것이 인덱스(Index)를 사용하는 큰 이유이다.</p>
+
+<h4 id="정렬-order-by-절의-효율성">정렬 Order by 절의 효율성</h4>
+<p>인덱스(Index)를 사용하면 <code class="language-plaintext highlighter-rouge">Order by</code>에 의한 <code class="language-plaintext highlighter-rouge">Sort</code> 과정을 피할수 있다. Order by는 굉장히 부하가 많이 걸리는 작업인데
+정렬과 동시에 1차적으로 메모리에 정렬이 이루어지고 메모리보다 큰 작업이 필요하다면 디스크 I/O도 추가적으로 발생한다.
+하지만 인덱스를 사용하면 이러한 전반적인 자원의 소모를 하지 않아도 된다. 이미 정렬이 되어 있기 때문에 가져오기만 하면 되기 때문이다.</p>
+
+<p>####</p>
+
+<h3 id="인덱스index-사용예시">인덱스(Index) 사용예시</h3>
+
+<h4 id="인덱스-생성">인덱스 생성</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>문법
+CREATE INDEX [인덱스명] ON [테이블명](컬럼 1, 컬럼2, 컬럼3 .....)
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREATE INDEX EX_INDEX ON CUSTOMERS(NAME,ADDRESS); 
+
+--예제 컬럼 중복 X
+CREATE[UNIQUE] INDEX EX_INDEX ON CUSTOMERS(NAME,ADDRESS); 
+</code></pre></div></div>
+
+<p>쿼리문을 작성하면 INDEX를 생성할 수 있다. UNIQUE 키워드를 붙이면 컬럼값에 중복값을 허용되지 않는다는 뜻이다.</p>
+
+<h4 id="인덱스-조회">인덱스 조회</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM USER_INDEXES WHERE TABLE_NAME = 'CUSTOMERS';
+
+SELECT * FROM ALL_IND_COLUMNS WHERE TABLE_NAME = 'CUSTOMERS';
+</code></pre></div></div>
+<p>인덱스를 생성하면 User_INDEXES나 ALL_IND_COLUMNS 에서 조회할 수 있다. 
+방금 CUSTOMERS테이블에 만들었던 EX_INDEX가 첫번째 ROW에 있는걸 알 수 있다.</p>
+
+<h4 id="인덱스-삭제">인덱스 삭제</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>문법 
+DROP INDEX [인덱스 명}
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DROP INDEX EX_INDEX;
+</code></pre></div></div>
+
+<p>인덱스는 조회할때 성능을 극대로 확대하기 위해 만든 객체인데 너무 많이 만들면
+index, delete, update 시에 부하가 발생해 전체적인 데이터베이스
+성능을 저하 시키려고 한다. 그럼 안쓰는 인덱스는 삭제하는것이 좋다.</p>
+
+<h4 id="인덱스-수정">인덱스 수정</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>문법
+DROP INDEX [기존 인덱스 명] TO [바뀔 인덱스 명]
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ALTER INDEX EX_INDEX RENAME TO EX_INDEX_NEW
+</code></pre></div></div>
+<p>인덱스 명을 바꾸고 싶다면 위와 같이 하면된다.  참고로 오라클에서 인덱스의 구성 칼럼을 추가하는 것은 ALTER로 불가능하다.
+인덱스를 변경하기 위해서는 삭제 DROP을 한 후에 새로 생성 CREATE를 해주어야 한다.</p>
+
+<h4 id="인덱스-리빌드">인덱스 리빌드</h4>
+<p>인덱스 파일은 생성 후 insert, update, delete 등을 반복하다보면 성능이 저하된다.
+생성된 인덱스는 트리구조를 가진다. <code class="language-plaintext highlighter-rouge">삽입</code>,<code class="language-plaintext highlighter-rouge">수정</code>,<code class="language-plaintext highlighter-rouge">삭제</code>등이 오랫동안 일어나다보면 트리의 한쪽이 무거워져 전체적으로
+트리의 깊이가 깊어집니다. 이러한 현상으로 인해 인덱스의 검색속도가 떨어지므로 주기적으로 리빌딩하는 작업을 거치는것이 좋다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--문법
+ALTER INDEX [인덱스명] REBUILD;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--예제
+ALTER INDEX EX_INDEX REBUILD;
+</code></pre></div></div>
+<p>위의 쿼리를 실행시키면 인덱스가 리빌드 된다. 또는 인덱스를 조회해서 리빌드 쿼리를 만들어 한번에 실행시키면 간편하다.</p>
+
+<h4 id="인덱스index를-남발하면-안되는-이유">인덱스(index)를 남발하면 안되는 이유</h4>
+<p>개발을 진행할때 대개 개발서버와 운영서버를 나누어 관리한다. 대부분 개발서버에서 개발을 할때에는 적은량의<br />
+데이터를 가지고 로직검사를 하며 로직검사에 통과한 코드들이 운영서버에 업데이트가 된다. 하지만 개발서버에는 잘 동작하던<br />
+로직들이 운영서버의 많은량의 데이터들을 처리하다보면 성능이슈가 많이 발생합니다. 그 성능이슈의 주요원인은 바로 데이터베이스에 있다.<br />
+데이터베이스 관리자는 성능문제가 발생하면 가장 빨리 생각하는 해결책이 인덱스 추가 생성이다.</p>
+
+<p>문제를 쉽게 해결하기 위해 쿼리 속도 문제가 날때마다 인덱스를 추가하는 것은 바람직하지 못하다. 성능이슈가 나서 인덱스를 만들고
+또 다른 SQL문에서 성능이슈가 발생하여 또 인덱스를 만들었다고 한다면, 문제가 발생할때마다 인덱스를 생성하면서
+인덱스가 계속 추가하게되고 참조하는 하나의 쿼리문을 빠르게 만들 수 있지만 전체적인 데이터베이스의 성능 부하를 초래하게된다.
+그렇기 때문에 인덱스를 생성하는것 보다는 SQL문을 좀 더 효율적으로 짜는 방향으로 나가야한다. 인덱스 생성은 꼭 마지막 수단으로 강구해야 할 문제인것이다.</p>
+
+<p>[DB] 데이터베이스 인덱스(Index) 란 무엇인가?</p>
+:ET

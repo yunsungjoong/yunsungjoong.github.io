@@ -1,8 +1,0 @@
-I"O<h2 id="sql-이란-">SQL 이란 ?</h2>
-<hr />
-<p><img src="/assets/images/img/Gitblog_img/22/04/27/SQL_01.PNG" /> 
-SQL(Structured Query Language, 구조적 질의 언어)은 관계형 데이터베이스 시스템(RDBMS)을 제어하는 컴퓨터 언어이다.
-SQL은 1970년대에 IBM에서 최초로 개발되었으며 관계형 모델이라는 이론에서 파생된 특징을 가지고 있는데, 
-현재 SQL의 표준으로 ANSI SQL이 정립되었다. 각 DBMS 프로그램에서 ANSI SQL을 기반으로 
-개발된 개별 SQL 을 사용하며 서로 근소한 차이를 보인다.</p>
-:ET

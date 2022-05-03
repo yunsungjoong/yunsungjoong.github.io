@@ -1,6 +1,0 @@
-I"�<h2 id="인덱스index란-무엇인가">인덱스(Index)란 무엇인가?</h2>
-<p>인덱스는 데이터베이스 테이블에 있는 데이터를 빨리 찾기 위한 용도의 데이터베이스 객체이며 일종의 색인기술이다.
-테이블에 index를 생성하게 되면 <code class="language-plaintext highlighter-rouge">index Table</code>을 생성해 관리한다. 인덱스는 테이블에 있는 하나 이상의 컬럼으로
-만들 수 있다. 가장 일반적인 <code class="language-plaintext highlighter-rouge">B-tree</code>인덱스는 인덱스 키(인덱스로 만들 테이블의 컬럼 값)와 이 키에 해당하는 컬럼 값을 가진
-테이블의 로우가 지정된 주소 값으로 구성된다.</p>
-:ET

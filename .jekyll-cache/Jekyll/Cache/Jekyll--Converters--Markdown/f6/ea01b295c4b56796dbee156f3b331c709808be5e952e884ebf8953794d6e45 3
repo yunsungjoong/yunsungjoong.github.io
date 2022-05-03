@@ -1,0 +1,63 @@
+I":<h2 id="1-docker">1. Docker</h2>
+<p><img src="/assets/images/img/Gitblog_img/22/04/22/docker_container04.png" /></p>
+<h4>Docker 컨테이너 애플리케이션의 빌드, 배치 및 관리를 위한 오픈소스 플랫폼이다.
+컨테이너의 정의 VM과 컨테이너의 차이점 , 그리고 왜 Docker가 이토록 널리 채택되고 사용되는지에 대해 알아보자 </h4>
+
+<h3 id="1-docker-란-">1) Docker 란 ?</h3>
+<hr />
+
+<p><img src="/assets/images/img/Gitblog_img/22/04/22/docker_container.png" />
+<code class="language-plaintext highlighter-rouge">Docker</code>란 Go언어로 작성된 리눅스 컨테이너 기반으로 하는 오픈소스 <u>컨테이너</u>화 플랫폼이다. 이를 통해 개발자는 애플리케이션 <u>컨테이너</u>로 패키징 할 수 있다.  <u>컨테이너란</u> 애플리케이션 소스 코드를 임의의 환경에서 해당 코드의 실행에 필요한 운영체제(OS) 라이브러리 및 종속 항목과 결합하는 실행 가능한 표준 컴포넌트를 말한다. 컨테이너는 분산형 애플리케이션의 딜리버리를 간소화해서 기업들이 클라우드 네이티브
+개발 및 하이브리드 <u>멀티클라우드</u> 환경으로 이전하면서 점점 더 유명세를 타고 있다.
+<b>프로그램 및 관리를 단순하게, 백엔드 프로그램, 데이터베이스 서버, 메시지 큐등 어떤 프로그램도 컨테이너로 추상화 할 수 있으며
+AWS, Azure, Google cloud 등등 어디에서든 실행할 수 있을만큼 이식성과 확장성이 좋다.</b></p>
+
+<p><img src="/assets/images/img/Gitblog_img/22/04/22/docker_container02.png" />
+개발자는 Docker를 사요하지 않고도 컨테이너를 구축할 수 있지만, Docker 플랫폼을 이용하면 보다 손쉽고 
+보다 간편하고 보다 안전하게 컨테이너를 빌드, 배치 및 관리할 수 있다. Docker는 기본적으로 개발자가 단일 API를 통한 업무 절감 등 
+자동화와 간단한 명령을 사용해 컨테이너를 빌드, 배치, 실행 업데이트 및 중지할 수 있도록 해주는 툴킷이다.</p>
+
+<h3 id="2-컨테이너-란">2) 컨테이너 란?</h3>
+<p>컨테이너는 가상화 기술 중 하나로써 대표적으로 LXC(Linux Container)가 있다. 기존 OS를 가상화 시키던 것과 달리 컨테이너는
+<u>OS레벨의 가상화 프로세스를 격리시켜 동작하는 방식</u>으로 이루어진다.
+결과적으로 컨테이너 기술은 <code class="language-plaintext highlighter-rouge">애플리케이션 격리</code>, <code class="language-plaintext highlighter-rouge">비용 효율적인 확장성</code>, <code class="language-plaintext highlighter-rouge">폐기 기능성</code> 포함 VM의 모든 기능과 장점을 제공한다.
+이와 더불어 추가적인 중요 장점은 다음과 같다.</p>
+
+<ul>
+  <li>경량의 무게 : 가상머신(VM)과는 달리 , 컨테이너는  하드웨어 용량을 보다 잘 활용하며 , 구동 시간이 보다 신속하다 .</li>
+  <li>리소스 효율성 향상 : 컨테이너를 사용하면 , 가상머신(VM)을 사용할 수 있는 동일 하드웨어에 애플리케이션 다수의 사본을 여러 번 실행할 수 있다. 이를 통해 클라우드 비용이 절감된다. ( 많은 개발자들이 Docker를 사용하는 이유)</li>
+  <li>개발자 생산성 향상 : 가상머신(VM) 비교해 , 컨테이너 보다 빠르고 보다 간편한 배치, 프로비저닝 및 재시작이 가능하다, 따라서 이는 지속적 통합 및 지속적 딜리버리 등 파이프라인에서 사용하기에 이상적이고, 애자일 및 DevOps 사례를 채택하여 개발 팀에 매우 적합하다 .</li>
+</ul>
+
+<h2 id="2-docker를-사용하는-이유">2. Docker를 사용하는 이유</h2>
+<hr />
+<p><img src="/assets/images/img/Gitblog_img/22/04/22/docker_container03.png" /></p>
+
+<h3 id="1-도커-컨테이너의-장점">1) 도커 컨테이너의 장점</h3>
+
+<p>오늘날 <code class="language-plaintext highlighter-rouge">Docker</code>가 너무나 유명하다 <code class="language-plaintext highlighter-rouge">Docker</code> 와 컨테이너는 상호교환적으로 사용된다.
+Docker는 다음을 가능케 하는 기술을 사용해 기본 Linux컨테이너화 기능을 향상시켰다.</p>
+
+<ul>
+  <li>이식성 활성화 : <code class="language-plaintext highlighter-rouge">Docker</code> 컨테이너는 데스크탑, 데이터 센서 및 클라우드 환경에서 수정 없이 실행된다.</li>
+  <li>보다 경량의 중량과 보다 미세한 업데이트 가능 : <code class="language-plaintext highlighter-rouge">LXC</code>를 사용하면 다수의 프로세스를 단일 컨테이너 내에서 결합할 수 있다. Docker 컨테이너를 사용하면, 각 컨테이너에 오직 하나의 프로세스만 실행 할 수 있다. 이를 통해 업데이트나 수리를 위해 해당 파트 중 하나를 중지하는 동안에도 계속 실행될 수 있는 애플리케이션을 빌드할 수 있다.</li>
+  <li>자동화된 컨테이너 작성 : <code class="language-plaintext highlighter-rouge">Docker</code>는 애플리케이션 소스 코드를 기반으로 컨테이너를 자동으로 빌드할 수 있다.</li>
+  <li>컨테이너 버전화 : <code class="language-plaintext highlighter-rouge">Docker</code>는 컨테이너 이미지의 버전을 추적하고, 이전 버전을 롤백해 , 버전을 빌드한 사용자와 빌드 방법을 추적할 수 있다. 심지어 이는 기존 버전과 새 버전 사이의 델타만 업로드 할 수 있다.</li>
+  <li>컨테이너 재사용 : 특히 새 컨테이너를 빌드하기 위해 템플릿처럼, 기존 컨테이너는 기본 이미지로 사용될 수 있다.</li>
+  <li>공유 컨테이너 라이브러리 : 개발자는 수천 개의 사용자가 기여한 컨테이너를 포함하는 오픈소스 레이스토리에 엑세스할 수 있다.</li>
+</ul>
+
+<h2 id="3-docker-이미지">3. Docker 이미지</h2>
+<p>Docker image는 컨테이너를 실행할 수 있는 실행파일 과 설정 값 들을 가지고 있고 변하지 않는다.
+컨테이너는 이미지를 실행한 상태라고 볼 수 있고 추가되거나 변하는 값은 컨테이너에 저장된다. 같은 이미지에 여러개 컨테이너를 생성할 수 있고
+컨테이너의 상태가 바뀌거나 컨테이너가 삭제되더라도 이미지는 변하지 않고 그대로 남는다.</p>
+
+<h5 id="레이어-저장방식">레이어 저장방식</h5>
+<p><img src="/assets/images/img/Gitblog_img/22/04/22/docker_container05.png" /></p>
+
+<h2 id="4-배워야-하는-이유는-무엇인가-">4. 배워야 하는 이유는 무엇인가 ?</h2>
+<ul>
+  <li>분명히 이것은 중요하다. 클라우드와 Docker가 매일 더 많이 연결됨에 따라 그 요청은 더욱 커질 것이고, 따라서 DevOps에서 빛나는 미래를 위해 장치가 필요할것이기 때문이다.</li>
+  <li></li>
+</ul>
+:ET

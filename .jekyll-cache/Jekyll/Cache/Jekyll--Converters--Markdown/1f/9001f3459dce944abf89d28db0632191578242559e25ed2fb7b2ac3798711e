@@ -1,0 +1,33 @@
+I"%<p>우리는 때때로 선택을 하기 어려운 두 가지 이유가 있다.
+선택할 수 있는 옵션이 너무 적거나 너무 많다는 것. 프로그래밍 언어와 관련하여 재물에 대한
+당혹감이 있으며, 이로 인해 정신적 교착 상태가 발생될 수 있다.
+언어는 <code class="language-plaintext highlighter-rouge">Python</code> , <code class="language-plaintext highlighter-rouge">Java</code> , <code class="language-plaintext highlighter-rouge">JavaScript</code> , ` C/CPP<code class="language-plaintext highlighter-rouge">, </code>PHP<code class="language-plaintext highlighter-rouge">, </code>Swift<code class="language-plaintext highlighter-rouge">, </code>C#<code class="language-plaintext highlighter-rouge"> , </code>Ruby<code class="language-plaintext highlighter-rouge">, </code>Objective-C<code class="language-plaintext highlighter-rouge"> , </code> SQL` 이 있으며
+전체 목록도 아니다. 어떻게 선택해야할까?</p>
+
+<p>이제는 프로그래머가 하는 한 너무 많은 언어를 아는 것과 같은 것은 없다는 것을 명심해야할것이다. 
+많은 언어들을 이해하고 할 수 있는 능력이 된다면 그 프로그래머는 시장성이 높고 수요가 많은 프로그래머일것이다.
+기술 향상은 항상 현명한 방법인것 같다.</p>
+
+<p>그래도 우린 어딘가에서 시작해야 한다. 전례 없는 수요 증가를 겪고 잇는 가장 인기 있는 언어 중 하나가 JavaScript다.</p>
+
+<h1 id="javascript를-배워야-하는-10가지-이유">JavaScript를 배워야 하는 10가지 이유</h1>
+
+<h2 id="자바스크립트란">자바스크립트란?</h2>
+
+<p>Java 와 JavaScript는 다른 언어이다. 
+자바스크립트는 방문자의 행동에 반응할 수 있도록 웹 페이지를 보다 동적으로 움직여 사용자 친화적으로 만든다. 
+또는 달리 표현하면 JavaScript는 웹 페이지를 대화형으로 만든다.</p>
+
+<p>JavaScript는 한때 LiveScript라고 불렀다. Java의 인기로 인해서 그 명성을 이용하기 위한 브랜드 변경 되었는데,
+새로운 언어가 떠오르는 스타에게 함께 타고 그 과정에서 수많은 추종자를 끌어들였다고 말 할 수 있다.</p>
+
+<h3 id="1-가장-대중적인-프로그래밍-언어">1) 가장 대중적인 프로그래밍 언어</h3>
+<p>우리는 아마도 가장 중요한 이유를 가지고 목록을 시작하고자 한다.
+<a href="https://insights.stackoverflow.com/survey/2019#technology" title="Javascript 문법정리">참고한 블로그링크 : javascript 기본 문법 정리</a></p>
+
+<h2 id="그렇다면-javascript를-어떻게-배울까">그렇다면 JavaScript를 어떻게 배울까?</h2>
+
+<h2 id="javascript를-배우는-가장-좋은-방법-제시">JavaScript를 배우는 가장 좋은 방법 제시</h2>
+
+<p><a href="https://blex.me/@baealex/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8javascript-%EA%B8%B0%EB%B3%B8-%EB%AC%B8%EB%B2%95-%EC%A0%95%EB%A6%AC" title="Javascript 문법정리">참고한 블로그링크 : javascript 기본 문법 정리</a></p>
+:ET

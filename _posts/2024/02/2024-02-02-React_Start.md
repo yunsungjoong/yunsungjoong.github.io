@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[React] 리엑트 시작하기 "
-tags: [React]
+tags: [React, 기타]
 categories: [React]
 banner:
   image: "/assets/images/banners/2024/0201/React.jpeg"

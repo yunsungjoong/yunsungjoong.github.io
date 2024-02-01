@@ -15,7 +15,7 @@ banner:
 
 이 글은 김민준(velopert)님의 <b>리액트를 다루는 기술을참조 </b>하여 작성한 글입니다.
 
-## 1-1 왜 리엑트인가?
+# 1-1 왜 리엑트인가?
 
 JS만으로도 규모가 큰 애플리케이션을 만들 수 있는 시대가 됬다. <br/>
 규모가 큰 애플리케이션을 관리하기 위해 만들어진 수많은 프레임워크들이 있다. <br/>
@@ -27,63 +27,26 @@ JS만으로도 규모가 큰 애플리케이션을 만들 수 있는 시대가 �
 
 - 컨트롤러(Controller) : 사용자의 입력이나 조작에 따라 모델 데이터를 조회, 수정하고 반영함.
 
-## AnyDesk란?
+---
+
+📌 리액트는 오직 뷰(View)만을 신경쓰는 라이브러리이다.
+어떤 데이터가 변할 때마다 어떤 변화를 줄지 고민하는 것이 아니라 그냥 기존 뷰를날려버리고 처음부터 새로 렌더링하는 방식
 
 ---
 
-애니데스크는 독일에서 만든 원격 DeskTop 어플리케이션이다. 프로그램 용량은 3메가 바이트로
-작은 편임에도 고품질의 영상과 소리를 전달할 수 있도록 잘 만들어져있다. 원격제어,파일전송,VPN 기능 등을
-제공하고 있어 편리하게 사용이 가능하다.
+## 리액트 이해
+
+---
+
+리액트는 특정 부분이 어떻게 생길지 정하는 선언체인 컴포넌트(Component) 단위로 프로젝트를 관리한다. <br />
+컴포넌트는 재사용이 가능한 API로, 수많은 기능들을 내장하고 있으며 생김새와 작동 방식을 정의한다. <br />
+사용자 화면에 뷰를 보여주는 것을 렌더링이라고 하는데, 최초로 실행한 '초기 렌더링 '과 데이터 변경으로 다시 실행되는 '리렌더링'이 있다.
 
 ## AnyDesk 다운방법
 
 ---
 
 <br>
-
-<center>
-아래 링크로 접속해주세요  <br>
-▼▼▼▼▼▼▼ <br>
-</center>
-<center>
-https://anydesk.com/gb
-</center>
-
-<br><br>
-<img src="/assets/images/img/Gitblog_img/22/05/04/AnyDesk_download.png">
-
-<center>
-"Download Now"<br>
-위에 이미지 빨간 네모칸 부분을 클릭한다.<br>
-바로 다운로드 실행을 클릭하고 설치하면 된다.
-</center>
-<br><br>
-
-<img src="/assets/images/img/Gitblog_img/22/05/04/AnyDesk_download02.png">
-<center>
-AnyDesk.app 아이콘을 끌어서 Applications 폴더로 드래그해서 놓는다.
-</center>
-
-<br><br>
-
-<img src="/assets/images/img/Gitblog_img/22/05/04/AnyDesk_download04.png">
-
-애니데스크를 실행하기전에<br>
-(1)<b>사과(🍎)버튼 -> 시스템 환경설정 -> 보안 및 개인정보보호 -> 개인정보보호 탭</b>으로 이동 <br>
-(2)좌측하단에 자물쇠를 푼다. (관리자 비밀번호 입력)<br>
-(3)손쉽게 쉬운 항복 Any Desk를 체크한다.(AnyDesk 보이지 않으면 +버튼을 눌러 응용프로그램 폴더에 AyDesk를 선택)<br>
-(4)화면기록 항목에서 마찬가지로 AnyDesk를 체크한다. AnyDesk가 보이지 않는다면 +버튼을 눌러 <br>
-응용프로그램 폴더에 AnyDesk를 선택한다.
-
-<img src="/assets/images/img/Gitblog_img/22/05/04/AnyDesk_download03.png">
-
-<h4><center><b>애니데스크를 실행한다.</b></center></h4>
-
-<br>
-
-<img src="/assets/images/img/Gitblog_img/22/05/04/AnyDesk_download05.png">
-
-<h4><center>숫자로된 주소를 상대방에게 알려준다. <br> 상대방이 원격제어를 요청하면 승인 누르면 된다.</center></h4>
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "[JavaScript] JavaScript 란? "
-tags: [Javascript, grammar]
-categories: [기타]
+tags: [Javascript]
+categories: [JavaScript]
 banner:
   image: "/assets/images/banners/22/05/js.png "
   opacity: 0.618

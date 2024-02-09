@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "[React] State  "
-tags: [Programming, OS]
-categories: [OS]
+title: "[React] 리엑트 State  "
+tags: [React]
+categories: [React]
 banner:
   image: "/assets/images/banners/22/04/OS.png "
   opacity: 0.618

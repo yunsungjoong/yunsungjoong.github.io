@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "[React] 리액트 Hoos_1 useState "
-tags: [React, useState]
+title: "[React] 리액트 Hoos_2 useEffect "
+tags: [React, useEffect]
 categories: [React]
 banner:
   image: "/assets/images/banners/2024/0201/React.jpeg"
@@ -17,18 +17,13 @@ banner:
 
 - 리액트에서 클래스형 컴포넌트와 함수형 컴포넌트가 있습니다. 그 중에 Hooks는 함수형 컴포넌트에서 사용하는 기능입니다.
 - Hooks는 기존에 함수형 컴포넌트에서 할 수 없었던 상태 관리나, 렌더링 후 작업을 설정하는 기능 등의 작업을 할 수 있게 해줍니다.
-- 상태(State)란 ?
-  - 컴포넌트 내부에 변경될 수 있는 값 props는 부모 컴포넌트로부터 넘겨 받으므로, 컴포넌트 자신은 props를 바꾸지 못하는 특성이 있는 것과는 차이가 있습니다.
 
 ---
 
-## useState
+## useEffect
 
-함수형 컴포넌트에서도 상태(state)관리를 할 수 있게 해 주는 Hook 입니다.
-카운터 값을 증가시키거나 감소시키는 카운터를 구현하는 코드를 짠다고 가정해 보겠습니다. 여기에서 카운터 값이 될 상태 값을
-`useState` 함수를 이용해 변할 수 있게 짤 수 있습니다.
-
-> Step1 함수형 컴포넌트에서 state를 관리할 수 있도록 useState import 하고
+`useEffect` 는 리액트 컴포넌트가 렌더링될 때마다 특정 작업을 수행하도록 설정할 수 있는 Hook 입니다.
+클래스형 컴포넌트의 `componentDidMount`와 `componentDidUpdate`를 합친 형태로 보아도 무방합니다.
 
 ```javascript
 import { useState } from "react";
@@ -100,5 +95,7 @@ const onChangeNickname = (e) => {
 - name, nickname 이라는 두 가지 상태를 사용할 수 있습니다.
 - input 에서 무언가 값을 입력 받을 때, `onChange` 이벤트 핸들링을 위해 onChangeName 등과 같은 함수를 미리 만들어 둔 것입니다.
 - 만약 `input` 요소에서 `onChnage` 이벤트 핸들링을 하지 않을 경우, 사용자가 `input`란에 무엇을 입력하더라도 칸에는 아무것도 보이지 않게 됩니다.
+
+---
 
 이 글은 김민준(velopert)님의 <b>리액트를 다루는 기술을참조 </b>하여 작성한 글입니다.

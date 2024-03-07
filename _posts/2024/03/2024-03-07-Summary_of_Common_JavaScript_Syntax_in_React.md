@@ -168,4 +168,4 @@ if(person){
 console.log(person ? person.name : "there this no person")
 ```
 
-이 글은 김민준(velopert)님의 <b>리액트를 다루는 기술을참조 </b>하여 작성한 글입니다.
+이 글은 코딩알려주는 누나님의 온라인 강의 통하여 작성한 글입니다.

@@ -18,12 +18,34 @@ banner:
 > 1.  새로고침X -> 않아도 자동으로 업데이트
 > 2.  코드 재사용성⬆️ ( 가용성이 좋다)
 > 3.  JSX문법
-  - `HTML` + `JavaScript`
-  - `HTML` 컴포넌트 와 관련된 함수를 뭉쳐 세트로 만든다. 그리고 이 세트는 컴포넌트 라고 한다.
+> - `HTML` + `JavaScript`
+> - `HTML` 컴포넌트 와 관련된 함수를 뭉쳐 세트로 만든다. 그리고 이 세트는 컴포넌트 라고 한다.
+> - App.js가 웹에 보여지는 내용
+> - `React`는 HTML파일이 하나
+> - `main.js` 는 `index.html` 파일과 App.js를 연결해주는 연결고리 역할 
+
 
 ---
 
-## 📋useMemo란?
+
+## 1. Object Shorthand AssignMent
+
+
+```javascript
+// 키와 키값에 들어가는 변수의 이름이 같을때만 사용
+let name = "noona"
+let age = 17
+
+let person = {
+	name,
+    age
+}
+console.log(person)
+//{name: 'noona',age: 17}
+
+
+```
+
 
 `useMemo`는 리액트에서 컴포넌트의 성능을 최적화 하는데 사용되는 `Hook`입니다
 `useMemo`에서 memo는 `MEMOIZATION`을 뜻하는데 이는 그대로 해석하면 '메모리에 넣기' 라는 의미이며 컴퓨터 프로그램이 동일한 계산을 반복해야 할 때, 이전에 계산한 값을 메모리에 저장함으로써 동일한 계산의 반복 수행을 제거해 프로그램 실행 속도를 빠르게 하는 기술입니다.

@@ -33,7 +33,7 @@ const getCurrentLocation = () => {
   });
 };
 ```
-
+<img src="/assets/images/img/Gitblog_img/2024_02_20_01/Counter.png">
 
 
 ---

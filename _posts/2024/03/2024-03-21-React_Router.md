@@ -87,6 +87,7 @@ export default Aboutpage;
 ```
 
 ## useMatch
+
 ```javascript
 import { useMatch } from "@reach/router"
 
@@ -99,6 +100,7 @@ const App = () => {
     <div>Uncool</div>
   )
 )
+}
 ```
 컴포넌트가 렌더링된 시점의 url가 인자 안의 url이 동일한지를 체크한다. 동일하다면 정보를 담은 객체가, 동잃지 않다면 null을 리턴한다.
 
@@ -110,6 +112,20 @@ pathname: "/pro"
 pathnameBase: "/pro"
 pattern: {path: "/pro", caseSensitive: false, end: true}
 ```
+
+## Restful Route
+
+<img src="/assets/images/img/Gitblog_img/2024/04/03_23_Restful_Router.png"/> 
+`Restful Router`는 `HTTP` 명령어와 URL을 일치시켜 통일성 있는 URL 디자인을 제공하는 방식입니다. 주로 다음과 같은 `HTTP` 명령어를 사용합니다:
+
+- GET: 데이터를 가져오는 데 사용됩니다.
+- POST: 데이터를 생성하는 데 사용됩니다.
+- PUT: 데이터를 수정하는 데 사용됩니다. (때로는 PATCH로도 불립니다)
+- DELETE: 데이터를 삭제하는 데 사용됩니다.
+`Restful Router`는 `URL`을 단순하고 일관된 패턴으로 설계함으로써 가독성을 향상시키고 개발자 간의 협업을 용이하게 만듭니다. 
+예를 들어, 쇼핑몰에서는 아이템을 다루는 페이지에서 모든 `CRUD(Create, Read, Update, Delete)` 작업을 하나의 `URL` 패턴 아래에서 수행합니다. 
+이를 통해 개발자는 일관된 URL 구조를 유지하면서도 각각의 기능에 대한 `HTTP` 명령어를 명확하게 사용하여 `API`를 설계할 수 있습니다. 
+이는 코드의 가독성과 유지 보수성을 높이며, `API`의 확장성과 재사용성을 향상시킵니다. 따라서, `Restful Router는 API` 디자인을 단순화하고 효율적으로 관리할 수 있는 방법으로 활용됩니다.
 
 # 3. react-router 사용해보기
 

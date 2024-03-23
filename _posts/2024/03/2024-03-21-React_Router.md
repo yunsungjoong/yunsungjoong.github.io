@@ -1,4 +1,4 @@
-b---
+---
 layout: post
 title: "[React] React-Router "
 tags: [React]
@@ -47,6 +47,8 @@ SPA를 쉽게 구축하고 복잡한 라우팅 로직을 간단하게 처리할 
 ## BrowserRouter, Routes, Route
 위의 세 컴포넌트는 SPA 구조에서 전체적인 라우팅 틀을 잡기 위해 사용한다. 라우팅 하고 싶은 컴포넌트들을 `<BrowserRouter>`,`<Routes>`로 감싸고 `<Route>`로 컴포넌트에 해당하는 URL을 지정해준다. 아래의 코드는 간단한 라우팅 컴포넌트인데, * 같은 경우 와일드카드처럼 해당되는 모든 URL에 대해 대응한다. 이 때 순서가 중요한데, 만약 와일드카드로 지정한 `<NotFound>`의 라우트가 상단에 배치될 경우, 다른 URL로 라우팅 되야하는 경우에도 `<NotFound>`만 라우팅하게 된다. 이는 원래 의도한 동작과는 큰 차이가 있을 것이다.
 
+---
+
 ## Link
 - 사용한 `Router` 의 주소를 바꿉니다.
 - a태그와 동일하지만 <b>새로고침이 되지 않습니다.</b>
@@ -59,6 +61,9 @@ SPA를 쉽게 구축하고 복잡한 라우팅 로직을 간단하게 처리할 
 
 ## useNaviGate
 > 이전의 useHistory가 useNavigate로 바뀌었다.
+
+
+---
 
 ### v6
 ```javascript
@@ -97,7 +102,7 @@ const App = () => {
 ```
 컴포넌트가 렌더링된 시점의 url가 인자 안의 url이 동일한지를 체크한다. 동일하다면 정보를 담은 객체가, 동잃지 않다면 null을 리턴한다.
 
->객체
+> 객체
 
 ```javascript
 params: {}

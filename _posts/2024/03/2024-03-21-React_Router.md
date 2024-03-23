@@ -13,26 +13,98 @@ banner:
   subheading_style: "color: gold"
 ---
 
-# 1. Routing 이란?
+## 1. Router 이란?
 
-> 라우팅이란, 어떤 주소에서 어떤 UI를 보여줄 것인가 규칙을 정하는 작업을 말합니다.
-
-과거의 라우팅은 주로. ㅓ버에서 처리했지만, 최근 웹에서는 클라이언트가 관리합니다.
-
+`React Router`는 `React` 애플리케이션에서 페이지 간의 네비게이션 및 URL 경로에 따른 컴포넌트 렌더링을 관리하는 라이브러리입니다. 주요 기능으로는 선언적 라우팅, 동적 라우팅, 중첩된 라우팅, 그리고 프로그래밍 방식 라우팅을 제공합니다. `React Router`를 사용하면 
+SPA를 쉽게 구축하고 복잡한 라우팅 로직을 간단하게 처리할 수 있습니다.
 
 
-# 2, React-Router 
+---
 
-### React-Router
-리액트에서 SPA를 만들기 위해 가장 많이 사용되는 라이브러리이며
-컴포넌트를 기반으로 라우팅 합니다.
+## 2. react-router-dom
 
-<b>Next</b>
-파일 경로, 이름을 기반으로 라우팅합니다. SSR, Code Splitting 을 매우 쉽게 구현할 수 있습니다.
+`react-router-dom`은 `react-router v4` 버전에서 처음 릴리즈 된 라우팅 모듈로, `react-router` 모듈에 `dom`이 바인딩 되어 있는 모듈이다. v3버전까진 `react-router` 모듈 하나만을 사용할 수 있었는데, v4버전 이후 `react-router` 모듈을 코어로, 웹 개발자를 위한 `react-router-dom`과 앱 개발자를 위한 `react-router-native`가 릴리즈 되었다. 우리는 웹을 주로 개발할 것이니 react-router-dom 을 중점으로 사용할 것이다.
+
+---
 
 
 
+## React-Router의 주요 컴포넌트
 
+### BrowserRouter
+- `HTML5` `History API` 를 사용하며 주소만 바꾸고 페이지는 다시 불러오지 않습니다.
+- 서버측에 새로운 요청을 하지 않으며 이를 통해 'history' 를 남겨 SPA에서 '뒤로가기' 를 구현할 수 있습니다.
+
+### Routes
+`Route`로 생성된 자식컴포넌트 중에 path와 URL이 매칭되는 첫번째 Route의 컴포넌트를 렌더링 한다.
+
+> 이전의 Switch가 Routes로 바뀌었다.
+> `Route` : 컴포넌트 별로 원하는 url을 지정한다.
+> `Link` : 클릭시 지정한 URL로 이동하는 링크를 생성한다. 아예 새로운 페이지를 불러오므로 기존 컴포넌트의 상태값은 소멸된다.
+
+---
+
+## BrowserRouter, Routes, Route
+위의 세 컴포넌트는 SPA 구조에서 전체적인 라우팅 틀을 잡기 위해 사용한다. 라우팅 하고 싶은 컴포넌트들을 `<BrowserRouter>`,`<Routes>`로 감싸고 `<Route>`로 컴포넌트에 해당하는 URL을 지정해준다. 아래의 코드는 간단한 라우팅 컴포넌트인데, * 같은 경우 와일드카드처럼 해당되는 모든 URL에 대해 대응한다. 이 때 순서가 중요한데, 만약 와일드카드로 지정한 `<NotFound>`의 라우트가 상단에 배치될 경우, 다른 URL로 라우팅 되야하는 경우에도 `<NotFound>`만 라우팅하게 된다. 이는 원래 의도한 동작과는 큰 차이가 있을 것이다.
+
+## Link
+- 사용한 `Router` 의 주소를 바꿉니다.
+- a태그와 동일하지만 <b>새로고침이 되지 않습니다.</b>
+```javascript
+<Link to="/about">Goto Aboutpage </Link>
+```
+
+특정 주소로 넘어갈 수 있게 해준다. `path`는 상대 경로로 표현하는데, `.` ,`..` 같은 문법도 사용할 수 있다.
+
+
+## useNaviGate
+> 이전의 useHistory가 useNavigate로 바뀌었다.
+
+### v6
+```javascript
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; 
+const Aboutpage = () => {
+    const navigate = useNavigate();
+    const goToHompage = () => {
+        navigate('/')
+
+    }
+    return (
+        <div>
+            <h1>Aboutpage</h1>
+            <button onClick={goToHompage}>Go to Homepage</button>
+        </div>
+    );
+};
+
+export default Aboutpage;
+```
+
+## useMatch
+```javascript
+import { useMatch } from "@reach/router"
+
+const App = () => {
+  const match = useMatch('/hot/:item');
+
+  return match ? (
+    <div>Hot {match.item}</div>
+  ) : (
+    <div>Uncool</div>
+  )
+)
+```
+컴포넌트가 렌더링된 시점의 url가 인자 안의 url이 동일한지를 체크한다. 동일하다면 정보를 담은 객체가, 동잃지 않다면 null을 리턴한다.
+
+>객체
+
+```javascript
+params: {}
+pathname: "/pro"
+pathnameBase: "/pro"
+pattern: {path: "/pro", caseSensitive: false, end: true}
+```
 
 # 3. react-router 사용해보기
 

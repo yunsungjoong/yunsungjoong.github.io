@@ -1,4 +1,4 @@
----
+b---
 layout: post
 title: "[React] React-Router "
 tags: [React]
@@ -38,9 +38,9 @@ SPA를 쉽게 구축하고 복잡한 라우팅 로직을 간단하게 처리할 
 ### Routes
 `Route`로 생성된 자식컴포넌트 중에 path와 URL이 매칭되는 첫번째 Route의 컴포넌트를 렌더링 한다.
 
-> 이전의 Switch가 Routes로 바뀌었다.
-> `Route` : 컴포넌트 별로 원하는 url을 지정한다.
-> `Link` : 클릭시 지정한 URL로 이동하는 링크를 생성한다. 아예 새로운 페이지를 불러오므로 기존 컴포넌트의 상태값은 소멸된다.
+> 이전의 Switch가 Routes로 바뀌었다. </br>
+> `Route` : 컴포넌트 별로 원하는 url을 지정한다. </br>
+> `Link` : 클릭시 지정한 URL로 이동하는 링크를 생성한다.  </br> 아예 새로운 페이지를 불러오므로 기존 컴포넌트의 상태값은 소멸된다.
 
 ---
 
@@ -118,7 +118,7 @@ pattern: {path: "/pro", caseSensitive: false, end: true}
 
 
 
-## index.js 수
+## index.js 
 
 이 코드에서
 ```javascript

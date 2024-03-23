@@ -13,7 +13,28 @@ banner:
   subheading_style: "color: gold"
 ---
 
-# 1, Router 라이브러리 Install
+# 1. Routing 이란?
+
+> 라우팅이란, 어떤 주소에서 어떤 UI를 보여줄 것인가 규칙을 정하는 작업을 말합니다.
+
+과거의 라우팅은 주로. ㅓ버에서 처리했지만, 최근 웹에서는 클라이언트가 관리합니다.
+
+
+
+# 2, React-Router 
+
+### React-Router
+리액트에서 SPA를 만들기 위해 가장 많이 사용되는 라이브러리이며
+컴포넌트를 기반으로 라우팅 합니다.
+
+<b>Next</b>
+파일 경로, 이름을 기반으로 라우팅합니다. SSR, Code Splitting 을 매우 쉽게 구현할 수 있습니다.
+
+
+
+
+
+# 3. react-router 사용해보기
 
 <b>npm</b>
 > npm install react-router-dom
@@ -25,7 +46,7 @@ banner:
 
 
 
-# index.js 수정
+## index.js 수
 
 이 코드에서
 ```javascript
@@ -75,7 +96,7 @@ reportWebVitals();
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Homepage from './page/Homepage';
-import Aboutpage from './page/aboutpage';
+import Aboutpage from './page/Aboutpage';
 
 function App() {
   return (
@@ -110,7 +131,7 @@ export default Homepage;
 ```javascript
 import React from 'react';
 
-const aboutpage = () => {
+const Aboutpage = () => {
     return (
         <div>
             Aboutpage
@@ -118,7 +139,7 @@ const aboutpage = () => {
     );
 };
 
-export default aboutpage;
+export default Aboutpage;
 ```
 
 ### 렌더링 결과입니다

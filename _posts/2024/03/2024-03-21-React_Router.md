@@ -13,7 +13,7 @@ banner:
   subheading_style: "color: gold"
 ---
 
-## 1. Router 이란?
+## Router란?
 
 `React Router`는 `React` 애플리케이션에서 페이지 간의 네비게이션 및 URL 경로에 따른 컴포넌트 렌더링을 관리하는 라이브러리입니다. 주요 기능으로는 선언적 라우팅, 동적 라우팅, 중첩된 라우팅, 그리고 프로그래밍 방식 라우팅을 제공합니다. `React Router`를 사용하면 
 SPA를 쉽게 구축하고 복잡한 라우팅 로직을 간단하게 처리할 수 있습니다.
@@ -21,7 +21,7 @@ SPA를 쉽게 구축하고 복잡한 라우팅 로직을 간단하게 처리할 
 
 ---
 
-## 2. react-router-dom
+## react-router-dom
 
 `react-router-dom`은 `react-router v4` 버전에서 처음 릴리즈 된 라우팅 모듈로, `react-router` 모듈에 `dom`이 바인딩 되어 있는 모듈이다. v3버전까진 `react-router` 모듈 하나만을 사용할 수 있었는데, v4버전 이후 `react-router` 모듈을 코어로, 웹 개발자를 위한 `react-router-dom`과 앱 개발자를 위한 `react-router-native`가 릴리즈 되었다. 우리는 웹을 주로 개발할 것이니 react-router-dom 을 중점으로 사용할 것이다.
 
@@ -115,7 +115,7 @@ pattern: {path: "/pro", caseSensitive: false, end: true}
 
 ## Restful Route
 
-<img src="/assets/images/img/Gitblog_img/2024/04/03_23_Restful_Router.png"/> 
+<img src="/assets/images/img/Gitblog_img/2024/04/03_23_Restful_Router.png" /> 
 `Restful Router`는 `HTTP` 명령어와 URL을 일치시켜 통일성 있는 URL 디자인을 제공하는 방식입니다. 주로 다음과 같은 `HTTP` 명령어를 사용합니다:
 
 - GET: 데이터를 가져오는 데 사용됩니다.

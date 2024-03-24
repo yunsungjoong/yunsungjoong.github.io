@@ -127,7 +127,8 @@ pattern: {path: "/pro", caseSensitive: false, end: true}
 이를 통해 개발자는 일관된 URL 구조를 유지하면서도 각각의 기능에 대한 `HTTP` 명령어를 명확하게 사용하여 `API`를 설계할 수 있습니다. 
 이는 코드의 가독성과 유지 보수성을 높이며, `API`의 확장성과 재사용성을 향상시킵니다. 따라서, `Restful Router는 API` 디자인을 단순화하고 효율적으로 관리할 수 있는 방법으로 활용됩니다.
 
-# 3. react-router 사용해보기
+
+# react-router 사용해보기
 
 <b>npm</b>
 > npm install react-router-dom

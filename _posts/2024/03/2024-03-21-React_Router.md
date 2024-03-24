@@ -238,3 +238,44 @@ export default Aboutpage;
 
 ### 렌더링 결과입니다
 <img src="/assets/images/img/Gitblog_img/2024/03/router-about.png"/> 
+
+
+## useParams : URL의 파라미터값을 읽어오기
+
+### 1) useParams를 import 한다.
+
+```javascript
+import React from 'react';
+import { useParams } from 'react-router-dom';
+
+const ProductDetaillPage = () => {
+    return (
+        <div>
+            <h1>Show Product Detaill </h1>
+        </div>
+    );
+};
+
+export default ProductDetaillPage;
+```
+
+### 2) useParams 정보를 하나의 변수에 저장한다.
+
+```javascript
+import React from 'react';
+import { useParams } from 'react-router-dom';
+
+const ProductDetaillPage = () => {
+    const { id } = useParams();
+    console.log("ppp", {id});
+    return (
+        <div>
+            <h1>Show Product Detaill {44}</h1>
+        </div>
+    );
+};
+
+export default ProductDetaillPage;
+```
+
+<img src="/assets/images/img/Gitblog_img/2024/04/03_24_products_detaill.png"/> 

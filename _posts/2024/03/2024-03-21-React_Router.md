@@ -13,7 +13,7 @@ banner:
   subheading_style: "color: gold"
 ---
 
-## Router란?
+# Router란?
 
 `React Router`는 `React` 애플리케이션에서 페이지 간의 네비게이션 및 URL 경로에 따른 컴포넌트 렌더링을 관리하는 라이브러리입니다. 주요 기능으로는 선언적 라우팅, 동적 라우팅, 중첩된 라우팅, 그리고 프로그래밍 방식 라우팅을 제공합니다. `React Router`를 사용하면 
 SPA를 쉽게 구축하고 복잡한 라우팅 로직을 간단하게 처리할 수 있습니다.
@@ -127,8 +127,10 @@ pattern: {path: "/pro", caseSensitive: false, end: true}
 이를 통해 개발자는 일관된 URL 구조를 유지하면서도 각각의 기능에 대한 `HTTP` 명령어를 명확하게 사용하여 `API`를 설계할 수 있습니다. 
 이는 코드의 가독성과 유지 보수성을 높이며, `API`의 확장성과 재사용성을 향상시킵니다. 따라서, `Restful Router는 API` 디자인을 단순화하고 효율적으로 관리할 수 있는 방법으로 활용됩니다.
 
+---
 
-# react-router 사용해보기
+
+## react-router 사용해보기
 
 <b>npm</b>
 > npm install react-router-dom
@@ -138,7 +140,7 @@ pattern: {path: "/pro", caseSensitive: false, end: true}
 > yarn add react-router-dom
 > yarn add react-router
 
-
+---
 
 ## index.js 
 
@@ -179,8 +181,8 @@ root.render(
 );
 
 reportWebVitals();
-
 ```
+---
 
 ## 사용 예시
 - 라우터를 사용하기 전에 (App, HomPage, AboutPage )
@@ -239,6 +241,7 @@ export default Aboutpage;
 ### 렌더링 결과입니다
 <img src="/assets/images/img/Gitblog_img/2024/03/router-about.png"/> 
 
+---
 
 ## useParams : URL의 파라미터값을 읽어오기
 
@@ -258,6 +261,8 @@ const ProductDetaillPage = () => {
 
 export default ProductDetaillPage;
 ```
+
+---
 
 ### 2) useParams 정보를 하나의 변수에 저장한다.
 
@@ -279,3 +284,6 @@ export default ProductDetaillPage;
 ```
 
 <img src="/assets/images/img/Gitblog_img/2024/04/03_24_products_detaill.png"/> 
+
+
+---

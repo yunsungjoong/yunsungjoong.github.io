@@ -74,5 +74,5 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 <img src="/assets/images/img/Gitblog_img/2024/04/03_27_img_03.png"/> 
 
-Font Awesome Icon 을 가져와 icon은 brands 에 있는 faCoffee 를 사용한다는 의미로 해석했습니다.
+Font Awesome Icon 을 가져와 icon은 brands 에 있는 faCoffee 를 사용한다는 의미로 이해했습니다.
 

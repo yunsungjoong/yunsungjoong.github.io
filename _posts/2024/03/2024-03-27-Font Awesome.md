@@ -46,163 +46,33 @@ yarn add @fortawesome/free-regular-svg-icons --save-dev
 ## 2. FontAwesome 을 React에서 사용하기
 ---
 
+무료 애플 로고를 사용하기 위해 Free 와 Brands 를 누르면 찾을 수 있습니다.
+
+<img src="/assets/images/img/Gitblog_img/2024/04/03_27_img_01.png"/> 
+
+해당 이미지는 HTML에서 아래와 같이 사용 가능합니다.
+
 ```javascript
 
-import React from 'react';
+// html 
+<i class="fa-solid fa-mug-saucer"></i>
+```
+
+하지만, React 에서는 아래와 같이 사용해야 합니다.
+
+
+```javascript
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar = () => {
-    return (
-        <div>
-            <div><FontAwesomeIcon icon={faCoffee}/></div>
-        </div>
-    );
-};
-
-export default Navbar;
-```
-
-
-
-
-## 1. Object Shorthand AssignMent
-
-```javascript
-// 키와 키값에 들어가는 변수의 이름이 같을때만 사용
-let name = "sungjoongYun"
-let age = 31
-
-let person = {
-	name,
-  age
-}
-console.log(person)
-// 결과값 : {name: 'sungjoongYun',age: 31}
-```
-
-<br />
----
-
-## 2. Destructuring 
-
-```javascript
-
-let person = {
-	name: "sungjoongYun",
-  age: 31
-}
-
-let name = person.name
-let age = person["age"]
-console.log(name,age) // 결과값 : 일반적인 방법의 예시
-```
-
-```javascript
-
-let person = {
-	name: "sungjoongYun",
-  age: 31
-}
-
-let name = person.name
-let age = person["age"]
-let {name,age} = person // 중괄호 사용!
-console.log(name,age)
-//결과값 : 'sungjoongYun',31
+<FontAwesomeIcon icon={faCoffee}/>
 
 ```
 
+결과 화면입니다.
 
----
+<img src="/assets/images/img/Gitblog_img/2024/04/03_27_img_03.png"/> 
 
-## 가장 많이 사용되는 문법
+Font Awesome Icon 을 가져와 icon은 brands 에 있는 faCoffee 를 사용한다는 의미로 해석했습니다.
 
-```javascript
-let array = [1, 2, 3, 4]
-let [a, b] = array
-
-console.log(a,b)
-```
-
-<br />
-## 3.Spread(확산)
-
-```javascript
-let person = {name: "sungjoongYun", age:31}
-let person2 = {...person} // 객체를 복사함
-console.log(person2)
-// 결과값 {name: "sungjoong.yun", age:12}
-```
-
-```javascript
-let person = {name:"sungjoongYun",age:31}
-let person2 = {...person}
-let person3 = person
-console.log(person2)	// 결과값 : {name:"sungjoongYun",age:31}
-console.log(person3)	// 결과값 : {name:"sungjoongYun",age:31}
-
-// 두개의 값이 같아보이지만 복사 방법이 다름
-// let person3 = person 이부분은 객체의 주소값만 복사
-// 즉, 객체는 하나이고 그 객체를 참조하는 변수가 두개!
-// ...person 부분은 실제로 객체를 하나 더 생성하는 것!
-```
-
-<br />
-
-```javascript
-let person = {name:"sungjoongYun",age:31}
-let person2 = {...person,address:'성남'}
-let person3 = person
-console.log(person2)	// 결과값 : {name:"sungjoongYun",age:31, address:'성남'} //기존값에 추가도 가능함
-console.log(person3)	// 결과값 : {name:'sungjoongYun',age: 31}
-```
-
-```javascript
-let person = {name: "sungjoongYun", age:31}
-let person2 = {...person, name: "냉면"}
-let person3 = person 
-console.log(person2) // 결과값 : {name: '냉면', age:12} // 기존값 수정 가능
-console.log(person3) // 결과값 : {name: 'sungjoongYun', age:31} // 기존값 수정 가능
-```
-
-<br />
-
----
-
-## Array(배열)
-```javascript
-let a = [1, 2]
-let b = [...a, 3]
-
-console.log(b)
-// 결과값 : [1, 2, 3]
-```
-
-```javascript
-let a = [1, 2]
-let b = [...a, 3]
-let c = [...a, ...b]
-
-console.log(c)
-// 결과값 : [1, 2, 1, 2, 3]
-```
-
-## 삼항연산자
-```javascript
-let person = {name: "sungjoongYun", age: 31}
-
-if(person){
-  console.log(person.name)
-} else {
-  console.log("there this no person")
-}
-
-// 결과값 : sungjoongYun
-
-
-// 삼항연산자
-console.log(person ? person.name : "there this no person")
-```
-
-이 글은 코딩알려주는 누나님의 온라인 강의 통하여 작성한 글입니다.

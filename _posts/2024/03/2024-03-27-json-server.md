@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[API] json server를 사용해보자 J "
+title: "[API] json server를 사용해보자"
 tags: [API, json-server]
 categories: [API, json-server]
 banner:

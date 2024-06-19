@@ -64,7 +64,7 @@ banner:
 
 ## Ionic & Angular 생명주기 예시 
 
-아래는 ionic docs에서 제공하는 Ionic & Angular lifeCycle 예시다, 2개의 페이지를 왔다갔다 이동하면서 Ionic 생명주기의 순서를 확인할 수 있다.
+아래는 `ionic docs`에서 제공하는 `Ionic & Angular lifeCycle` 예시다, 2개의 페이지를 왔다갔다 이동하면서 Ionic 생명주기의 순서를 확인할 수 있다.
 
 ![ioniclifecycle-test](https://github.com/yunsungjoong/yunsungjoong.github.io/assets/96567925/63fef148-2e30-48ce-a4f9-f5fcca4cb31e)
 

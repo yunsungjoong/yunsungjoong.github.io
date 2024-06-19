@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[ionic] Ionic life cycle 정리"
-tags: [ionic]
+tags: [ionic,angular]
 categories: [ionic]
 banner:
   image: "/assets/images/banners/2024/06/17-nvm.png"

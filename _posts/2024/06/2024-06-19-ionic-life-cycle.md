@@ -1,10 +1,10 @@
-b---
+---
 layout: post
 title: "[ionic] Ionic life cycle 정리"
 tags: [ionic,angular]
 categories: [ionic]
 banner:
-  image: "/assets/images/banners/2024/06/17-nvm.png"
+  image: "/assets/images/banners/2024/06/19-ionic.png"
   opacity: 0.618
   background: "#000"
   height: "100vh"

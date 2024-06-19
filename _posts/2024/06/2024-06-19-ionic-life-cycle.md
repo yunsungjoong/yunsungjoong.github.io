@@ -1,4 +1,4 @@
----
+b---
 layout: post
 title: "[ionic] Ionic life cycle 정리"
 tags: [ionic,angular]
@@ -13,10 +13,10 @@ banner:
   subheading_style: "color: gold"
 ---
 
-# Ionic Page Life Cycle 
+## Ionic Page Life Cycle 
 
-근무하고 있는 곳에서 Ionic & Angular 로 구축된 모바일 프로젝트 진행 중이다.
-Page life cycle가 어떤 순서로 작동하는지 알아둘 필요가 있어 공부겸 정리해본다.
+근무하고 있는 곳에서 `Ionic & Angular` 로 구축된 모바일 프로젝트 진행 중이다.
+`Page life cycle`가 어떤 순서로 작동하는지 알아둘 필요가 있어 공부겸 정리해본다.
 
 
 ## Ionic 페이지 생명 주기
@@ -35,9 +35,10 @@ Page life cycle가 어떤 순서로 작동하는지 알아둘 필요가 있어 �
 6. ngOnDestory
 
 1번과 6번을 제외하고는 비슷한 단어라 유추하기 쉽다. 
-1번과 6번은 `angular`에서 제공하는 대표적인 생명 주기 이벤트이고 
-나머지는 ionic에서 제공하기 때문에 ionic에서 제공하기 때문에 ion이라는 키워드가 붙는다
+1번과 6번은 `Angular`에서 제공하는 대표적인 생명 주기 이벤트이고 
+나머지는 Ionic에서 제공하기 때문에 Ionic에서 제공하기 때문에 ion이라는 키워드가 붙는다
 
+--- 
 
 ## Angular 생명주기 이벤트
 
@@ -45,6 +46,7 @@ Page life cycle가 어떤 순서로 작동하는지 알아둘 필요가 있어 �
 |----------|----------|
 | ngOnInit   | 컴포넌트 초기화 중에 1번 실행된다. 로컬 멤버를 초기화하고 딱 한 번만 수행하면 되는 서비스를 호출할 때 사용한다.   |
 | ngOnDestroy | Angular가 해당 뷰를 파괴하기 직전에 실행된다. 예를 들어 Observable 구독 취소 같이 정리시 유용하다.   |
+
 
 
 ## Ionic 생명주기 이벤트
@@ -59,11 +61,12 @@ Page life cycle가 어떤 순서로 작동하는지 알아둘 필요가 있어 �
 | ionViewDidLeave | 페이지가 active 상태가 해제된 직후에 호출된다.   |
 
 
+
 ## Ionic & Angular 생명주기 예시 
 
 아래는 ionic docs에서 제공하는 Ionic & Angular lifeCycle 예시다, 2개의 페이지를 왔다갔다 이동하면서 Ionic 생명주기의 순서를 확인할 수 있다.
 
-![image](https://github.com/yunsungjoong/yunsungjoong.github.io/assets/96567925/fddc5262-1034-4271-bace-a95a5ceff597)
+![ioniclifecycle-test](https://github.com/yunsungjoong/yunsungjoong.github.io/assets/96567925/63fef148-2e30-48ce-a4f9-f5fcca4cb31e)
 
 
 ### page 1 페이지 진입시 생명주기
@@ -89,7 +92,7 @@ Page life cycle가 어떤 순서로 작동하는지 알아둘 필요가 있어 �
 - page 2 ionViewDidLeave
 - page 2 ngOnDestroy
 
-
+<br>
 ---
 
 ## 정리

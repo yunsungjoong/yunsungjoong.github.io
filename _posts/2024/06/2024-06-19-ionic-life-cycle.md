@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[ionic] Ionic life cycle 정리"
+title: "[Ionic] Ionic life cycle 정리"
 tags: [ionic,angular]
 categories: [ionic]
 banner:

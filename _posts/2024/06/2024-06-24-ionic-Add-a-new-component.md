@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Ionic] 쿰포넌트 생성"
+title: "[Ionic] 컴포넌트 생성"
 tags: [ionic,angular]
 categories: [ionic]
 banner:

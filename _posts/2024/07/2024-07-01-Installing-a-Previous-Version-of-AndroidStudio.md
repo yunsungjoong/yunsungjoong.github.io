@@ -29,7 +29,7 @@ banner:
 
 `Android Studio` 다운로드 자료실에 접속 후 아래로 스크롤하면 
 
-
+<br>
 <img width="725" alt="image" src="https://github.com/yunsungjoong/yunsungjoong.github.io/assets/96567925/3e0c79ed-26fc-406a-9088-e9bcd33b1076">
 
 
@@ -41,8 +41,7 @@ I agree to the terms("약관에 동의합니다") 를 선택해 다음 단계로
 ![androidStudio_create_list](https://github.com/yunsungjoong/yunsungjoong.github.io/assets/96567925/6d4c2f04-e3b4-4bef-a520-346c28fe3b80)
 
 설치하려는 버전을 선택해 아래처럼 설치파일 버전이 팝업이 됩니다.
-
-
+<br>
 ![image](https://github.com/yunsungjoong/yunsungjoong.github.io/assets/96567925/161d2522-098c-42c4-8864-272c45093a61)
 
 위에 이미지에 사용하는 환경에 맞춰 스튜디오를 다운로드 받고 설치하면 됩니다.
@@ -50,6 +49,7 @@ I agree to the terms("약관에 동의합니다") 를 선택해 다음 단계로
 <img width="662" alt="androidSSS" src="https://github.com/yunsungjoong/yunsungjoong.github.io/assets/96567925/99527f21-7c13-41a4-9b44-e0c2ba9283ec">
 
 정상적으로 설치되었습니다.
+감사합니다.
 
 
 

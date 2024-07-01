@@ -23,8 +23,8 @@ banner:
 ## 안드로이드 구버전 다운로드 
 
 링크로 접속하여 안드로이드 스튜디오 구버전 설치 페이지로 이동합니다.
-
-[![안드로이드 스튜디오 구버전](https://github.com/yunsungjoong/yunsungjoong.github.io/assets/96567925/3fc6f72e-5c8a-44da-a8f3-ba0808ed4541 "초보 개발자 공부기록")](https://developer.android.com/studio/archive)
+아래 이미지 클릭시 이동됩니다. 
+[![안드로이드 스튜디오 구버전](https://github.com/yunsungjoong/yunsungjoong.github.io/assets/96567925/3fc6f72e-5c8a-44da-a8f3-ba0808ed4541 "안드로이드 구버전 설치")](https://developer.android.com/studio/archive)
 
 
 `Android Studio` 다운로드 자료실에 접속 후 아래로 스크롤하면 

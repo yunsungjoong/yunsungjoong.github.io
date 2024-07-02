@@ -1,0 +1,5481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Home | Your awesome title</title>
+<meta name="generator" content="Jekyll v4.3.3">
+<meta property="og:title" content="Home">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<link rel="canonical" href="/jekyll-theme-yat/">
+<meta property="og:url" content="/jekyll-theme-yat/">
+<meta property="og:site_name" content="Your awesome title">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Home">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"GitHub User"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Home","name":"Your awesome title","url":"/jekyll-theme-yat/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/jekyll-theme-yat/feed.xml" title="Your awesome title">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="Your awesome title" src="" onerror="this.style.display='none'">
+  Your awesome title
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about.html">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives.html">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories.html">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(/jekyll-theme-yat/assets/images/banners/home03.gif)"></div>
+        <img class="img-placeholder" src="/jekyll-theme-yat/assets/images/banners/home03.gif">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner"><div class="page-banner-default">
+            <h1 class="page-banner-heading">
+              IT 기록 블로그 
+            </h1>
+            <h2 class="page-banner-subheading">
+              Always crave and challenge like a fool
+            </h2>
+          </div></div>
+    </div>
+  </section><script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="articles">
+  
+
+  
+
+
+  <div class="pagination">
+  <!-- Post list links -->
+  <ul class="post-list">
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/angular/2024/07/01/angular%EC%9D%98-%EA%B5%AC%EC%84%B1%EC%9A%94%EC%86%8C(Summary).html">
+          [Angular] 구성요소(Summary)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jul 01, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/angular/2024/07/01/angular%EC%9D%98-%EA%B5%AC%EC%84%B1%EC%9A%94%EC%86%8C(Summary).html">
+        <p>
+        컴포넌트
+컴포넌트는 템플릿과 메타데이터, 컴포넌트 클래스로 구성되며, 데이터 바인딩에 의해 이들이 연결됩니다. 컴포넌트의 주된 역할은 화면을 구성하는 뷰(View)를 생성하고 관리하는 것입니다. 화면은 1개 이상의 컴포넌트를 조립하여 구성됩니다. 컴포넌트는 . 뷰계층의 기본 단위로, 재사용 가능하고 독립적인 UI 요소를 정의합니다,
+
+디렉티브
+디렉티브는 애플리케이션 전역에서 사용할 수 있는 뷰(View) 관련 공통 관심사를 컴포넌트에 분리하여 구현한 것입니다. 이를 통해 컴포넌트의 복잡도를 낮추고 가독성을 높일 수 있습니다.디렉티브는 크게 
+구조 디렉티브, 어트리뷰트로 구분됩니다. 구조 디렉티브는 DOM 레이아웃을... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#Angular">#Angular</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/android%20studio/2024/07/01/Installing-a-Previous-Version-of-AndroidStudio.html">
+          [Android Studio] 구 버전 다운로드 받는 방법 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jul 01, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/android%20studio/2024/07/01/Installing-a-Previous-Version-of-AndroidStudio.html">
+        <p>
+        안녕하세요.
+
+회사업무로 안드로이드 스튜디오 구버전을 사용해야 하는 상황이라 
+안드로이드 스튜디오의 구버전을 다운로드 하는 방법에 대해서 정리해 보았습니다.
+
+안드로이드 구버전 다운로드
+
+링크로 접속하여 안드로이드 스튜디오 구버전 설치 페이지로 이동합니다.
+아래 이미지 클릭시 이동됩니다. 
+
+
+Android Studio 다운로드 자료실에 접속 후 아래로 스크롤하면
+
+
+
+
+I agree to the terms(“약관에 동의합니다”) 를 선택해 다음 단계로 이동합니다.
+
+
+
+
+
+설치하려는 버전을 선택해 아래처럼 설치파일 버전이 팝업이 됩니다.
+
+
+
+위에 이미지에 사용하는 환경에 맞춰 스튜디오를 다운로드 받고 설치하면 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#Android%20Studio">#Android Studio</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/apache%20cordova/2024/06/27/Apache-Cordova.html">
+          [Apache Cordova] 모바일 하이브리드 앱 개발을 위한 아파치 코도바
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jun 27, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/apache%20cordova/2024/06/27/Apache-Cordova.html">
+        <p>
+        Cordova 란?
+
+Cordova(코르도바)는 HTML5, CSS3, JavaScript를 사용해 크로스 플랫폼 모바일 애플리케이션을 개발할 수 있게 해주는 
+Apache 재단에서 오픈 소스로 제공중인 하이브리드 앱 제작을 위한 프레임워크입니다.
+Cordova는 개발자들이 한번의 코드 작성으로 IOS, Android, Windows 등 다양한 모바일 플랫폼에서 동작하는 애플리케이션을 만들 수 있도록 돕습니다.
+이는 네이티브 개발 환경을 따로 학습할 필요 없이 웹 기술을 사용해 모바일 애플리케이션을 개발할 수 있다는 장점을 제공합니다.
+
+현재 지원하고 있는 플랫폼은
+
+
+
+  
+    
+      Android
+  ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#ionic">#ionic</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#angular">#angular</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Apache%20Cordova">#Apache Cordova</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ionic/2024/06/24/ionic-Add-a-new-component.html">
+          [Ionic] 컴포넌트 생성
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jun 24, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ionic/2024/06/24/ionic-Add-a-new-component.html">
+        <p>
+        새 컴포넌트를 추가 해야 할 때
+현재 환경 : mac m1 / Ionic5 / angular(TypeScript)
+/src/app 하위에 heroes 컴포넌트에 대한 폴더가 생성되고
+하위에 총 4개 파일
+
+
+  
+    .component.ts 컴포넌트 파일
+
+  
+  
+    .component.html 템플릿 파일
+
+  
+  
+    .component.css CSS 스타일 파일
+
+  
+  
+    .component.spec.ts 테스트 파일이 생성된다.
+
+
+
+  
+
+Ionic Component 생성
+
+컴포넌트는 아래 명령어로 생성할 수 있습니다.
+줄여서 ng g c 컴포넌트이름으로도 생성이 가능합니다.
+
+n... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#ionic">#ionic</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#angular">#angular</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ionic/2024/06/19/ionic-life-cycle.html">
+          [Ionic] Ionic life cycle 정리
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jun 19, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ionic/2024/06/19/ionic-life-cycle.html">
+        <p>
+        Ionic Page Life Cycle
+
+근무하고 있는 곳에서 Ionic &amp; Angular 로 구축된 모바일 프로젝트 진행 중이다.
+Page life cycle가 어떤 순서로 작동하는지 알아둘 필요가 있어 공부겸 정리해본다.
+
+Ionic 페이지 생명 주기
+
+Ionic 및 Angular로 구축된 앱에서 페이지 수명 주기가 작동하는 방식을 다룹니다.
+생명주기는 아래 순서대로 이벤트가 발생합니다. Ionic에서 Angular의 생명주기 이벤트도 수용하고 있기 때문에, Angular 로 구현되어 있다면
+Angular의  LifeCycle도 같이 고려해 보아야 한다.
+
+
+
+
+  ngOnInit
+  ionViewWil... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#ionic">#ionic</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#angular">#angular</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ionic/2024/06/19/cordova.html">
+          [cordova] Ionic life cycle 정리
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jun 19, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ionic/2024/06/19/cordova.html">
+        <p>
+        ##
+
+참고 
+ionic Docs
+블로그 참고
+
+ <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#ionic">#ionic</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#cordova">#cordova</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/angular/2024/06/17/angular.html">
+          [Angular] 디렉티브란?
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jun 17, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/angular/2024/06/17/angular.html">
+        <p>
+        Angular 디렉티브
+
+디렉티브(Directive) 는 템플릿 문법의 일환으로 봐도 무방할 것 같습니다.
+디렉티브는 엘리먼트에 속성을 부여해 DOM의 모양이나 동작 등의 모든 것을 관리(제어)하기 위한 명령어입니다.
+
+디렉티브
+
+디렉티브는 지시,선언 의미로, 웹애플리케이션 전역에서 사용할 수 있는것을 컴포넌트에서 분리해 구현합니다.
+이로 인해 컴포넌트의 복잡도를 낮추고 가독성을 향상시키는 장점이 있습니다.
+
+디렉티브의 종류
+
+앵귤러는 3가지 유형의 디렉티브를 제공합니다.
+
+
+  컴포넌트 디렉티브(Component Directives)
+  어트리뷰트 디렉티브(Attribute Directives)
+  구조 디렉티브... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#Angular">#Angular</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/nvm/2024/06/17/NVM.html">
+          [NVM] NVM 이란?
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jun 17, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/nvm/2024/06/17/NVM.html">
+        <p>
+        NVM 이란?
+
+NVM(Node Version Manager)은 다양한 버전의 Node.js를 간편하게 설치하고 관리할 수 있게 도와주는 도구 입니다. 
+여러 프로젝트를 진행하다 보면 각 프로젝트에 요구하는 Node.js 버전이 다를 수 있는데 이런 경우 
+NVM을 사용하면 필요한 버전의 Node.js를 설치하고 쉽게 전환할 수 있습니다.
+
+NVM의 주요 기능
+
+
+  Node.js 버전 설치 및 관리
+    
+      특정 버전의 Node.js를 쉽게 설치하고, 필요에 따라 버전을 전환할 수 있다.
+      설치된 버전을 확인하거나, 필요하지 않은 버전을 삭제할 수 있다.
+    
+  
+  버전 전환:
+    ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#NVM">#NVM</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ionic/2024/05/30/ionic.html">
+          [ionic] ionic
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> May 30, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ionic/2024/05/30/ionic.html">
+        <p>
+        ionic
+
+
+
+ <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#ionic">#ionic</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/react/2024/05/01/redux.html">
+          [Redux] Redux란?
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> May 01, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/react/2024/05/01/redux.html">
+        <p>
+        오늘은 Redux에 대해 알아보자
+
+
+
+Redux란?
+
+Redux 리덕스란 JavaScript 상태관리 라이브러리이다.
+
+여기서 말하는 상태State란 간단하게 말하자면 데이터를 말한다. 
+덧붙이자면 상태는 컴포넌트 내부에서 사용하는 데이터라 할 수 있다.
+
+요즘 웹 사이트를 구성할 때, 사용자에게 보이는 UI들을 하나의 파일로 몽땅 구현하지 않고, 
+요소요소들을 컴포넌트 단위로 구성하여 조합하는 식으로 만드는 추세이다.
+
+Redux의 3가지 원칙
+
+
+  진실은 하나의 근원으로부터
+    
+      동일한 데이터는 항상 같은 곳에서 가져온다.
+      즉, Store 스토어라는 하나뿐인 데이터 공간을 만들어 S... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#React">#React</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#JavaScript">#JavaScript</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/api/json-server/2024/03/27/json-server.html">
+          [API] json server를 사용해보자
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 27, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/api/json-server/2024/03/27/json-server.html">
+        <p>
+        최근에 json-server를 통해 간단하게 쇼핑몰 프로젝트를 수행했다. 
+쉽게 테스트버서를 사용할 수 있는 느낌이었는데, 알아두면 유용할 것 같아서 정리해 두고자 한다.
+
+🔍 json-server란
+
+json-server란 , 가짜 API서버를 만드는 툴이다. 짧은 시간동안 REST API가 필요할 때, 간단하게 만들어서 테스트해 볼 수 있다. 
+API가 만들어지기 전에 연결 작업을 진행할 때 사용하면 유용할 것 같다.
+
+설치와 사용방법 모두 간단하다. 먼저, npm &amp; yarn 을 통해 설치한다.
+
+json-server 설치
+
+# npm 
+npm install -g json-server
+
+# yarn 
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#API">#API</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#json-server">#json-server</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/react/font%20awesome/2024/03/26/Font-Awesome.html">
+          [React] React에서 Font Awesome 사용하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 26, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/react/font%20awesome/2024/03/26/Font-Awesome.html">
+        <p>
+        Font Awesome 공식문서
+
+1. Font Awesome 설치
+
+
+npm 또는 yarn 사용해 아래와 같은 명령어로 설치 가능합니다.
+
+// npm 일 경우
+npm i --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons
+npm install --save @fortawesome/react-fontawesome
+// 추가 아이콘 사용시
+npm install --save @fortawesome/free-brands-svg-icons
+npm install --save @fortawesome/free-r... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#React">#React</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Font%20Awesome">#Font Awesome</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/react/2024/03/21/React_Router.html">
+          [React] React-Router 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 21, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 8 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/react/2024/03/21/React_Router.html">
+        <p>
+        Router란?
+
+React Router는 React 애플리케이션에서 페이지 간의 네비게이션 및 URL 경로에 따른 컴포넌트 렌더링을 관리하는 라이브러리입니다. 주요 기능으로는 선언적 라우팅, 동적 라우팅, 중첩된 라우팅, 그리고 프로그래밍 방식 라우팅을 제공합니다. React Router를 사용하면 
+SPA를 쉽게 구축하고 복잡한 라우팅 로직을 간단하게 처리할 수 있습니다.
+
+
+
+react-router-dom
+
+react-router-dom은 react-router v4 버전에서 처음 릴리즈 된 라우팅 모듈로, react-router 모듈에 dom이 바인딩 되어 있는 모듈이다. v3버전까진 react-router... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#React">#React</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/react/2024/03/16/React%EB%A1%9C-%EB%82%A0%EC%94%A8%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0OpenWeather-API.html">
+          [React] 날씨앱-만들기 OpenWeather-API 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 16, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/react/2024/03/16/React%EB%A1%9C-%EB%82%A0%EC%94%A8%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0OpenWeather-API.html">
+        <p>
+        완성본
+
+Teck Stack
+
+React , JS , css , Weather open API
+
+🔍 날씨 데이터 가져오기
+
+const getCurrentLocation = () =&gt; {
+    navigator.geolocation.getCurrentPosition(( position ) =&gt; {
+      let lat = position.coords.latitude; // 위도
+      let lon = position.coords.longitude; // 경도
+      
+      console.log('현재위치', lat, lon);
+  });
+};
+
+
+
+
+
+1. Object Shorthand... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#React">#React</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#JavaScript">#JavaScript</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/javascript/react/2024/03/07/Summary_of_Common_JavaScript_Syntax_in_React.html">
+          [React] 리액트에서 자주쓰이는 자바스크립트 문법 정리 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 07, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/javascript/react/2024/03/07/Summary_of_Common_JavaScript_Syntax_in_React.html">
+        <p>
+        🔍 React 장점
+
+
+  
+    새로고침X -&gt; 않아도 자동으로 업데이트
+    코드 재사용성⬆️ ( 가용성이 좋다)
+    JSX문법
+      
+        HTML + JavaScript
+        HTML 컴포넌트 와 관련된 함수를 뭉쳐 세트로 만든다. 그리고 이 세트는 컴포넌트 라고 한다.
+        App.js가 웹에 보여지는 내용
+        React는 HTML파일이 하나
+        main.js 는 index.html 파일과 App.js를 연결해주는 연결고리 역할
+      
+    
+  
+
+
+
+
+
+
+1. Object Shorthand AssignMent
+
+// 키와 키값에 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#React">#React</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#JavaScript">#JavaScript</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/react/2024/02/22/React_useMemo.html">
+          [React] useMemo
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 22, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/react/2024/02/22/React_useMemo.html">
+        <p>
+        🔍 리액트 Hooks
+
+
+  리액트에서 클래스형 컴포넌트와 함수형 컴포넌트가 있습니다. 그 중에 Hooks는 함수형 컴포넌트에서 사용하는 기능입니다.
+  Hooks는 기존에 함수형 컴포넌트에서 할 수 없었던 상태 관리나, 렌더링 후 작업을 설정하는 기능 등의 작업을 할 수 있게 해줍니다.
+
+
+
+
+📋useMemo란?
+
+useMemo는 리액트에서 컴포넌트의 성능을 최적화 하는데 사용되는 Hook입니다
+useMemo에서 memo는 MEMOIZATION을 뜻하는데 이는 그대로 해석하면 ‘메모리에 넣기’ 라는 의미이며 컴퓨터 프로그램이 동일한 계산을 반복해야 할 때, 이전에 계산한 값을 메모리에 저장함으로써 동일한 계산의 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#React">#React</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#useMemo">#useMemo</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/react/2024/02/21/React_useEffect.html">
+          [React] useEffect
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 21, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/react/2024/02/21/React_useEffect.html">
+        <p>
+        🔍 리액트 Hooks
+
+
+  리액트에서 클래스형 컴포넌트와 함수형 컴포넌트가 있습니다. 그 중에 Hooks는 함수형 컴포넌트에서 사용하는 기능입니다.
+  Hooks는 기존에 함수형 컴포넌트에서 할 수 없었던 상태 관리나, 렌더링 후 작업을 설정하는 기능 등의 작업을 할 수 있게 해줍니다.
+
+
+
+
+useEffect
+
+useEffect 는 리액트 컴포넌트가 렌더링될 때마다 특정 작업을 수행하도록 설정할 수 있는 Hook 입니다.
+클래스형 컴포넌트의 componentDidMount와 componentDidUpdate를 합친 형태로 보아도 무방합니다.
+
+useEffect도 사용하려면 import가 필수입니다.
+
+useEf... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#React">#React</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#useEffect">#useEffect</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/react/2024/02/20/React_useState.html">
+          [React] useState
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 20, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/react/2024/02/20/React_useState.html">
+        <p>
+        🔍 리액트 Hooks
+
+
+  리액트에서 클래스형 컴포넌트와 함수형 컴포넌트가 있습니다. 그 중에 Hooks는 함수형 컴포넌트에서 사용하는 기능입니다.
+  Hooks는 기존에 함수형 컴포넌트에서 할 수 없었던 상태 관리나, 렌더링 후 작업을 설정하는 기능 등의 작업을 할 수 있게 해줍니다.
+  상태(State)란 ?
+    
+      컴포넌트 내부에 변경될 수 있는 값 props는 부모 컴포넌트로부터 넘겨 받으므로, 컴포넌트 자신은 props를 바꾸지 못하는 특성이 있는 것과는 차이가 있습니다.
+    
+  
+
+
+
+
+useState
+
+함수형 컴포넌트에서도 상태(state)관리를 할 수 있게 해 주는 Hook 입니다... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#React">#React</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#useState">#useState</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/react/2024/02/09/React_state.html">
+          [React] 리액트 State 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 09, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/react/2024/02/09/React_state.html">
+        <p>
+        이 글은 김민준(velopert)님의 리액트를 다루는 기술을참조 하여 작성한 글입니다.
+
+State
+
+리액트에서 state는 컴포넌트 내부에서 바뀔 수 있는 값을 의미합니다. 
+props는 컴포넌트가 사용되는 과정에서 부모 컴포넌트가 설정하는 값이며, 컴포넌트 자신은 해당 props를 읽기 전용으로만 
+사용할 수 있습니다. props를 바꾸려면 부모 컴포넌트에서 바꾸어 주어야 합니다. 
+상황에서는 App 컴포넌트에서 MyComponent를 사용할 때 props를 바꾸어 주어야 값이 변경할 수 있는 것이죠. 
+반면 myComponent 에서는 전달받은 name 값을 직접 바꿀 수 없습니다.
+리액트에는 두 가지 종류의... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#React">#React</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/react/2024/02/02/React_Start.html">
+          [React] 리엑트 시작하기 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 02, 2024</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/react/2024/02/02/React_Start.html">
+        <p>
+        이 글은 김민준(velopert)님의 리액트를 다루는 기술을참조 하여 작성한 글입니다.
+
+1-1 왜 리엑트인가?
+
+JS만으로도 규모가 큰 애플리케이션을 만들 수 있는 시대가 됬다. 
+규모가 큰 애플리케이션을 관리하기 위해 만들어진 수많은 프레임워크들이 있다. 
+이 프레임워크들ㅇ느 주로 MVC(Model-View-Controller), MVVM(Model-View-View Model) 아키텍처를 사용한다.
+
+
+  
+    모델(Model) : 애플리케이션에서 사용하는 데이터를 관리하는 영역
+  
+  
+    뷰(View) : 사용자에게 보이는 부분
+  
+  
+    컨트롤러(Controller) : 사용자의 입력이나... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#React">#React</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/javascript/2022/05/17/Why-should-you-study-JavaScript.html">
+          [JavaScript] 기본 문법 정리 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> May 17, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/javascript/2022/05/17/Why-should-you-study-JavaScript.html">
+        <p>
+        JavaScript를 배워야 하는 10가지 이유
+
+우리는 때때로 선택을 하기 어려운 두 가지 이유가 있다.
+선택할 수 있는 옵션이 너무 적거나 너무 많다는 것. 프로그래밍 언어와 관련하여 재물에 대한
+당혹감이 있으며, 이로 인해 정신적 교착 상태가 발생될 수 있다.
+언어는 Python , Java , JavaScript , C/CPP, PHP, Swift, C# , Ruby, Objective-C , SQL 이 있으며
+전체 목록도 아니다. 어떻게 선택해야할까?
+
+이제는 프로그래머가 하는 한 너무 많은 언어를 아는 것과 같은 것은 없다는 것을 명심해야할것이다.
+많은 언어들을 이해하고 할 수 있는 능력이 된다면 그 프... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#Javascript">#Javascript</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/javascript/2022/05/09/JavaScript_-grammar.html">
+          [JavaScript] JavaScript 란? 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> May 09, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 18 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/javascript/2022/05/09/JavaScript_-grammar.html">
+        <p>
+        JavaScript 란 ?
+
+HTML과 CSS로 만들어진 웹 페이지에 생동감을 불어넣기 위해 만들어진 객체기반
+프로그래밍 언어로 C, C++ 처럼 컴파일 없이 한줄 한줄씩 해석하며 명령어를 실행하는 인터프리터 언어이다.
+HTML의 특정 요소를 선택해 다양한 이벤트 ( 마우스 클릭 , 키보드 입력 등)에 따라 어떤 동작을 하도록 기능을 넣을 수 있다.
+
+JavaScript 사용방법
+
+1. 내부 스크립트
+
+자바스크립트 코드는 &lt;script&gt; 태그를 HTML 문서안에 넣어서 사용 가능하다.
+HTML문서의 어느위치에서도 사용 가능한데 보통 HTML문서가 전부 로드 되고 나서
+&lt;body&gt; 아래에 사용한... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#Javascript">#Javascript</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/%EA%B8%B0%ED%83%80/2022/05/04/AnyDesk.html">
+          [AnyDesk] 원격프로그램 설치&amp;사용법 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> May 04, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/%EA%B8%B0%ED%83%80/2022/05/04/AnyDesk.html">
+        <p>
+        오늘은 사용하기 편한 무료 원격 프로그램 AnyDesk 다운로드 방법과 간단한 사용법을 알아보자.
+원격제어프로그램은 기존에 팀뷰어나 네이트온에서 주로 사용되고 이쓴ㄴ데 끊김 현상이 심하기도 하고
+회사업무로 인해 새로운 원격 프로그램을 설치하게 되었다.
+
+AnyDesk란?
+
+애니데스크는 독일에서 만든 원격 DeskTop 어플리케이션이다. 프로그램 용량은 3메가 바이트로 
+작은 편임에도 고품질의 영상과 소리를 전달할 수 있도록 잘 만들어져있다. 원격제어,파일전송,VPN 기능 등을
+제공하고 있어 편리하게 사용이 가능하다.
+
+AnyDesk 다운방법
+
+
+
+
+아래 링크로 접속해주세요  
+▼▼▼▼▼▼▼ 
+
+
+https://an... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#JAVA">#JAVA</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#method">#method</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/programming/2022/05/03/Method.html">
+          [JAVA] 메소드(Method)란?
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> May 03, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/programming/2022/05/03/Method.html">
+        <p>
+        Method 메소드란 ?
+
+메소드(method) 또는 멤버 함수(member function)는 객체 지향 프로그래밍에서 객체와 관련된
+서브루틴(또는 클래스 내에 존재하는 함수)이며 데이터와 멤버 변수에 대한 접근권한을 갖는다.
+JavaScript라는 언어가 가지는 독특한 특징이 있는데, 바로 자바스크립트는 대체로 ‘객체’로 구성되어 있다는 점이다.
+함수 또한 자바스크립트 객체로 다루어 지며, 그중에서도 ‘일급객체’ 이므로 값으로 취급 받을 수 있다.
+자바스크립트의 객체는 프로퍼티 키와 값으로 구성되어지는데, 이때 값에는 말그대로 JavaScript에서 평가되어지는 모든 값을 담을 수 있다.
+함수 또한 그러하다.
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#JAVA">#JAVA</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#method">#method</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/cs/2022/04/28/Framework&amp;Library.html">
+          👨🏻‍💻프레임워크 &amp; 라이브러리의 차이점
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 28, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/cs/2022/04/28/Framework&amp;Library.html">
+        <p>
+        프레임워크 &amp; 라이브러리
+
+프레임워크와 라이브러리의 정확한 차이점이 무엇일까?
+대충 알것 같지만 정확히 어떠한 차이점이 있는지 알아보자
+프레임워크는 미리 만들어 둔 반제품이나 , 확장해서 사용할 수 있도록 준비된 추상 라이브러리의 집합이 아니다.
+프레임워크가 어떤 것인지 이해하려면 라이브러리와 프레임워크가 어떻게 다른지 알아야 할 것이다.
+먼저 프레임워크와 라이브러리의 개념과 차이점에 대해 알아보자
+
+
+
+Framwork(프레임워크)
+
+
+
+프레임워크는 뼈대나 기반구조를 뜻한다.
+제어의 역전 개념이 적용된 대표적인 기술이다. 소프트웨어에서의 프레임워크는 ‘소프트웨어의 특정 문제를 해결하기 위해 상호 협력하는 크... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Framwork">#Framwork</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Library">#Library</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/mark%20up/2022/04/27/HTML_05.html">
+          [HTML] 멀티미디어 표현  
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 27, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/mark%20up/2022/04/27/HTML_05.html">
+        <p>
+        HTML에서 멀티미디어 표현
+
+HTML 오디오 / 비디오 재생
+
+1. audio 요소
+
+
+  mp3(.mp3)
+    
+      MPEG-1 오디오 규칙 (MPEG-1 Audio Layer-3) 으로 개발된 오디오 압축 기술
+    
+  
+  Wav(.wav&gt;
+    
+      윈도우에서  오디오 재생을 위해 MS와 IBm이 개발한 비압축 방식)
+    
+  
+  OGG(.ogg/.oga)
+    
+      MP3 대안으로 개발되어 스트리밍 방식으로 멀티미디어 표현을 위한 공개 소스기반의 파일 형식
+    
+  
+
+
+
+
+&lt;HTML&gt;
+  &lt;head&gt;
+    &lt;title&gt;오디... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#HTML">#HTML</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/database/2022/04/27/DATABASE_Query.html">
+          [Database] 쿼리(query)란 무엇인가?  
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 27, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/database/2022/04/27/DATABASE_Query.html">
+        <p>
+        쿼리(Query)란 무엇인가?
+쿼리(Query)는 질문, 문의하다라는 뜻이다. 질문하면 답을 달라는 일종의 요청(데이터베이스에 정보를 요청하는 것)이다.
+ex ) 구글, 다음 등 검색창에 ‘Database’ 라는 검색어를 쳐보면 , Database에 대한 정보들이 쏟아져 나올 것이다.
+이 정보들은 모두 서버에 저장되어 있던 데이터베이스에서 온 것들이다. 내가 ‘Database’에 대한 데이터를 달라는 쿼리를 
+주었고, 서버가 이에 응답해 데이터베이스에서 데이터를 보여준 것이다.
+
+흔히 ‘ 쿼리문을 작성한다’ 는 말을 많이 사용하는데, 이 말은 데이터베이스에서 원하는 정보를 가져오는 코드를 작성한다.
+정도로 이해하면... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#data">#data</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#database">#database</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#query">#query</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/database/2022/04/27/DATABASE_Index.html">
+          [Database] SQL 인덱스(INDEX)  
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 27, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/database/2022/04/27/DATABASE_Index.html">
+        <p>
+        인덱스(Index)란 무엇인가?
+
+인덱스는 데이터베이스 테이블에 있는 데이터를 빨리 찾기 위한 용도의 데이터베이스 객체이며 일종의 색인기술이다.
+테이블에 index를 생성하게 되면 index Table을 생성해 관리한다. 인덱스는 테이블에 있는 하나 이상의 컬럼으로
+만들 수 있다. 가장 일반적인 B-tree인덱스는 인덱스 키(인덱스로 만들 테이블의 컬럼 값)와 이 키에 해당하는 컬럼 값을 가진
+테이블의 로우가 지정된 주소 값으로 구성된다.
+
+
+
+인덱스(Index)를 사용하는 이유
+
+인덱스의 가장 큰 특징은 데이터들이 정렬이 되어있다는 점이다. 
+이 특징으로 조건 검색이라는 영역에서 굉장한 장점이 된다. (찾기 편하... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#data">#data</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#database">#database</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#query">#query</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/%EA%B8%B0%ED%83%80/2022/04/26/IDE_01.html">
+          IDE란?
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 26, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/%EA%B8%B0%ED%83%80/2022/04/26/IDE_01.html">
+        <p>
+        IDE
+IDE는 통합 개발 환경(intergrated Development Environment, IDE)은
+통합된 개발 환경으로 , 개발자를 위한 종합 프로그램을 말한다. 쉽게 말해 개발 도구 모음집이라고 보면 된다.
+
+대표적인 IDE로는 비쥬얼 스튜디오와 이클립스가 있다.
+하나의 프ㅗ그램 안에서 해당하는 언어 JAVA 와 C 등의 프로그래밍을 처리하는 도구를 뜻한다.
+
+IDE는 어떤 기능이 있을까 ?
+IDE의 주요 기능에 대해 자세히 알아보자
+
+
+  코드를 작성하기 위한 텍스트 에디터(Text Editor)
+  작성한 코드를 실행하기 위한 빌더(Builder)
+  작성한 코드에 문제가 없는지 체크해주는 디버거(... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#IDE">#IDE</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#IDE%EB%9E%80">#IDE란</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#IDE%EC%9D%98%20%EC%A0%95%EC%9D%98">#IDE의 정의</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/database/2022/04/26/DATABASE_SQL.html">
+          [Database] SQL 이란?
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 26, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/database/2022/04/26/DATABASE_SQL.html">
+        <p>
+        SQL 이란 ?
+
+ 
+SQL(Structured Query Language, 구조적 질의 언어)은 관계형 데이터베이스 시스템(RDBMS)을 제어하는 컴퓨터 언어이다.
+SQL은 1970년대에 IBM에서 최초로 개발되었으며 관계형 모델이라는 이론에서 파생된 특징을 가지고 있는데, 
+현재 SQL의 표준으로 ANSI SQL이 정립되었다. 
+각 DBMS 프로그램에서 ANSI SQL을 기반으로 
+개발된 개별 SQL 을 사용하며 서로 근소한 차이를 보인다.
+
+간략요약 : SQL은 데이터를 저장하고 관리하는 커다란 체계
+
+SQL 쿼리문 의 분류
+
+SQL 쿼리문의 역할에 따라 3가지로 분류된다.
+
+
+  
+    DDL(Data D... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DB">#DB</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#DATABASE">#DATABASE</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#SQL">#SQL</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#DDL">#DDL</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#DML">#DML</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#DCL">#DCL</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/os/2022/04/25/OS_03.html">
+          [운영체제] 스케줄링 알고리즘  
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 25, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/os/2022/04/25/OS_03.html">
+        <p>
+        스케줄링 알고리즘
+운영체제는 실행할 준비가 된 프로세스들이 적절히 CPU를 배정받아 효율적으로 작업을 처리할 수 있도록 관리해야 하고
+이를 처리할 수 있도록 관리해야 하고, 이를 위해서 다양한 스케줄링 알고리즘을 활용한다.
+
+01. 스케줄링 성능 평가 기준
+1) 평균 대기시간
+
+  각 프로세스가 수행이 완료될 때까지 준비 큐에서 기다리는 시간의 합의 평균값
+
+
+2) 평균 반환시간
+
+  각 프로세스가 생성된 시점부터 수해이 완료된 시점까지 소요시간의 결과값
+
+
+02. 다양한 스케줄링 알고리즘
+
+01) FCFS 스케줄링
+
+(1) SJF(Shrtest Job First) 스케줄링
+
+  비선점 스케줄링 알고리즘
+  준비 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#OS">#OS</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/os/2022/04/25/OS_02.html">
+          [운영체제] 프로세스(Process)  
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 25, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/os/2022/04/25/OS_02.html">
+        <p>
+        01. 프로세스(Process)
+
+
+프로그램을 실행시키면 운영체제로부터 프로그램이 동작하는데 필요한 자원을 할당받아 동작을 시작한다.
+이처럼 실행 상태에 들어간 프로그램을 프로세스라고 한다. 프로세스의 동작 CPU가 그 프로세스의 명령들을 실행하는 것이다.
+이때 CPU도 기억장치나 입출력장치와 마찬가지로 프로세스가 동작하는데 필요한 자원이다 운영체제는
+실행할 준비가 된 프로세스들이 적절한 CPU를 배정받아 효율적으로 작업을 처리할 수 있도록 관리해야한다.
+이번 강의에서는 운영체제의 핵심적인 구성 요소 중 하나인 프로세스에 대한 기본적인 이해와 함께
+쓰레드의 개념을 학습하고, 스케줄링의 정책에 대하여 살펴본다.
+
+0... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#OS">#OS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Process">#Process</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/os/2022/04/24/OS_01.html">
+          [운영체제] OS  
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 24, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/os/2022/04/24/OS_01.html">
+        <p>
+        운영체제의 개요
+운영체제는 컴퓨터를 사용하기 위해 반드시 필요한 소프트웨어 중 하나이다.
+컴퓨터가 사용자에게 제공하는 서비스가 다양해지고 편리해지는 만큼
+사용자를 위해 컴퓨터 내에서 이루어져야 하는 자원의 관리나 활용이 효율적으로
+동작해야하는데, 운영체제는 그 근간을 이루는 핵심적인 시스템 소프트웨어이다.
+이번 강의에서는 운영체제에 대한 기본적인 이해와 운영체제를 구성하는
+기본적인 요소인 프로세스 관리자, 메모리관리자, 파일 관리자의 역할에 대하여
+개략적으로 학습하고, 운영체제의 유형과 발전 과정을 살펴보자.
+***
+
+01. 컴퓨터 시스템의 구성
+
+(1) 컴퓨터 시스템의 구성 : 사용자 ,응용 소프트웨어 , 시스템... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#OS">#OS</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/doker/2022/04/22/docker_01.html">
+          [Doker] Doker 란 ?  
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 22, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/doker/2022/04/22/docker_01.html">
+        <p>
+        1. Docker
+
+
+Docker 컨테이너 애플리케이션의 빌드, 배치 및 관리를 위한 오픈소스 플랫폼이다.
+컨테이너의 정의 VM과 컨테이너의 차이점 , 그리고 왜 Docker가 이토록 널리 채택되고 사용되는지에 대해 알아보자 
+
+1) Docker 란 ?
+
+
+
+
+Docker란 Go언어로 작성된 리눅스 컨테이너 기반으로 하는 오픈소스 컨테이너화 플랫폼이다. 이를 통해 개발자는 애플리케이션 컨테이너로 패키징 할 수 있다.  컨테이너란 애플리케이션 소스 코드를 임의의 환경에서 해당 코드의 실행에 필요한 운영체제(OS) 라이브러리 및 종속 항목과 결합하는 실행 가능한 표준 컴포넌트를 말한다. 컨테이너는 분산형 애플리케이션의... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#Doker">#Doker</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/mark%20up/2022/04/20/HTML_04.html">
+          [HTML] HTML 테이블  
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 20, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/mark%20up/2022/04/20/HTML_04.html">
+        <p>
+        1.테이블의 형식
+
+
+&lt;table&gt; &lt;tr&gt; &lt;td&gt; &lt;th&gt; &lt;caption&gt;
+
+  &lt;table&gt; Html에서 테이블을 정의하는 태그
+  &lt;tr&gt; 테이블에서 하나의 줄을 해당하는 행(row) 정의하는 태그
+  &lt;td&gt; 또는 &lt;th&gt;  포함해야만 사용 가능하다
+  &lt;caption&gt; 테이블 전체에 해당하는 제목을 표시 테이블 레이아웃에는 아무런 영향을 미치지 않음
+
+
+2.셀 병합과 요소 배치
+
+
+
+1) 행 과 열의 방향으로 인접한 셀을 합쳐서 하나의 셀을 생성
+
+  rowspan , colspan 속성 : &amp;l... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#HTML">#HTML</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/mark%20up/2022/04/19/HTML_03.html">
+          [HTML] HTML 그림과 링크 표현  
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 19, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/mark%20up/2022/04/19/HTML_03.html">
+        <p>
+        1. 이미지 삽입(img)
+
+
+
+1)&lt;img&gt; 태그와 속성을 활용할 수 있다.
+
+속성
+
+  src = “이미지 파일” -&gt; 문서에 표시할 이미지 파일을 지정
+  width = “숫자” -&gt; 이미지의 폭 지정 (픽셀, %)
+  height = height = “숫자” -&gt; 이미지의 높이 지정 (픽셀, %)
+  alt = “내용” -&gt; 이미지가 표시되지 않을 때 대체될 텍스트 지정
+  usemap = “#맵이름” -&gt; 클라이언트 측의 이미지맵 지정
+
+
+2) &lt;img&gt; src 속성
+
+  HTML문서에 표시할 이미지 파일의 이름/경로 지정 (필수속성)
+
+
+ 
+&lt;!-- ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#HTML">#HTML</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/mark%20up/2022/04/19/HTML_02.html">
+          [HTML] HTML 텍스트표현  
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 19, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/mark%20up/2022/04/19/HTML_02.html">
+        <p>
+        1. 텍스트 표현
+
+
+&lt;!--주석--&gt; // 주석  
+
+&lt;br&gt; // 엔터키 기능  
+
+&lt;p&gt;&lt;/p&gt; // 문단을 나눠 독립된 단락을 생성 다른 내용과의 구분을 위해 단락 전후에서 자동 줄바꿈 수행 
+
+&amp;nbsp  // 두 칸 이상의 연속된 공백, 예약어로 사용되는 문자 
+
+xmrtnanswk //
+
+&lt;hr&gt; // 텍스트 사이 수평선 그리는 것 ( 단락 주제를 구분함)
+
+&lt;hn&gt;&lt;/hn&gt; // 단락의 제목을 지정하는 태그 
+
+&lt;pre&gt;&lt;/pre&gt; // 텍스트를 자유롭게 표시(문자가 입력된 형식을 그대로 유지하여 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#HTML">#HTML</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/mark%20up/2022/04/19/HTML_01.html">
+          [HTML] HTML란 ? 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 19, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/mark%20up/2022/04/19/HTML_01.html">
+        <p>
+        1. HTML 이란 ?
+
+
+
+
+
+Hyper Text Language
+1) 웹(Web) : World wide Web 에서 사용하는 마크업 언어 인터넷 상에서 사용되는 웹페이즈의 
+정보를 표현하기 위한 언어
+
+2)  하이퍼텍스트 :
+
+  다른 텍스트에 대한 참조(“링크”)를 가진 텍스트 단위들과 이것들을 결합시킨 구성
+  사용자가 연상하는 순서에 따라 관련 있는 쪽으로 이동하여 정보를 얻도록 조직화된 시스템
+
+
+HTML의 특징
+
+  W3C에 의한 웹 문서의 표준 : 수정/관리 용이 , 웹 접근성 향상, 브라우저 등의 호환성 확보
+  마크업 언어 : 파일 용량이 작아 클라이언트 - 서버 간의 빠른 문서 전달 가능
+  ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#HTML">#HTML</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/spring/2022/04/18/SpringFramWork.html">
+          [Springboot] 스프링부트 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 18, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/spring/2022/04/18/SpringFramWork.html">
+        <p>
+        1. Spring boot란 ?
+
+Spring Framwork 기반 프로젝트를 복잡한 설정없이 쉽고 빠르게 만들 수 있는 라이브러리다.
+개발자가 하나하나 모든 설정을 하지 않아도 자주 사용되는 기본 설정을 알아서 해준다.
+스프링 부트는 실행만 하면 스프링기반 사용화가 가능한 애플리케이션을 쉽게 만들기 위해 단독 실행 가능하도록 해주는
+스프링 프로젝트이다.
+스프링 부트는 스프링을 쉽게 사용할 수 있도록 필요한 여러가지 복잡한 설정을 대부분 미리 세팅 해놓았을 뿐 아니라 WAS도 별도의 설정없이
+바로 웹개발에 들어갈 수 있도록 만들어 놓은게 Springboot 이다.
+
+2. Spring boot를 사용하는 이유
+
+Sp... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#API">#API</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/programming/2022/04/15/HTTP.API.html">
+          HTTP API 동기&amp;비동기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 15, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/programming/2022/04/15/HTTP.API.html">
+        <p>
+        
+1. HTTP란 ?
+
+
+  HyperText Transper Protocol 의 준말, 하이퍼텍스트 트랜스퍼란 링크 기반으로 데이터를 요청하고 받겠다는 것
+  클라이언트와 서버가 요청을 하고 응답을 하기위해 따르는 프로토콜이다.
+  HTML 문서를 주고 받을 수 있음, 뿐만 아니라 이미지, 동영상, 오디오, 텍스트 문서 등을 주고 받을 수 있다.
+  
+
+
+
+
+2. HTTP 메소드 그리고 API의 종류
+
+
+  메소드란 ? 요청의 종류를 서버에 알리기 위해 사용하는 것, 게시판 기능 (CRUD , REST API)을 만들 때 사용
+  메소드 종류
+
+
+1.POST : 정보를 입력하기 위해 사용( CREATE )
+
+2.... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#API">#API</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/programming/2022/04/15/Fetch_API.html">
+          Fetch API 와 데이터 정제
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 15, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/programming/2022/04/15/Fetch_API.html">
+        <p>
+        Fetch API
+
+
+
+웹 개발할때 , Ajax 라는 비동기적인 통신 방법을 통해서 클라이언트 족에서 서버에 추가 정보를 요청하여
+가져올 수 있게 한다.
+fetch API는 그런 Ajax 통신 기술의 일종 별도 라이브러리 추가하지 않더라도 최신 브라우저 내장되어
+있기 때문에 , 함수를 JavaScript에서 호출하는 것으로 손수비게 사용가능하다.
+
+fetch()의 기본 스펙은 Jquery.ajax() 와 기본적으로 다른 두가지.
+
+  
+    
+      fetch() 로 부터 반환되는 Promise 객체는 HTTP error 상태를 reject 하지않는다 
+(HTTP 상태코드가 404 나 500이더라도 안한다) ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#API">#API</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#fetch">#fetch</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#fetchapi">#fetchapi</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/node.js/2022/04/14/node.js_npm.html">
+          [node.js] npm 이란 ?
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 14, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/node.js/2022/04/14/node.js_npm.html">
+        <p>
+        1. Node.js는 무엇인가 ?
+
+
+
+
+
+Java  모든 OS운영체제에서 가상머신(Virtual Machine) 환경 안에서 런타임 이 구독 되듯이 Node.JS는 웹 브라우저에 종속적인 자바스크립트에서 외부에서
+실행 할 수 있는 런타임 환경을 Chrome V8 엔진을 제공하여 여러 OS환경에서 실행할 수 있는 환경을 제공한다. 이것을 ``Node.JS` 라고 정의할 수 있다.
+
+
+  구글 V8 자바스크립트 엔진
+  고성능 네트워크 서버
+  단일 쓰레드(Single Thread) 이벤트 루프(Event Loop) 기반
+  비동기 처리 (바로 적용됨 )
+  자바스크립트
+  개발 생산성 향상
+  방대한 모듈 제공 (... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#node.js">#node.js</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#npm">#npm</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#javascript">#javascript</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#java">#java</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/%EA%B8%B0%ED%83%80/2022/04/13/API.html">
+          API란 무엇인가
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 13, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/%EA%B8%B0%ED%83%80/2022/04/13/API.html">
+        <p>
+        API란
+
+
+API(Application Programming interface
+응용 프로그램에서 사용할 수 있도록, 운영체제나 프로그래밍 언어가 제공하는 기능을 제어 할 수 있게 만든 인터페이스를 뜻한다. 
+주로 파일 제어, 창 제어, 화상 처리, 문자 제어 등을 위한 인터페이스를 제공한다.
+
+키보드를 통해 우린 컴퓨터와 대화한다. 키보드의 버튼을 누르면 -&gt; 키보드에서 컴퓨터로 전달되고 -&gt; 스크린에서 텍스트를 볼 수 있다.
+키보드를 통해서 컴퓨터와 인터렉션(interaction : 상호작용 ) 하는 것이다.
+
+이와 같은 맥락으로 API는 프로그램과 프로그램이 서로 상호작용하는 것을 도와주는 매개체로... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#API">#API</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/programming/2022/04/11/Echart.html">
+          [데이터 시각화] Echart 란 ? 
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 11, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/programming/2022/04/11/Echart.html">
+        <p>
+        DATA의 시각화
+
+
+
+
+
+데이터 3법이 개정되고 D(Data), N(Network).A(A.I) 산업이 부각되면서, 빅데이터 관련 차트 라이브러리의
+관심이 높아지고 있다. 이에 따라 “데이터 시각화” 영역이 프론트 개발자의 필수항목인 시대가 되었다. 
+차트를 그릴때 보통 chart.js 와 Echart 정도만 알고 있다면 멋진 그래프를 그릴 수 있을것이다.
+
+실시간으로 변하는 데이터를 시각화하려면 ‘속도’가 가장 중요하다.시각적인 그래픽 요소도 중요하지만 데이터를 제대로
+반영하지 못하는 그래픽 차트는 의미없다.
+우리가 알아볼 Echart는 맞는 데이터 값을 넣어주면 그때 그때마다 데이터를 시각화 해준다.
+
+Ech... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Echart">#Echart</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#chart">#chart</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/git/2022/04/08/Github_blog_start02.html">
+          [Github blog] 깃허브 블로그 만들기(Jekyll)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 08, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/git/2022/04/08/Github_blog_start02.html">
+        <p>
+        macOS 용 Jekyll 블로그 생성 방법
+
+
+1. Home brew 설치
+
+macOS 패키지 관리자 Homebrew를 설치한다.
+
+homebrew url : https://brew.sh/index_ko
+
+2. Ruby 설치하기
+
+brew install rbenv
+
+Ruby build를 설치한다.
+
+rbenv init
+
+설치 상태 검사
+
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+
+이후 터미널을 재시작 후
+
+rbenv 로 ruby 최신버전을 설치 (등록일 기준 3.1.1 이 최신버전)
+
+터미널에서 차례... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#GitHub">#GitHub</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Gitpage">#Gitpage</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Jekyll">#Jekyll</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Ruby">#Ruby</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/git/2022/04/08/Github_blog_start01.html">
+          [Github blog] 깃허브 블로그란?
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 08, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/git/2022/04/08/Github_blog_start01.html">
+        <p>
+        GitHub 란 ?
+
+
+
+개발 코딩을 하시는 분들은 GitHub을 다 알고 계실텐데요. 아닌 분들을 위해 간단하게 설명을 해드려보면, Github은 소프트웨어 개발에 사용되는 코드를 저장하고, 관리하는 온라인 상의 공간이라고 볼 수 있습니다.
+프로그램 코드의 수정, 반영, 취소, 복구, 배포 등 여러가지 기능을 가지고 있습니다.
+
+GitHub 가입하기
+
+
+GitHub 에 접속하면 보이는 첫 화면입니다.dddd
+GitHub 에 접속하면 보이는 첫 화면입니다.dddd
+dddddggggggggg
+
+
+먼저, GitHub 사이트에 접속합니다.
+
+username과 Email 을 입력하여 가입합니다. username은 추후 변... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#GitHub">#GitHub</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Gitpage">#Gitpage</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Jekyll">#Jekyll</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Ruby">#Ruby</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/node.js/2022/04/07/start.html">
+          [Node.js] JSON Web Tokens이란?
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Apr 07, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/node.js/2022/04/07/start.html">
+        <p>
+        시작으로
+
+
+
+최근 Express.js로 사내 rest-api서버를 구축했었는데, 그 중 사용자 인증을 처리를 JWT로 구현했었다.
+그때는 사용방법만 빠르게 익히고 구현했기 때문에 정리할 시간이 없었다.
+
+현재 서비스를 오픈하고 시간이 남아서 지금이라도 정리를 해본다.(기억 &lt; 기록 )
+
+본 포스트는 JWT 공식문서를 번역 및 테스트하여 정리한 글이다.
+
+
+
+JSON 웹 토큰이란?
+
+JWT(JSON Web Token)는 당사자 간에 정보를 JSON 개체로 안전하게 전송하기 위한 간결하고 자체 포함된 방법을 정의하는 개방형 표준이다. 이 정보는 디지털 서명이 되어 있으므로 신뢰할 수 있다.
+JWT는 비밀(HMA... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Node.js">#Node.js</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Javascript">#Javascript</a>
+</div>
+    </li>
+</ul>
+
+  <!-- Pagination links -->
+</div>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="common-list">
+  <ul>
+    <li>
+      <a href="/jekyll-theme-yat/index.html">
+        All<span>47</span>
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-API">
+          API <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Android%20Studio">
+          Android Studio <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Angular">
+          Angular <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Apache%20Cordova">
+          Apache Cordova <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-CS">
+          CS <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Database">
+          Database <span>3</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Doker">
+          Doker <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Font%20Awesome">
+          Font Awesome <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Git">
+          Git <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-JavaScript">
+          JavaScript <span>3</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-MARK%20UP">
+          MARK UP <span>5</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-NVM">
+          NVM <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Node.js">
+          Node.js <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-OS">
+          OS <span>3</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Programming">
+          Programming <span>4</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-React">
+          React <span>10</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Spring">
+          Spring <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-ionic">
+          ionic <span>4</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-json-server">
+          json-server <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-%EA%B8%B0%ED%83%80">
+          기타 <span>3</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2024 GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

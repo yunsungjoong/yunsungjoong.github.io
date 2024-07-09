@@ -57,8 +57,23 @@ nvm use 10.24.1
 ### Cordova를 이용해 안드로이드 플랫폼을 추가
 
 ```zsh
+# 코르도바 플랫폼에 복사하여 네이티브 빌드를 준비합니다.
 ionic cordova prepare android 
 ```
+
+#### `ionic cordova prepare` 는 다음을 수행합니다.
+- 웹 자산을 `www/` 로 컴파일하는 `ionic` 빌드를 수행합니다.
+- `config.xml`을 플랫폼별 매니페스트 파일로 변환합니다.
+- `resources/` 에서 아이콘과 시작 화면을 `Cordova` 플랫폼으로 복사합니다.
+- 플러그인 파일을 지정된 플랫폼에 복사합니다.
+
+### 준비하려는 플랫폼 (예 android : ios )
+```zsh 
+$ ionic cordova prepare 
+$ ionic cordova prepare ios
+$ ionic cordova prepare android
+```
+
 
 
 ## 안드로이드 스튜디오에서 프로젝트 열기

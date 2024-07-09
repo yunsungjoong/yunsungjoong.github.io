@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "[Cordova]코르도바 안드로이드 스튜디오 실행 "
+title: "[Android] KeyStore란? 생성 방법 및 역할 "
 tags: [Cordova]
-categories: [Cordova]
+categories: [Android]
 banner:
   image: "/assets/images/banners/2024/07/banner_android-studio-logo-hero.jpg"
   opacity: 0.618
@@ -28,10 +28,10 @@ banner:
 
 
 ### Cordova
+
 ```zsh
 # 개발 환경에 맞게 코르도바 설치 명령어 
 npm install -g cordova@10.0.0
-
 ```
 
 ```zsh

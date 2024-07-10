@@ -31,3 +31,7 @@ AndroidManifest.xml 진입 -> application -> android:label="@string/app_name" �
 
 ### 변경 후
 ![Android_ReName_002](https://github.com/yunsungjoong/yunsungjoong.github.io/assets/96567925/195f75b6-92a2-4d22-8f5c-00d23556c09c)
+
+
+위 방법으로 프로젝트 이름은 바뀌지 않았지만 앱의 이름은 변경이 되었음을 앱실행을 통해 확인할 수 있습니다.
+

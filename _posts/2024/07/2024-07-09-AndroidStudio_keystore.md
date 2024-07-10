@@ -17,6 +17,9 @@ banner:
 안드로이드 디버그 키스토어(Android Debug keystore)는 무엇이고 
 `debug.keysotre`를 이용해 앱 설치 파일을 만드는 방법에 대해 알아보겠습니다.
 
+---
+<br>
+
 ## 키 스토어(key store)
 흔히 안드로이드 개발자는 3가지 키스토어라는 용어를 듣습니다.
 1. 디버깅용 키스토어 
@@ -48,12 +51,11 @@ PC환경에 상관없이 1개의 키스토어로써 서명을 진행하게 됩�
 
 
 ### 1. 목적
-안드로이드 애플리케이션은 서명되지 않은 상태로는 실행할 수 없습니다. `디버그 키스토어`는 개발자가 애플리케이션을 서명하고, <br>
-애뮬레이터나 실제 기기에서 테스트할 수 있도록 합니다.
+안드로이드 애플리케이션은 서명되지 않은 상태로는 실행할 수 없습니다. `디버그 키스토어`는 <br>
+개발자가 애플리케이션을 서명하고, 애뮬레이터나 실제 기기에서 테스트할 수 있도록 합니다.
 
 안드로이드 API를 이용하려면 다음과 같이 `debug` , `release` 용 등 자신이 사용할 용도에 따라 keystore를 만들어주어야 합니다.
 만드는 작업은 구글 사이트에 자세히 설명되어 있습니다.
-
 
 
 ### 2. 디폴트 위치
@@ -97,15 +99,25 @@ keytool -exportcert -keystore path-to-debug-or-production-keystore -list -v
 
 
 
-## Android Studio에서 APK 파일 생성을 위한 Key Store 생성 및 앱에 서명해서 APK 추출
+## Android Studio에서 APK 파일 생성을 위한 Key Store 생성 및 앱에 서명해서 APK 생성
 
 Android Studio에서 APK 파일을 생성을 위한 Key Store 생성 및 앱에 서명해서 APK 추출하기 
 
 
-1. 
+1) build -> Generate Signed Bundle / APK 로 이동합니다.
+
 ![Android_debug_apk00](https://github.com/yunsungjoong/yunsungjoong.github.io/assets/96567925/258f32bb-5c1b-45c2-95a9-506c4c2ec9a4)
 
 
+2) Android App Bundle or APK 아무거나 선택해도 무방합니다. ( APK 클릭 후 Next )
 ![Android_debug_apk01](https://github.com/yunsungjoong/yunsungjoong.github.io/assets/96567925/88cdb7a7-6a79-465c-be9f-a1c6ffbfb73f)
+
+
+3) key 생성 or key 선택
+
+![Android_debug_apk02](https://github.com/yunsungjoong/yunsungjoong.github.io/assets/96567925/2a050eb3-d39b-439c-95d3-000ad5275406)
+
+- 키가 없다면 `New Key Store` 선택하여 이름과 비밀번호 기재 후 -> 저장 -> 키 생성 (보통 기업에서는 이미 발급되어 있는 키가 있어서 생성하지 않음 , 기존 key를 사용함 ) 
+- 키가 있다면 `Choose existing` 을 클릭하고 해당 key를 업로드 하면 된다. 
 
 

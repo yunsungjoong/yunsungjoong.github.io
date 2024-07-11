@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "[Android] KeyStore란? 생성 방법 및 역할 "
-tags: [Cordova]
-categories: [Android]
+title: "[Android Studio] KeyStore란? 생성 방법 및 역할 "
+tags: [Android Studio]
+categories: [Android Studio]
 banner:
   image: "/assets/images/banners/2024/07/banner_android-studio-logo-hero.jpg"
   opacity: 0.618

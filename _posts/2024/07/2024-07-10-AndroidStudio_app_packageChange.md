@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "[Android] 안드로이드 스튜디오 앱이름 간단하게 바꾸는 방법 "
-tags: [Android]
-categories: [Android]
+title: "[Android Studio] 패키지명 변경(AndroidStudio PackageName "
+tags: [Android Studio]
+categories: [Android Studio]
 banner:
   image: "/assets/images/banners/2024/07/banner_android-studio-logo-hero.jpg"
   opacity: 0.618

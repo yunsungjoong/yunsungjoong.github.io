@@ -72,5 +72,5 @@ npm install @ionic-native/splash-screen
 
 
 하고 실행하면 된다. 
-`조건은 ` `$ ionic cordova prepare android`  인 경우 상관없음 
+`조건은 ` `$ ionic cordova prepare android`  인 경우 문제없이 동작 
 

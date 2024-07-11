@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Cordova] ionic 아이콘, 스플래시 스크린"
+title: "[Cordova] ionic&cordova 아이콘, 스플래시 스크린"
 tags: [Android Studio]
 categories: [Android Studio]
 banner:
@@ -66,6 +66,11 @@ xxhdpi : 144x144 px| xxxhdpi : 192x192 px|
 ## splash screen
 
 ```zsh 
-
-Ionic cordova plugin add Cordova-plugin-splashscreen
+ionic cordova plugin add cordova-plugin-splashscreen
+npm install @ionic-native/splash-screen
 ```
+
+
+하고 실행하면 된다. 
+`조건은 ` `$ ionic cordova prepare android`  인 경우 상관없음 
+

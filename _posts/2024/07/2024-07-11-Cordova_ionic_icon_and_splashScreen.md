@@ -34,7 +34,7 @@ splash screen  (with git)
 http://cordova.apache.org/docs/en/7.x/reference/cordova-plugin-splashscreen/index.html#page-toc-source
 https://github.com/apache/cordova-plugin-splashscreen
 
-
+  
 
 ## icon 
 

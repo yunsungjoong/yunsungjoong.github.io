@@ -48,7 +48,7 @@ ionic cordova prepare android
 ```
 
 
-![image](https://github.com/user-attachments/assets/6421c11f-10ca-4e34-bcf2-96a8b6b3681f)
+![image](https://github.com/user-attachments/assets/d61c11c1-fd85-4fc5-980c-a37703a30e7e)
 
 ### 1.앱 이름 변경
 ```zsh

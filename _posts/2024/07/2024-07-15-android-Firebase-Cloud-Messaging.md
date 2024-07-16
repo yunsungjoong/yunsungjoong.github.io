@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "[Android] FCM(Firebase Cloud Messaging)란? "
-tags: [Android Studio]
-categories: [Android Studio]
+tags: [Android,FCM]
+categories: [Android]
 banner:
   image: "/assets/images/banners/2024/07/banner_android-fcm.jpg"
   opacity: 0.618
@@ -48,6 +48,7 @@ banner:
 
 
 ### 3.클라이언트 코드 작성:
+
 - 클라이언트 앱에서 FCM SDK를 사용하여 메시지를 수신하고 처리하는 코드를 작성합니다.
 - 수신된 메시지를 알림으로 표시하거나, 앱 내부에서 특정 작업을 수행할 수 있습니다.
 

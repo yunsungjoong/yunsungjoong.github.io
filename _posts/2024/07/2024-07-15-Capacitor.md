@@ -92,7 +92,7 @@ npx cap init
 
 ### 2.Capacitor 플랫폼 추가
 
-Android iOS 플랫폼을 추가합니다.
+#### Android iOS 플랫폼을 추가합니다.
 ```zsh
 # capacitor 플랫폼 추가 (Android , iOS)
 npm install @capacitor/android@4.7.1 
@@ -104,3 +104,41 @@ npx cap add android
 # # iOS 플랫폼 추가
 npx cap add ios
 ```
+
+#### 작업 후 안드로이드 빌드 전 
+
+```zsh
+# Android 빌드 하기전에 아래 명령어를 통해 리소스 및 변경된 플러그인을 싱크(업데이트) 합니다.
+npx cap sync android
+```
+
+
+### 안드로이드 & iOS 이름 및 버전 변경방법
+
+Capacitor는 각각 안드로이드면 안드로이드 스튜디오 
+iOS 이면 스위프트에서 Name, Version 등 세부적인거는 각 플랫폼에서 진행해야 한다.
+
+![image](https://github.com/user-attachments/assets/74fbe27f-6744-4ce5-b9a3-d4463bdf3382)
+
+```zsh
+# 앱의 이름을 변경하려면 다음 값을 변경 app_name하세요 strings.xml.
+
+<string name="app_name">MyApp</string>
+
+# 특히 앱에 단일 활동이 있는 경우 활동 이름을 일치하도록 변경하는 것이 좋습니다.
+
+<string name="title_activity_main">MyApp</string>
+```
+
+
+#### 버전 변경방법
+
+![android_capacitor01](https://github.com/user-attachments/assets/5b7fa292-9d91-45ac-9e9e-051ca1471e21)
+
+```zsh
+# build.gradle 파일 수정
+# android/app/build.gradle 파일을 열고 versionCode와 versionName 속성을 설정합니다
+
+```
+
+

@@ -141,4 +141,56 @@ iOS 이면 스위프트에서 Name, Version 등 세부적인거는 각 플랫폼
 
 ```
 
+### `@capacitor/splash-screen`설치
+
+먼저, `@capacitor/splash-screen` 플러그인을 설치합니다.
+
+```zsh
+
+# 스프래시 스크린 설치 & 버전에 따라 재설정할 필요 있음
+npm install @capacitor/splash-screen 
+
+# 필자는 버전에 맞춰 설치
+npm install @capacitor/core@4 @capacitor/cli@4 @capacitor/android@4 @capacitor/device@4 @capacitor/splash-screen@4 --legacy-peer-deps
+
+# 안드로이드 동기화
+npx cap sync android
+```
+
+
+#### 스플래시 화면 및 아이콘 
+
+`@capacitor/assets` 도구를 사용하여 `iOS`, `Android` 또는 프로그레시브 웹 애플리케이션용 
+스플래시 화면과 아이콘을 생성할 수 있습니다 .
+
+1. 먼저, 다음을 설치하세요  `@capacitor/assets`
+
+```zsh 
+npm install @capacitor/assets --save-dev
+```
+
+2. 프로젝트 루트 디렉터리에 `resources` 폴더를 만듭니다.
+
+3. `resources` 폴더 안에 `icon`, `splash.png` 파일을 추가합니다.
+```plaintext
+resources/
+├── icon-only.png
+├── icon-foreground.png
+├── icon-background.png
+├── splash.png
+└── splash-dark.png
+```
+
+- 아이콘 파일은 최소한 1024pxx 이상이어야 합니다 1024px.
+- 시작 화면 파일은 최소한 2732pxx 이상이어야 합니다 2732px.
+- 형식은 jpg또는 일 수 있습니다 png.
+
+```zsh
+npx capacitor-assets generate --android
+```
+
+
+4. 스플래시 참고사항
+- 안드로이드 12 이상
+Android12 이상에서 Google은 스플래시 화면이 표시되는 방식을 변경하여 Android 11 이하에서 가능했던 전체 화면 이미지 대신 색상이 있는 작은 아이콘을 사용했습니다. 이 변경 사항에 대한 추가 문서는 [developer.android.com] (https://developer.android.com/develop/ui/views/launch/splash-screen#splash-screen-resources) 에서 찾을 수 있습니다 .
 

@@ -19,6 +19,8 @@ banner:
 이는 최신 웹 기술을 사용하여 모바일, 데스크탑 및 웹에서 실행할 수 있는 애플리케이션을 만들 수 있도록 설계되었습니다. <br>
 다음은 `Ionic Capacitor`에 대한 주요 정보입니다.
 
+
+
 ### 주요 특징
 
 1. 네이티브 API 접근:
@@ -140,6 +142,15 @@ iOS 이면 스위프트에서 Name, Version 등 세부적인거는 각 플랫폼
 # android/app/build.gradle 파일을 열고 versionCode와 versionName 속성을 설정합니다
 
 ```
+## 스플래시(Splash) 화면과 그 목적
+스플래시 화면은 앱의 본격적인 화면이 나오기 전에 1~2초 간 잠시 나타나는 화면이다.
+일반적으로 단색 배경에 애플리케이션 로고 중앙에 표시되는 경우가 많다.
+이 화면은 왜 필요한 걸까?
+브랜드나 앱 이미지를 각인시키기 위해서.
+하지만 Splash 화면의 주 목적은 따로 있다.
+스플래시 화면이 없는 어플리케이션을 열어 보면, 메인 화면이 표시되기 전에 0.x초동안 텅 빈 화면이 나타난다.
+짧은 시간이지만 이렇게 텅 빈 화면이 나타나는 것은 분명히 보기 좋은 현상은 아니다.
+Splash 화면은 이러한 공백을 채우기 위해 제작된다.
 
 ### `@capacitor/splash-screen`설치
 
@@ -169,11 +180,11 @@ npx cap sync android
 npm install @capacitor/assets --save-dev
 ```
 
-2. 프로젝트 루트 디렉터리에 `resources` 폴더를 만듭니다.
+2. 프로젝트 루트 디렉터리에 `assets` 폴더를 만듭니다.
 
-3. `resources` 폴더 안에 `icon`, `splash.png` 파일을 추가합니다.
+3. `assets` 폴더 안에 `icon`, `splash.png` 파일을 추가합니다.
 ```plaintext
-resources/
+assets/
 ├── icon-only.png
 ├── icon-foreground.png
 ├── icon-background.png
@@ -194,7 +205,36 @@ npx cap sync android
 ```
 안드로이드 동기화 후 안드로이드 스튜디오에서 실행 
 
-4. 스플래시 참고사항
+4. 앱 + 전체 스플래시 스크린 구현방법 
+Splash Screen 은 일반적으로 앱이 실행될 때 나타나는 화면입니다.
+YouTube 앱 실행 시 나오는 잠깐 로고화면이 나오고 앱 메인화면으로 진입되는데, 여기서 로고가 나온 화면이 Splash Screen 입니다.
+
+이때 앱을 실행하면 나타나는 흰화면 혹은 검은화면을 실제 Splash Screen으로 띄워 개선하는 방법에 대해 알아보겠습니다.
+
+1) splash.xml 생성
+`/drawbale 에 splash.xml` 을 추가합니다.
+
+
+```zsh
+
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Splash screen theme -->
+    <style name="AppTheme.NoActionBarLaunch" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>
+```
+
+5. 스플래시 참고사항
 - 안드로이드 12 이상
 Android12 이상에서 Google은 스플래시 화면이 표시되는 방식을 변경하여 Android 11 이하에서 가능했던 전체 화면 이미지 대신 색상이 있는 작은 아이콘을 사용했습니다. 이 변경 사항에 대한 추가 문서는 [developer.android.com] (https://developer.android.com/develop/ui/views/launch/splash-screen#splash-screen-resources) 에서 찾을 수 있습니다 .
 

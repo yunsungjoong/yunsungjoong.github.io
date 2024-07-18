@@ -177,10 +177,11 @@ npx cap sync android
 1. 먼저, 다음을 설치하세요  `@capacitor/assets`
 
 ```zsh 
+# JPEG,PNG 소스 이미지를 자르고 크기를 조정해 안드로이드에 맞게 리사이징 해줍니다
 npm install @capacitor/assets --save-dev
 ```
 
-2. 프로젝트 루트 디렉터리에 `assets` 폴더를 만듭니다.
+2. 프로젝트 루트 디렉터리에 `assets` 있으면 그대로~ 없다면 폴더를 만듭니다.
 
 3. `assets` 폴더 안에 `icon`, `splash.png` 파일을 추가합니다.
 ```plaintext

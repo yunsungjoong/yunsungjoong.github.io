@@ -198,6 +198,7 @@ assets/
 - 형식은 jpg또는 일 수 있습니다 png.
 
 ```zsh
+# 모든 기본 옵션으로 안드로이드에 맞춰 리소스를 생성합니다
 npx capacitor-assets generate --android
 
 # 안드로이드 동기화
@@ -238,4 +239,15 @@ YouTube 앱 실행 시 나오는 잠깐 로고화면이 나오고 앱 메인화�
 5. 스플래시 참고사항
 - 안드로이드 12 이상
 Android12 이상에서 Google은 스플래시 화면이 표시되는 방식을 변경하여 Android 11 이하에서 가능했던 전체 화면 이미지 대신 색상이 있는 작은 아이콘을 사용했습니다. 이 변경 사항에 대한 추가 문서는 [developer.android.com] (https://developer.android.com/develop/ui/views/launch/splash-screen#splash-screen-resources) 에서 찾을 수 있습니다 .
+
+### Status Bar
+
+```
+<!-- 버전에 맞게 플러그인 설치 -->
+npm install @capacitor/status-bar@^4.0.0 --legacy-peer-deps
+```
+
+안드로이드 `AndroidManifest.xml` 
+`android/app/src/main/AndroidManifest.xml` 파일을 열고 `android:theme` 속성을 설정합니다.
+
 

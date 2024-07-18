@@ -187,8 +187,12 @@ resources/
 
 ```zsh
 npx capacitor-assets generate --android
-```
 
+# 안드로이드 동기화
+npx cap sync android
+
+```
+안드로이드 동기화 후 안드로이드 스튜디오에서 실행 
 
 4. 스플래시 참고사항
 - 안드로이드 12 이상

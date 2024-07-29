@@ -13,9 +13,6 @@ banner:
   subheading_style: "color: gold"
 ---
 
-https://www.howdy-mj.me/angular/angular-structure
-위 링크 참고 해서 내용정리 할것 
-
 ## Angular 구조
 
 Angular에는 크게 `Component(컴포넌트)`, `Template(템플릿)`, `Directive(디렉티브)`, `Service(서비스)` 그리고 `Module(모듈)`이 존재한다.

@@ -25,4 +25,4 @@ deprecated 될 기능은 iOS 하위 버전에서는 지원하지만 보다 최�
    
 
 ## 참고 링크 
-> [네이버 사전](https://en.dict.naver.com/#/entry/enko/c4dbe94228834e2597a64ca4094f3f22)
+> [네이버 사전](https://en.dict.naver.com/#/entry/enko/c4dbe94228834e2597a64ca4094f3f22)   

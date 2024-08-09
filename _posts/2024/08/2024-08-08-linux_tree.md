@@ -21,7 +21,7 @@ banner:
 
 ```
 # 리눅스에서 설치
-sudo yum install tree
+sudo yum install tree  
 
 # 맥에서 설치 (homebrew로 이용)
 brew install tree

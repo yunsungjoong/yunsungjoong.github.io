@@ -4,7 +4,7 @@ title: "[Linux] 리눅스 Tree 명령어로 폴더 구조 보기"
 tags: [Linux]
 categories: [Linux]
 banner:
-  image: "/assets/images/banners/2024/0201/React.jpeg"
+  image: ""
   opacity: 0.618
   background: "#000"
   height: "100vh"

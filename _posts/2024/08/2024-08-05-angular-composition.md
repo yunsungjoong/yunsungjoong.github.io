@@ -144,7 +144,7 @@ export class ExampleService {
 
 디렉티브는 `DOM`의 모든 것을 직접 관리할 수 있다. `HTML` 요소 또는 어트리뷰트의 형태로 사용하여 디렉티브가 사용된 요소에게 무언가를 하라는 `지시(directive)`를 전달한다. 디렉티브는 프로젝트 전역에서 사용할 수 있는 공통 관심사를 컴포넌트에서 분리한 것으로 구현하여 컴포넌트의 복잡도를 낮추고 가독성을 향상시킨다.
 
-∑
+
 #### 어트리뷰트 디렉티브
 - NgClass: CSS 클래스 추가/제거
 - NgStyle: HTML 스타일 추가/제거
@@ -163,9 +163,10 @@ export class ExampleService {
 $ ng generate directive blueText
 ```
 
-> src/app/shared/blue-text.directive.ts
+> `src/app/shared/blue-text.directive.ts`
 
 ```angular
+
 import { Directive, ElementRef } from '@angular/core'
 
 @Directive({
@@ -179,6 +180,7 @@ export class BlueTextDirective {
 ```
 
 ```angular
+
 <h1>{{ title }}</h1>
 
 <div blueText>blue title: {{ title }}</div>
@@ -186,13 +188,15 @@ export class BlueTextDirective {
 
 ## Pipe
 파이프(pipe)는 템플릿에서 사용되며, 화면에 표시하는 형식만 변경하고 싶을 때 사용한다.
+
 ```angular
 ng generate component components/pipe
 ```
 
-> src/app/components/pipe/pipe.component.ts
+> `src/app/components/pipe/pipe.component.ts`
 
 ```angular
+
 import { Component, OnInit } from '@angular/core'
 
 @Component({
@@ -209,9 +213,10 @@ export class PipeComponent implements OnInit {
 }
 ```
 
-> src/app/components/pipe/pipe.component.html
+> `src/app/components/pipe/pipe.component.html`
 
 ```angular
+
 <div>{{ now }}</div>
 <!-- 결과: Wed May 19 2024 17:03:16 GMT+0900 (대한민국 표준시) -->
 
@@ -224,6 +229,7 @@ export class PipeComponent implements OnInit {
 `날짜` 외에도, `화폐`, `대소문자`, `소숫점`, `퍼센트`, `비동기` 등의 `pipe`가 있다.
 
 ```angular
+
 {{ 'howdy-mj' | uppercase }}
 <!-- 결과: HOWDY-MJ -->
 
@@ -241,6 +247,5 @@ export class PipeComponent implements OnInit {
 {{ 0.1234 | percent: "2.1" }}
 <!-- 결과: 12.3% -->
 ```
- 
 
 [참고문서](https://www.howdy-mj.me/angular/angular-structure)

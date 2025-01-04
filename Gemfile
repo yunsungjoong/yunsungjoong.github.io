@@ -13,6 +13,9 @@ gem "webrick", "~> 1.7"
 # 특정 버전의 rake gem 명시
 gem "rake", "~> 12.3"
 
+gem 'faraday-retry'
+
+
 # gem "gem"은 일반적으로 필요하지 않음
 # gem "gem", "~> 0.0.1.alpha" # 이 줄은 제거
 

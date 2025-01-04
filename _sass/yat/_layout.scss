@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /**
  * Animation for transparent header
  */
@@ -107,7 +109,8 @@ html {
 
     .site-favicon {
       display: inline-block;
-      height: $header-height / 1.5;
+      // height: $header-height / 1.5;
+      height: math.div($header-height, 1.5);
       margin-right: 5px;
     }
   }
@@ -676,7 +679,8 @@ html {
   }
 
   @include media-query($on-palm) {
-    height: $banner-height / 1.5;
+    // height: $banner-height / 1.5;
+    height: math.div($banner-height, 1.5);
   }
 }
 

@@ -3,6 +3,7 @@ layout: post
 title: "[Angular] 구성요소(Summary)"
 tags: [Angular]
 categories: [Angular]
+published: true
 banner:
   image: "/assets/images/banners/2024/06/17-angular_01.jpeg"
   opacity: 0.618
@@ -16,7 +17,7 @@ banner:
 ## Angular 구조
 
 Angular에는 크게 `Component(컴포넌트)`, `Template(템플릿)`, `Directive(디렉티브)`, `Service(서비스)` 그리고 `Module(모듈)`이 존재한다.
-![image](https://github.com/user-attachments/assets/9f3708ae-3614-424a-9d01-93c7a62cfaa3)
+<!-- ![image](https://github.com/user-attachments/assets/9f3708ae-3614-424a-9d01-93c7a62cfaa3) -->
 
 
 Angular 프로젝트를 생성하면 기본으로 만들어지는 모듈과 컴포넌트가 있다. 모듈은 `app-routing`.`module.ts`와 `app.module.ts`가 있으며, 컴포넌트는 `app.component.html`, `app.component.scss`, `app.component.ts`, `app.component.spec.ts`가 있다.
@@ -226,6 +227,7 @@ export class PipeComponent implements OnInit {
 <div>{{ now | date: "y년 MM월 dd일" }}</div>
 <!-- 결과: 2024년 05월 19일 -->
 ```
+
 `날짜` 외에도, `화폐`, `대소문자`, `소숫점`, `퍼센트`, `비동기` 등의 `pipe`가 있다.
 
 ```angular
@@ -239,7 +241,7 @@ export class PipeComponent implements OnInit {
 
 {{ 1.2345 | number: "1.2-2" }}
 <!-- 결과: 1.23 -->
-{{ 1.2345 | number: "3.2-2" }}
+{{ 1.2345 | number: "3.2-2"  }}
 <!-- 결과: 001.23 -->
 
 {{ 0.1234 | percent }}

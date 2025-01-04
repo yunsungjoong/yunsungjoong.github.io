@@ -1,25 +1,37 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-gemspec
 
-
-# 기존 gemspec 설정
-gemspec
-
-# 최신 버전의 webrick gem 명시
+# 최신 webrick gem (Jekyll 4.x에서 필요)
 gem "webrick", "~> 1.7"
 
-# 특정 버전의 rake gem 명시
+# Jekyll에서 권장하는 kramdown 사용
+gem "kramdown", "= 2.3.2"
+
+# 특정 rake 버전 명시
 gem "rake", "~> 12.3"
 
-gem 'faraday-retry'
+gem "jekyll-sitemap"
 
+gem "jekyll-spaceship"
 
-# gem "gem"은 일반적으로 필요하지 않음
-# gem "gem", "~> 0.0.1.alpha" # 이 줄은 제거
+gem "jekyll-paginate"
 
-# Jekyll 관련 gem 추가
+# faraday-retry (필요한 경우에만 유지)
+gem "faraday-retry"
+
+# 최신 Sass 문법(math.div)을 지원하기 위해 최신 버전으로 업데이트
+gem "jekyll-sass-converter", "~> 2.1"
+
+# 최신 Sass를 지원하기 위해 sassc를 추가
+gem "sassc", "~> 2.4"
+
+# Jekyll 설치
+gem "jekyll", "~> 4.3"
+
+# Jekyll 플러그인 (필요한 경우만 추가)
+gem "jekyll-feed", "~> 0.15"
+gem "jekyll-seo-tag", "~> 2.8"
 gem "jekyll-coffeescript"
 gem "jekyll-default-layout"
 gem "jekyll-github-metadata"

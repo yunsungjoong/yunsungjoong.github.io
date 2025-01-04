@@ -29,7 +29,7 @@ brew install tree
 
 ### 2. tree명령어
 
-```
+```  
 $ tree -L 2 
 $ tree -L 2 -f 
 ```

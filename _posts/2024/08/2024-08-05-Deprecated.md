@@ -13,7 +13,7 @@ banner:
   subheading_style: "color: gold"
 --- 
 
-
+   
 ## RepositoDeprecatedPermalink
 사전에서 deprecate를 검색하면 반대, 비난하다 라는 뜻이 나와서 애플에서 말하는 deprecated 용어가 명확하게 이해가 되지 않았습니다. 알아보니 소프트웨어에서 다른 의미로 이해할 수 있었습니다.
 

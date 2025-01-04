@@ -77,4 +77,4 @@ $ spring-quartz tree -L 2 -d -f
     └── ./target/test-classes
 ```
 
-- depth2로 보여주고, 디렉토리만, 파일의 전체 경로를 보여줘라
+- depth2로 보여주고, 디렉토리만, 파일의 전체 경로를 보여줘라   

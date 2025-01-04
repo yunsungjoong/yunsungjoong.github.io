@@ -41,7 +41,7 @@ URI 스킴을 이용한 딥링크는 앱에 Scheme값을 등록하는 형태로 
 - 안드로이드의 경우 아래와 같이 Androidmanifest.xml 이라는 파일에 스킴 값을 등록합니다.
 
 
-
+  
 
 ### javaScript에서 딥링크 방법
 

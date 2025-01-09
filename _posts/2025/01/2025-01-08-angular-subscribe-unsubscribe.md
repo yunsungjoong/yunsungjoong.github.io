@@ -24,7 +24,7 @@ banner:
 
 
 ### subscription
-`subscription`은 내가 구독하고 있는 `subscribe`를 관리하기 위해 만들어준 변수라고 생각하면 된다. `interval`에 닮겨서 구독되어지고 있는 상황이고 그로 인해 `time`의 값은 계속해서 변하고 있다. 그러나 내가 화면을 클릭할 시 `timeSubscription`을 `unsubscribe`하게 되고 이후엔 `time` 값이 변하지 않아 console이 찍히지 않는 모습을 볼 수 있다.
+`subscription`은 내가 구독하고 있는 `subscribe`를 관리하기 위해 만들어준 변수라고 생각하면 된다. 
 
 ### complete
 `subscribe`를 구독완료 즉 앞으로 구독하지 않겠다. 내가 할 일은 완료되었다. 라는 뜻이다. `complete`를 하게되면 `time`을 다시 `new Subject`로 등록하지 않는 한 `time`이라는 `Subject` 변수는 더 이상 사용할 수 없게 된다.

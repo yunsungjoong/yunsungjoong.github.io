@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[ionic] Capacitor | Your awesome title</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="[ionic] Capacitor">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Capacitor란 ?">
+<meta property="og:description" content="Capacitor란 ?">
+<link rel="canonical" href="/jekyll-theme-yat/android/2024/07/17/Capacitor.html">
+<meta property="og:url" content="/jekyll-theme-yat/android/2024/07/17/Capacitor.html">
+<meta property="og:site_name" content="Your awesome title">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2024-07-17T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="[ionic] Capacitor">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2024-07-17T00:00:00+00:00","datePublished":"2024-07-17T00:00:00+00:00","description":"Capacitor란 ?","headline":"[ionic] Capacitor","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll-theme-yat/android/2024/07/17/Capacitor.html"},"url":"/jekyll-theme-yat/android/2024/07/17/Capacitor.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/jekyll-theme-yat/feed.xml" title="Your awesome title">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="Your awesome title" src="" onerror="this.style.display='none'">
+  Your awesome title
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about.html">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives.html">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories.html">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    html .page-banner {
+      background: #000;
+    }
+  </style>
+<style>html .page-banner {
+      height:  36.8vh;
+      min-height: 38vh;
+    }
+    html[data-scroll-status="top"] .page-banner {
+      height: 100vh;
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-img > *:first-child {
+      opacity: 0.618;
+    }
+
+    html[data-theme="dark"] .page-banner .page-banner-img > *:first-child {
+      opacity: 0.443724;
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-inner > *:first-child > *:nth-child(1) {
+      font-size: 3.25em; font-weight: bold; text-decoration: underline
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-inner > *:first-child > *:nth-child(2) {
+      color: gold
+    }
+  </style>
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(/jekyll-theme-yat/assets/images/banners/2024/07/banner_ionic-capacitor.jpeg)"></div>
+        <img class="img-placeholder" src="/jekyll-theme-yat/assets/images/banners/2024/07/banner_ionic-capacitor.jpeg">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner">
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">[ionic] Capacitor </h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2024-07-17T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jul 17, 2024
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#ionic">#ionic</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#capacitor">#capacitor</a>
+</div></header>
+</div>
+    </div>
+  </section><script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="capacitor란-">Capacitor란 ?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Ionic Capacitor</code>는 <code class="language-plaintext highlighter-rouge">Ionic</code> 팀에 의해 개발된 크로스 플랫폼 하이브리드 애플리케이션 개발 프레임워크입니다. <br>
+이는 최신 웹 기술을 사용하여 모바일, 데스크탑 및 웹에서 실행할 수 있는 애플리케이션을 만들 수 있도록 설계되었습니다. <br>
+다음은 <code class="language-plaintext highlighter-rouge">Ionic Capacitor</code>에 대한 주요 정보입니다.</p>
+
+<h3 id="주요-특징">주요 특징</h3>
+
+<ol>
+  <li>네이티브 API 접근:
+    <ul>
+      <li>Capacitor는 네이티브 API에 직접 접근할 수 있어 더 나은 성능과 유연성을 제공합니다.</li>
+      <li>Cordova와 달리, 많은 네이티브 기능을 플러그인 없이 직접 사용할 수 있습니다​.</li>
+    </ul>
+  </li>
+  <li>Progressive Web App (PWA) 지원:
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">Capacitor</code>는 <code class="language-plaintext highlighter-rouge">PWA</code>를 기본적으로 지원합니다. 이를 통해 웹 애플리케이션을 모바일 애플리케이션처럼 사용할 수 있으며, 웹 브라우저에서 직접 설치 및 실행할 수 있습니다.</li>
+    </ul>
+  </li>
+  <li>현대적인 웹 기술 사용:
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">HTML</code>, <code class="language-plaintext highlighter-rouge">CSS</code>, <code class="language-plaintext highlighter-rouge">JavaScript</code>와 같은 최신 웹 기술을 사용하여 개발할 수 있습니다.</li>
+      <li>이는 웹 개발자가 모바일 애플리케이션 개발로 쉽게 전환할 수 있게 합니다​.</li>
+    </ul>
+  </li>
+  <li>백워드 호환성:
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">Capacitor</code>는 대부분의 <code class="language-plaintext highlighter-rouge">Cordova</code> 플러그인과 호환됩니다. 이는 기존의 <code class="language-plaintext highlighter-rouge">Cordova</code> 프로젝트를 <code class="language-plaintext highlighter-rouge">Capacitor</code>로 쉽게 전환할 수 있게 합니다​.</li>
+    </ul>
+  </li>
+  <li>클라우드 빌드 및 배포:
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">Ionic</code> 팀은 <code class="language-plaintext highlighter-rouge">Capacitor</code>와 통합된 클라우드 빌드 및 배포 서비스를 제공합니다. 이를 통해 개발자는 다양한 플랫폼에서 앱을 쉽게 빌드하고 배포할 수 있습니다​.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="장점">장점</h3>
+<ul>
+  <li>성능: 네이티브 API에 직접 접근할 수 있어 Cordova보다 성능이 우수합니다.</li>
+  <li>유연성: 플러그인 없이 네이티브 기능을 활용할 수 있어 개발이 더 유연합니다.</li>
+  <li>현대적인 개발 경험: 최신 웹 기술을 사용하여 현대적인 개발 경험을 제공합니다.</li>
+  <li>강력한 지원: Ionic 팀과 커뮤니티의 강력한 지원을 받을 수 있습니다.</li>
+</ul>
+
+<h3 id="단점">단점</h3>
+<ul>
+  <li>상대적으로 새로운 프레임워크: Cordova에 비해 커뮤니티와 플러그인 생태계가 아직 성장 중입니다​ (No-code Mobile Builder)​​ (MobiLoud)​.</li>
+</ul>
+
+<h3 id="개발-환경">개발 환경</h3>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">Capacitor</code>는 CLI 도구를 통해 프로젝트를 생성하고 관리할 수 있습니다. <code class="language-plaintext highlighter-rouge">npx cap init</code> 명령을 사용하여 프로젝트를 초기화하고, <code class="language-plaintext highlighter-rouge">npx cap add</code> 명령을 사용하여 플랫폼을 추가할 수 있습니다.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Capacitor</code>는 <code class="language-plaintext highlighter-rouge">Angular, React, Vue</code>와 같은 프레임워크와 쉽게 통합할 수 있으며, 기존의 웹 프로젝트를 모바일 애플리케이션으로 확장할 수 있습니다</li>
+</ul>
+
+<h3 id="ionic-과-cordova-차이">Ionic 과 Cordova 차이</h3>
+<ul>
+  <li>모바일 <code class="language-plaintext highlighter-rouge">WebView</code>로부터 디바이스의 <code class="language-plaintext highlighter-rouge">Native</code> 기능에 접근한다는 점에서 같은 기능을 한다.</li>
+  <li>코도바는 전체를 빌드 하기 떄문에 시간이 많이 걸리고 작은 테스트하기에 번거롭다. 캐패시터는 코도바 <code class="language-plaintext highlighter-rouge">imports</code> 없이 앱을 만드는데, 대신에 캐패시터 자체의 <code class="language-plaintext highlighter-rouge">네이티브 플러그인</code>을 <code class="language-plaintext highlighter-rouge">import</code> 한다.</li>
+  <li>코도바와 달리 캐패시터는 앱 빌드를 안드로이드 스튜디오 또는 <code class="language-plaintext highlighter-rouge">Xcode</code>에서 직접한 후, 디바이스 또는 Emulator 에서 테스트가 가능하다. 만족한다면 바로 빌드 및 퍼블리시가 가능하고, 코드를 조금 바꾸어야 한다면 소스 코드를 변경하고 터미널에 <code class="language-plaintext highlighter-rouge">npm run build, npx cap copy</code> (굉장히 빠름) 한 후 <code class="language-plaintext highlighter-rouge">Xcode</code> 또는 안드로이드 스튜디오를 열어서 바로바로 테스트 해볼 수 있다.</li>
+</ul>
+
+<h3 id="결론">결론</h3>
+<p><code class="language-plaintext highlighter-rouge">Ionic Capacitor</code>는 최신 웹 기술을 사용하여 크로스 플랫폼 애플리케이션을 개발하려는 개발자에게 매우 유용한 도구입니다. 
+특히 성능과 유연성을 중시하는 프로젝트에 적합하며, <code class="language-plaintext highlighter-rouge">PWA</code> 지원과 같은 현대적인 기능을 제공합니다. <code class="language-plaintext highlighter-rouge">Cordova</code>에서 <code class="language-plaintext highlighter-rouge">Capacitor</code>로의 전환을 고려하고 있다면, 대부분의 플러그인이 호환되므로 큰 어려움 없이 전환할 수 있습니다.</p>
+
+<h2 id="capacitor-시작하기">Capacitor 시작하기</h2>
+
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ionic CLI 설치 </span>
+npm <span class="nb">install</span> <span class="nt">-g</span> @ionic/cli@7.1.1
+
+<span class="c"># 노드버전 v16 으로 변경 </span>
+nvm use 16 
+
+<span class="c"># 노드 v16 설치</span>
+npm <span class="nb">install</span> <span class="nt">--legacy-peer-deps</span>     
+
+<span class="c"># Angular v15 패키지 설치</span>
+npm i @angular/cli@15.0.0
+
+</code></pre></div></div>
+
+<h3 id="capacitor-설치-및-초기화">Capacitor 설치 및 초기화</h3>
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># Capacitor 설치 및 초기화</span>
+npm <span class="nb">install</span> @capacitor/cli@4.7.1 @capacitor/core@4.7.1
+
+<span class="c"># 초기화 과정에 애플리케이션 이름과 ID를 묻습니다. 적절한 이름과 ID를 입력합니다</span>
+npx cap init  
+</code></pre></div></div>
+
+<h3 id="2capacitor-플랫폼-추가">2.Capacitor 플랫폼 추가</h3>
+
+<h4 id="android-ios-플랫폼을-추가합니다">Android iOS 플랫폼을 추가합니다.</h4>
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># capacitor 플랫폼 추가 (Android , iOS)</span>
+npm <span class="nb">install</span> @capacitor/android@4.7.1 
+npm <span class="nb">install</span> @capacitor/ios@4.7.1 
+
+<span class="c"># 안드로이드 플랫폼 추가 </span>
+npx cap add android
+
+<span class="c"># # iOS 플랫폼 추가</span>
+npx cap add ios
+</code></pre></div></div>
+
+<h4 id="작업-후-안드로이드-빌드-전">작업 후 안드로이드 빌드 전</h4>
+
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Android 빌드 하기전에 아래 명령어를 통해 리소스 및 변경된 플러그인을 싱크(업데이트) 합니다.</span>
+npx cap <span class="nb">sync </span>android
+</code></pre></div></div>
+
+<h3 id="안드로이드--ios-이름-및-버전-변경방법">안드로이드 &amp; iOS 이름 및 버전 변경방법</h3>
+
+<p>Capacitor는 각각 안드로이드면 안드로이드 스튜디오 
+iOS 이면 스위프트에서 Name, Version 등 세부적인거는 각 플랫폼에서 진행해야 한다.</p>
+
+<p><img src="https://github.com/user-attachments/assets/74fbe27f-6744-4ce5-b9a3-d4463bdf3382" alt="image"></p>
+
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 앱의 이름을 변경하려면 다음 값을 변경 app_name하세요 strings.xml.</span>
+
+&lt;string <span class="nv">name</span><span class="o">=</span><span class="s2">"app_name"</span><span class="o">&gt;</span>MyApp&lt;/string&gt;
+
+<span class="c"># 특히 앱에 단일 활동이 있는 경우 활동 이름을 일치하도록 변경하는 것이 좋습니다.</span>
+
+&lt;string <span class="nv">name</span><span class="o">=</span><span class="s2">"title_activity_main"</span><span class="o">&gt;</span>MyApp&lt;/string&gt;
+</code></pre></div></div>
+
+<h4 id="버전-변경방법">버전 변경방법</h4>
+
+<p><img src="https://github.com/user-attachments/assets/5b7fa292-9d91-45ac-9e9e-051ca1471e21" alt="android_capacitor01"></p>
+
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># build.gradle 파일 수정</span>
+<span class="c"># android/app/build.gradle 파일을 열고 versionCode와 versionName 속성을 설정합니다</span>
+
+</code></pre></div></div>
+<h2 id="스플래시splash-화면과-그-목적">스플래시(Splash) 화면과 그 목적</h2>
+<p>스플래시 화면은 앱의 본격적인 화면이 나오기 전에 1~2초 간 잠시 나타나는 화면이다.
+일반적으로 단색 배경에 애플리케이션 로고 중앙에 표시되는 경우가 많다.
+이 화면은 왜 필요한 걸까?
+브랜드나 앱 이미지를 각인시키기 위해서.
+하지만 Splash 화면의 주 목적은 따로 있다.
+스플래시 화면이 없는 어플리케이션을 열어 보면, 메인 화면이 표시되기 전에 0.x초동안 텅 빈 화면이 나타난다.
+짧은 시간이지만 이렇게 텅 빈 화면이 나타나는 것은 분명히 보기 좋은 현상은 아니다.
+Splash 화면은 이러한 공백을 채우기 위해 제작된다.</p>
+
+<h3 id="capacitorsplash-screen설치">
+<code class="language-plaintext highlighter-rouge">@capacitor/splash-screen</code>설치</h3>
+
+<p>먼저, <code class="language-plaintext highlighter-rouge">@capacitor/splash-screen</code> 플러그인을 설치합니다.</p>
+
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># 스프래시 스크린 설치 &amp; 버전에 따라 재설정할 필요 있음</span>
+npm <span class="nb">install</span> @capacitor/splash-screen 
+
+<span class="c"># 필자는 버전에 맞춰 설치</span>
+npm <span class="nb">install</span> @capacitor/core@4 @capacitor/cli@4 @capacitor/android@4 @capacitor/device@4 @capacitor/splash-screen@4 <span class="nt">--legacy-peer-deps</span>
+
+<span class="c"># 안드로이드 동기화</span>
+npx cap <span class="nb">sync </span>android
+</code></pre></div></div>
+
+<h4 id="스플래시-화면-및-아이콘">스플래시 화면 및 아이콘</h4>
+
+<p><code class="language-plaintext highlighter-rouge">@capacitor/assets</code> 도구를 사용하여 <code class="language-plaintext highlighter-rouge">iOS</code>, <code class="language-plaintext highlighter-rouge">Android</code> 또는 프로그레시브 웹 애플리케이션용 
+스플래시 화면과 아이콘을 생성할 수 있습니다 .</p>
+
+<ol>
+  <li>먼저, 다음을 설치하세요  <code class="language-plaintext highlighter-rouge">@capacitor/assets</code>
+</li>
+</ol>
+
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># JPEG,PNG 소스 이미지를 자르고 크기를 조정해 안드로이드에 맞게 리사이징 해줍니다</span>
+npm <span class="nb">install</span> @capacitor/assets <span class="nt">--save-dev</span>
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>프로젝트 루트 디렉터리에 <code class="language-plaintext highlighter-rouge">assets</code> 있으면 그대로~ 없다면 폴더를 만듭니다.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">assets</code> 폴더 안에 <code class="language-plaintext highlighter-rouge">icon</code>, <code class="language-plaintext highlighter-rouge">splash.png</code> 파일을 추가합니다.</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>assets/
+├── icon-only.png
+├── icon-foreground.png
+├── icon-background.png
+├── splash.png
+└── splash-dark.png
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<ul>
+  <li>아이콘 파일은 최소한 1024pxx 이상이어야 합니다 1024px.</li>
+  <li>시작 화면 파일은 최소한 2732pxx 이상이어야 합니다 2732px.</li>
+  <li>형식은 jpg또는 일 수 있습니다 png.</li>
+</ul>
+
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 모든 기본 옵션으로 안드로이드에 맞춰 리소스를 생성합니다</span>
+npx capacitor-assets generate <span class="nt">--android</span>
+
+<span class="c"># 안드로이드 동기화</span>
+npx cap <span class="nb">sync </span>android
+
+</code></pre></div></div>
+<p>안드로이드 동기화 후 안드로이드 스튜디오에서 실행</p>
+
+<ol>
+  <li>앱 + 전체 스플래시 스크린 구현방법 
+Splash Screen 은 일반적으로 앱이 실행될 때 나타나는 화면입니다.
+YouTube 앱 실행 시 나오는 잠깐 로고화면이 나오고 앱 메인화면으로 진입되는데, 여기서 로고가 나온 화면이 Splash Screen 입니다.</li>
+</ol>
+
+<p>이때 앱을 실행하면 나타나는 흰화면 혹은 검은화면을 실제 Splash Screen으로 띄워 개선하는 방법에 대해 알아보겠습니다.</p>
+
+<p>1) splash.xml 생성
+<code class="language-plaintext highlighter-rouge">/drawbale 에 splash.xml</code> 을 추가합니다.</p>
+
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+&lt;resources&gt;
+    &lt;<span class="o">!</span><span class="nt">--</span> Base application theme. <span class="nt">--</span><span class="o">&gt;</span>
+    &lt;style <span class="nv">name</span><span class="o">=</span><span class="s2">"AppTheme"</span> <span class="nv">parent</span><span class="o">=</span><span class="s2">"Theme.MaterialComponents.DayNight.DarkActionBar"</span><span class="o">&gt;</span>
+        &lt;item <span class="nv">name</span><span class="o">=</span><span class="s2">"android:colorPrimary"</span><span class="o">&gt;</span>@color/colorPrimary&lt;/item&gt;
+        &lt;item <span class="nv">name</span><span class="o">=</span><span class="s2">"android:colorPrimaryDark"</span><span class="o">&gt;</span>@color/colorPrimaryDark&lt;/item&gt;
+        &lt;item <span class="nv">name</span><span class="o">=</span><span class="s2">"android:colorAccent"</span><span class="o">&gt;</span>@color/colorAccent&lt;/item&gt;
+    &lt;/style&gt;
+
+    &lt;<span class="o">!</span><span class="nt">--</span> Splash screen theme <span class="nt">--</span><span class="o">&gt;</span>
+    &lt;style <span class="nv">name</span><span class="o">=</span><span class="s2">"AppTheme.NoActionBarLaunch"</span> <span class="nv">parent</span><span class="o">=</span><span class="s2">"AppTheme"</span><span class="o">&gt;</span>
+        &lt;item <span class="nv">name</span><span class="o">=</span><span class="s2">"android:windowBackground"</span><span class="o">&gt;</span>@drawable/splash&lt;/item&gt;
+        &lt;item <span class="nv">name</span><span class="o">=</span><span class="s2">"android:windowNoTitle"</span><span class="o">&gt;</span><span class="nb">true</span>&lt;/item&gt;
+        &lt;item <span class="nv">name</span><span class="o">=</span><span class="s2">"android:windowFullscreen"</span><span class="o">&gt;</span><span class="nb">true</span>&lt;/item&gt;
+    &lt;/style&gt;
+&lt;/resources&gt;
+</code></pre></div></div>
+
+<ol>
+  <li>스플래시 참고사항
+    <ul>
+      <li>안드로이드 12 이상
+Android12 이상에서 Google은 스플래시 화면이 표시되는 방식을 변경하여 Android 11 이하에서 가능했던 전체 화면 이미지 대신 색상이 있는 작은 아이콘을 사용했습니다. 이 변경 사항에 대한 추가 문서는 [developer.android.com] (https://developer.android.com/develop/ui/views/launch/splash-screen#splash-screen-resources) 에서 찾을 수 있습니다 .</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="status-bar">Status Bar</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- 버전에 맞게 플러그인 설치 --&gt;
+npm install @capacitor/status-bar@^4.0.0 --legacy-peer-deps
+</code></pre></div></div>
+
+<p>안드로이드 <code class="language-plaintext highlighter-rouge">AndroidManifest.xml</code> 
+<code class="language-plaintext highlighter-rouge">android/app/src/main/AndroidManifest.xml</code> 파일을 열고 <code class="language-plaintext highlighter-rouge">android:theme</code> 속성을 설정합니다.</p>
+
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/android/2024/07/15/android-Firebase-Cloud-Messaging.html" title="[Android] FCM(Firebase Cloud Messaging)란? ">[Android] FCM(Firebase Cloud Messaging)란? </a><a class="next" href="/jekyll-theme-yat/git/2024/07/22/git.html" title="[git] git ">[git] git </a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/react/2024/02/09/React_state.html" title="[git] git ">[React] 리액트 State </a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/android/2024/07/15/android-Firebase-Cloud-Messaging.html" title="[git] git ">[Android] FCM(Firebase Cloud Messaging)란? </a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/nvm/2024/06/17/NVM.html" title="[git] git ">[NVM] NVM 이란?</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/react/2024/03/16/React%EB%A1%9C-%EB%82%A0%EC%94%A8%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0OpenWeather-API.html" title="[git] git ">[React] 날씨앱-만들기 OpenWeather-API </a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2025 GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

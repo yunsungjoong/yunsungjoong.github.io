@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="/jekyll-theme-yat/feed.xml" rel="self" type="application/atom+xml" /><link href="/jekyll-theme-yat/" rel="alternate" type="text/html" /><updated>2025-01-20T08:59:48+00:00</updated><id>/jekyll-theme-yat/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>GitHub User</name></author><entry><title type="html">[Java] final란 ?</title><link href="/jekyll-theme-yat/java/2025/01/20/Java-final.html" rel="alternate" type="text/html" title="[Java] final란 ?" /><published>2025-01-20T00:00:00+00:00</published><updated>2025-01-20T00:00:00+00:00</updated><id>/jekyll-theme-yat/java/2025/01/20/Java-final</id><content type="html" xml:base="/jekyll-theme-yat/java/2025/01/20/Java-final.html"><![CDATA[<h2 id="java에서-final-이란-무엇인가">Java에서 final 이란 무엇인가?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Java</code>에서 <code class="language-plaintext highlighter-rouge">final</code> 키워드는 변수, 메서드, 또는 클래스에 대한 변경 불가능성을 지정하는 데 사용된다. 
+<code class="language-plaintext highlighter-rouge">final</code> 키워드를 사용하면 그 요소는 한 번 할당되거나 정의된 후 변경될 수 없다. 이는 코드의 <code class="language-plaintext highlighter-rouge">가독성</code>, <code class="language-plaintext highlighter-rouge">안정성</code>, <code class="language-plaintext highlighter-rouge">유지보수성</code>을 <u>향상</u>시키는 데 도움이 된다.</p>
+
+<h2 id="detail">Detail</h2>
+
+<h3 id="변수에-final-사용">변수에 final 사용</h3>
+<ul>
+  <li>지역 변수: final 로 선언된 지역 변수는 한 번만 값을 할당할 수 있다. 초기화 이후, 그 값은 변경될 수 없다.</li>
+  <li>필드(멤버 변수) : 객체의 필드에 <code class="language-plaintext highlighter-rouge">final</code> 을 사용하면, 객체가 생성될 때 필드를 초기화해야 하며, 그 이후에는 그 필드의 값을 변경할 수 없다.</li>
+  <li>파라미터 : 메서드의 파라미터를 <code class="language-plaintext highlighter-rouge">final</code>로 선언하면, 메서드 안에서 파라미터의 값을 변경할 수 없다. 이는 메서드 안에서 파라미터가 참조하는 데이터의 무결성을 유지하는 데 도움이 된다.</li>
+</ul>
+
+<h3 id="클래스에-final-사용">클래스에 final 사용</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">final</code>로 선언된 클래스는 다른 클래스가 상속할 수 없다. 즉, <code class="language-plaintext highlighter-rouge">final</code> 클래스는 확장될 수 없으며, 항상 기본 형태를 유지한다. 이는 보안과 불변성을 유지하는 데 유용하다.</li>
+</ul>
+
+<h3 id="장점">장점</h3>
+
+<ul>
+  <li>불변성: final 변수는 읽기 전용이 되므로, 애플리케이션의 실행 도중에 예상치 못한 변경으로부터 안전하다.</li>
+  <li>스레드 안정성: 멀티스레드 환경에서 final 필드는 한 번 생성되고 초기화된 이후에는 변경되지 않으므로, 스레드 간에 안전하게 공유될 수 있다.</li>
+  <li>성능 최적화: 컴파일러와 JVM은 final 키워드를 사용하는 요소에 대해 추가적인 최적화를 수행할 수 있다.</li>
+  <li>설계 의도 명확화: final 키워드는 코드를 읽는 사람에게 해당 요소가 변경되지 않을 것임을 명확하게 전달한다.</li>
+</ul>
+
+<h3 id="불변-객체와의-차이점">불변 객체와의 차이점</h3>
+
+<p><code class="language-plaintext highlighter-rouge">final</code> 변수는 변수의 재할당을 막지만, 객체의 내부 상태 변화는 막지 않는다. 반면, 불변 객체(<code class="language-plaintext highlighter-rouge">Immutable Object</code>)는 객체가 생성된 후에는 그 상태가 절대로 변하지 않음을 보장한다. 둘 다 코드의 안정성과 예측 가능성을 높이는 데 기여하지만, 적용되는 범위와 의미가 다르다.</p>
+
+<ul>
+  <li>
+    <p>예를 들어, <code class="language-plaintext highlighter-rouge">final</code>로 선언된 <code class="language-plaintext highlighter-rouge">List</code> 객체는 다른 <code class="language-plaintext highlighter-rouge">List</code> 객체로 재할당될 수는 없지만, 리스트에 항목을 추가하거나 제거하는 것은 가능하다.</p>
+  </li>
+  <li>
+    <p>불변 객체의 예로는 <code class="language-plaintext highlighter-rouge">String</code>, <code class="language-plaintext highlighter-rouge">Integer</code> 등 <code class="language-plaintext highlighter-rouge">Java</code>의 표준 라이브러리에 포함된 클래스들이 있다. 이러한 객체들은 내부 상태를 변경하는 메소드를 제공하지 않는다.</p>
+  </li>
+</ul>]]></content><author><name>GitHub User</name></author><category term="Java" /><category term="Java" /><category term="final" /><summary type="html"><![CDATA[Java에서 final 이란 무엇인가?]]></summary></entry><entry><title type="html">[Java] HashMap란 ?</title><link href="/jekyll-theme-yat/java/2025/01/20/Java-hasyMap.html" rel="alternate" type="text/html" title="[Java] HashMap란 ?" /><published>2025-01-20T00:00:00+00:00</published><updated>2025-01-20T00:00:00+00:00</updated><id>/jekyll-theme-yat/java/2025/01/20/Java-hasyMap</id><content type="html" xml:base="/jekyll-theme-yat/java/2025/01/20/Java-hasyMap.html"><![CDATA[<h2 id="java에서-hashmap-이란-무엇인가">Java에서 HashMap 이란 무엇인가?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">HashMap</code>은 데이터를 저장할 때 키(Key)와 밸류(Value)가 짝을 이루어 저장됩니다. 데이터를 저장할 때는 키(Key) 값으로 해시함수를 실행한 결과를 통해 저장위치를 결정합니다. 
+따라서 <code class="language-plaintext highlighter-rouge">HashMap</code>은 특정 데이터의 저장위치를 해시함수를 통해 바로 알 수 있기 때문에 데이터의 <code class="language-plaintext highlighter-rouge">추가</code>, <code class="language-plaintext highlighter-rouge">삭제</code>, 특히 <u>검색이 빠르다는 장점</u>이 있습니다. 
+이러한 이유로 HashMap은 키(Key)값을 통해서만 검색이 가능하며, HashMap의 키(Key) 값은 중복될 수 없고, 밸류(Value) 값은 키(Key) 값이 다르다면 중복이 가능합니다. </p>
+
+<h2 id="hashmap-생성방법">HashMap 생성방법</h2>
+<pre><code class="language-JAVA">(방법1) HashMap&lt;String, String&gt; h1 = new HashMap&lt;String, String&gt;( );         // 기본 capacity:16, load factor:0.75
+(방법2) HashMap&lt;String, String&gt; h2 = new HashMap&lt;String, String&gt;(20);       // capacity:20으로 설정
+(방법3) HashMap&lt;String, String&gt; h3 = new HashMap&lt;String, String&gt;(20, 0.8); // capacity:20, load factor:0.8로 설정
+(방법4) HashMap&lt;String, String&gt; h4 = new HashMap&lt;String, String&gt;(h1);      // 다른 Map(h1)의 데이터로 초기화
+
+</code></pre>
+
+<h2 id="hashmap-메서드">HashMap 메서드</h2>
+<p>1) 데이터 추가</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">V</span> <span class="nf">put</span><span class="o">(</span><span class="no">K</span> <span class="n">key</span><span class="o">,</span> <span class="no">V</span> <span class="n">value</span><span class="o">)</span> <span class="o">:</span> <span class="n">key와</span> <span class="n">value를</span> <span class="n">저장합니다</span><span class="o">.</span><span class="err"> </span>
+<span class="kt">void</span><span class="err"> </span><span class="n">putAll</span><span class="o">(</span><span class="nc">Map</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="no">K</span><span class="o">,</span> <span class="o">?</span> <span class="kd">extends</span> <span class="no">V</span><span class="o">&gt;</span> <span class="n">m</span><span class="o">)</span> <span class="o">:</span> <span class="nc">Map</span> <span class="n">m의</span> <span class="n">데이터를</span> <span class="n">전부</span> <span class="n">저장합니다</span><span class="o">.</span> 
+<span class="no">V</span><span class="err"> </span><span class="n">putIfAbsent</span><span class="o">(</span><span class="no">K</span><span class="err"> </span><span class="n">key</span><span class="o">,</span><span class="err"> </span><span class="no">V</span><span class="err"> </span><span class="n">value</span><span class="o">)</span> <span class="o">:</span> <span class="n">기존</span> <span class="n">데이터에</span> <span class="n">key가</span> <span class="n">없으면</span><span class="err"> </span> <span class="n">key와</span> <span class="n">value를</span> <span class="n">저장합니다</span><span class="o">.</span><span class="err"> </span>
+</code></pre></div></div>
+<p> 
+2) 데이터 삭제</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">clear</span><span class="o">(</span> <span class="o">)</span> <span class="o">:</span> <span class="n">모든</span> <span class="n">데이터를</span> <span class="n">삭제합니다</span><span class="o">.</span><span class="err"> </span>
+<span class="no">V</span> <span class="nf">remove</span><span class="o">(</span><span class="nc">Object</span><span class="err"> </span><span class="n">key</span><span class="o">)</span> <span class="o">:</span> <span class="n">key와</span> <span class="n">일치하는</span> <span class="n">기존</span> <span class="n">데이터</span><span class="o">(</span> <span class="n">key와</span> <span class="n">value</span><span class="o">)</span><span class="n">를</span> <span class="n">삭제합니다</span><span class="o">.</span><span class="err"> </span>
+<span class="kt">boolean</span><span class="err"> </span><span class="n">remove</span><span class="o">(</span><span class="nc">Object</span><span class="err"> </span><span class="n">key</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">value</span><span class="o">)</span> <span class="o">:</span> <span class="n">key와</span> <span class="n">value가</span> <span class="n">동시에</span> <span class="n">일치하는</span> <span class="n">데이터를</span> <span class="n">삭제합니다</span><span class="o">.</span><span class="err"> </span>
+</code></pre></div></div>
+<p> 
+3) 데이터 수정</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">V</span><span class="err"> </span><span class="n">replace</span><span class="o">(</span><span class="no">K</span><span class="err"> </span><span class="n">key</span><span class="o">,</span><span class="err"> </span><span class="no">V</span><span class="err"> </span><span class="n">value</span><span class="o">)</span> <span class="o">:</span> <span class="n">key와</span> <span class="n">일치하는</span> <span class="n">기존</span> <span class="n">데이터의</span> <span class="n">value를</span> <span class="n">변경합니다</span><span class="o">.</span><span class="err"> </span>
+<span class="no">V</span><span class="err"> </span><span class="n">replace</span><span class="o">(</span><span class="no">K</span><span class="err"> </span><span class="n">key</span><span class="o">,</span><span class="err"> </span><span class="no">V</span> <span class="n">oldValue</span><span class="o">,</span><span class="err"> </span><span class="no">V</span> <span class="n">newValue</span><span class="o">)</span> <span class="o">:</span> <span class="n">key와</span> <span class="n">oldValue가</span> <span class="n">동시에</span> <span class="n">일치하는</span> <span class="n">데이터의</span> <span class="n">value를</span> <span class="n">newValue로</span> <span class="n">변경합니다</span><span class="o">.</span><span class="err"> </span>
+</code></pre></div></div>
+<p> 
+4) 데이터 확인</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">boolean</span> <span class="nf">containsKey</span><span class="o">(</span><span class="nc">Object</span><span class="err"> </span><span class="n">key</span><span class="o">)</span> <span class="o">:</span><span class="err"> </span><span class="n">key와</span> <span class="n">일치하는</span> <span class="n">데이터가</span> <span class="n">있는지</span> <span class="n">여부를</span> <span class="n">반환합니다</span><span class="o">.</span> <span class="o">(</span><span class="n">있으면</span> <span class="kc">true</span><span class="o">)</span>
+<span class="kt">boolean</span><span class="err"> </span><span class="n">containsValue</span><span class="o">(</span><span class="nc">Object</span> <span class="n">value</span><span class="o">)</span> <span class="o">:</span> <span class="n">value가</span> <span class="n">일치하는</span> <span class="n">데이터가</span> <span class="n">있는지</span> <span class="n">여부를</span> <span class="n">반환합니다</span><span class="o">.</span> <span class="o">(</span><span class="n">있으면</span> <span class="kc">true</span><span class="o">)</span>
+<span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">(</span> <span class="o">)</span> <span class="o">:</span> <span class="n">데이터가</span> <span class="n">빈</span> <span class="n">상태인지</span> <span class="n">여부를</span> <span class="n">반환합니다</span><span class="o">.</span> <span class="o">(</span><span class="n">빈</span> <span class="n">상태면</span> <span class="kc">true</span><span class="o">)</span>
+<span class="kt">int</span> <span class="nf">size</span><span class="o">(</span> <span class="o">)</span> <span class="o">:</span> <span class="n">key</span><span class="o">-</span><span class="n">value</span> <span class="n">맵핑</span> <span class="n">데이터의</span> <span class="n">개수를</span> <span class="n">반환합니다</span><span class="o">.</span><span class="err"> </span>
+</code></pre></div></div>
+
+<p>5) 데이터 반환</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">V</span> <span class="nf">get</span><span class="o">(</span><span class="nc">Object</span><span class="err"> </span><span class="n">key</span><span class="o">)</span> <span class="o">:</span><span class="err"> </span><span class="n">key와</span> <span class="n">맵핑된</span> <span class="n">value값을</span> <span class="n">반환합니다</span><span class="o">.</span><span class="err"> </span>
+<span class="no">V</span><span class="err"> </span><span class="n">getOrDefault</span><span class="o">(</span><span class="nc">Object</span><span class="err"> </span><span class="n">key</span><span class="o">,</span> <span class="no">V</span> <span class="n">defaultValue</span><span class="o">)</span> <span class="o">:</span><span class="err"> </span><span class="n">key와</span> <span class="n">맵핑된</span> <span class="n">value값을</span> <span class="n">반환하고</span> <span class="n">없으면</span> <span class="n">defaultValue값을</span> <span class="n">반환합니다</span><span class="o">.</span>
+<span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span> <span class="no">V</span><span class="o">&gt;&gt;</span> <span class="nf">entrySet</span><span class="o">(</span> <span class="o">)</span> <span class="o">:</span> <span class="n">모든</span><span class="err"> </span><span class="n">key</span><span class="o">-</span><span class="n">value</span> <span class="n">맵핑</span> <span class="n">데이터를</span> <span class="n">가진</span> <span class="nc">Set</span> <span class="n">데이터를</span> <span class="n">반환합니다</span><span class="o">.</span><span class="err"> </span>
+<span class="nc">Set</span><span class="o">&lt;</span><span class="no">K</span><span class="o">&gt;</span><span class="err"> </span><span class="n">keySet</span><span class="o">(</span><span class="err"> </span><span class="o">)</span> <span class="o">:</span><span class="err"> </span><span class="n">모든</span><span class="err"> </span><span class="n">key</span> <span class="n">값을</span> <span class="n">가진</span> <span class="nc">Set</span> <span class="n">데이터를</span> <span class="n">반환합니다</span><span class="o">.</span><span class="err"> </span>
+<span class="nc">Collection</span><span class="o">&lt;</span><span class="no">V</span><span class="o">&gt;</span> <span class="nf">values</span><span class="o">(</span><span class="err"> </span><span class="o">)</span> <span class="o">:</span><span class="err"> </span><span class="n">모든</span> <span class="n">value</span><span class="err"> </span><span class="n">값을</span> <span class="n">가진</span> <span class="nc">Collection</span> <span class="n">데이터를</span> <span class="n">반환합니다</span><span class="o">.</span><span class="err"> </span>
+</code></pre></div></div>
+
+<h2 id="hashmap-사용예제">HashMap 사용예제</h2>
+
+<h3 id="1-hashmap-생성-및-실행">1) HashMap 생성 및 실행</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">h1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;();</span>
+		<span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">h2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;();</span>
+		
+		<span class="n">h1</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"aaa"</span><span class="o">,</span> <span class="s">"1111"</span><span class="o">);</span>
+		<span class="n">h1</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"bbb"</span><span class="o">,</span> <span class="s">"2222"</span><span class="o">);</span>
+		<span class="n">h1</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"ccc"</span><span class="o">,</span> <span class="s">"3333"</span><span class="o">);</span>
+		<span class="n">h1</span><span class="o">.</span><span class="na">putIfAbsent</span><span class="o">(</span><span class="s">"aaa"</span><span class="o">,</span> <span class="s">"0000"</span><span class="o">);</span>
+		<span class="n">h1</span><span class="o">.</span><span class="na">putIfAbsent</span><span class="o">(</span><span class="s">"ddd"</span><span class="o">,</span> <span class="s">"4444"</span><span class="o">);</span>
+		<span class="n">h2</span><span class="o">.</span><span class="na">putAll</span><span class="o">(</span><span class="n">h1</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"h1 : "</span> <span class="o">+</span> <span class="n">h1</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"h2 : "</span> <span class="o">+</span> <span class="n">h2</span><span class="o">);</span>
+		
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"[1]: "</span> <span class="o">+</span> <span class="n">h1</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="s">"aaa"</span><span class="o">));</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"[2]: "</span> <span class="o">+</span> <span class="n">h1</span><span class="o">.</span><span class="na">containsValue</span><span class="o">(</span><span class="s">"1111"</span><span class="o">));</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"[3]: "</span> <span class="o">+</span> <span class="n">h1</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">());</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"[4]: "</span> <span class="o">+</span> <span class="n">h1</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"[5]: "</span> <span class="o">+</span> <span class="n">h1</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"[6]: "</span> <span class="o">+</span> <span class="n">h1</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="s">"aaa"</span><span class="o">,</span> <span class="s">"1111"</span><span class="o">));</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"[7]: "</span> <span class="o">+</span> <span class="n">h1</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"bbb"</span><span class="o">,</span> <span class="s">"0000"</span><span class="o">));</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"[8]: "</span> <span class="o">+</span> <span class="n">h1</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s">"ccc"</span><span class="o">,</span> <span class="s">"0000"</span><span class="o">));</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"h1 : "</span> <span class="o">+</span> <span class="n">h1</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"h2 : "</span> <span class="o">+</span> <span class="n">h2</span><span class="o">);</span>
+				
+		
+		<span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="nl">key:</span> <span class="n">h1</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span>
+			<span class="nc">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">h1</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Key:"</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s">", Value:"</span> <span class="o">+</span> <span class="n">value</span><span class="o">);</span>	
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="2-실행-결과">2) 실행 결과</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>h1 : {aaa=1111, ccc=3333, bbb=2222, ddd=4444}
+h2 : {aaa=1111, ccc=3333, bbb=2222, ddd=4444}
+[1]: true
+[2]: true
+[3]: false
+[4]: 4
+[5]: {aaa=1111, ccc=3333, bbb=2222, ddd=4444}
+[6]: true
+[7]: 2222
+[8]: 3333
+h1 : {ccc=0000, bbb=0000, ddd=4444}
+h2 : {aaa=1111, ccc=3333, bbb=2222, ddd=4444}
+Key:ccc, Value:0000
+Key:bbb, Value:0000
+Key:ddd, Value:4444
+</code></pre></div></div>]]></content><author><name>GitHub User</name></author><category term="Java" /><category term="Java" /><category term="HashMap" /><summary type="html"><![CDATA[Java에서 HashMap 이란 무엇인가?]]></summary></entry><entry><title type="html">[Rxjs] Observable</title><link href="/jekyll-theme-yat/rxjs/2025/01/09/Rxjs-Observable.html" rel="alternate" type="text/html" title="[Rxjs] Observable" /><published>2025-01-09T00:00:00+00:00</published><updated>2025-01-09T00:00:00+00:00</updated><id>/jekyll-theme-yat/rxjs/2025/01/09/Rxjs-Observable</id><content type="html" xml:base="/jekyll-theme-yat/rxjs/2025/01/09/Rxjs-Observable.html"><![CDATA[<h1 id="rxjs란">RxJS란?</h1>
+<p><code class="language-plaintext highlighter-rouge">RxJS</code>는 <code class="language-plaintext highlighter-rouge">Reactive Extensions For JavaScript</code> 라이브러리이다.
+여기서 <code class="language-plaintext highlighter-rouge">Reactive Extensions</code> 는 <code class="language-plaintext highlighter-rouge">ReactiveX</code> 프로젝트에서 출발한 리액티브 프로그래밍을 지원하기 위해 확장했다는 뜻이다.</p>
+
+<p>RxJS는 이벤트 스트림을 Observable 이라는 객체로 표현한 후 비동기 이벤트 기반의 프로그램 작성을 돕는다.</p>
+
+<p>이벤트 처리를 위한 API로 다양한 연산자를 제공하는 함수형 프로그래밍 기법도 도입되어 있다.</p>
+
+<h2 id="리액티브-프로그래밍이란">리액티브 프로그래밍이란</h2>
+<p>리액티브 프로그래밍이란 이벤트나 배열 같은 데이터 스트림을 비동기로 처리해 변화에 유연하게 반응하는 프로그래밍 패러다임 이다.</p>
+
+<p>외부와 통신하는 방식은 Pull 과 Push 시나리오가 있을 수 있다.</p>
+
+<h3 id="pull-시나리오">Pull 시나리오</h3>
+<p>외부에서 명령하여 응답받고 처리한다.
+데이터를 가지고 오기 위해서는 계속 호출해야 한다.</p>
+
+<h3 id="push-시나리오">Push 시나리오</h3>
+<p>외부에서 명령하고 기다리지 않고, 응답이 오면 그때 반응하여 처리한다
+데이터를 가지고 오기 위해서 구독해야 한다.</p>
+
+<p>Reactive Programming 은 Push 시나리오를 채택하고 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// javascript</span>
+<span class="kd">function</span> <span class="nf">event</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">};</span>
+<span class="kd">const</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementsById</span><span class="p">(</span><span class="dl">'</span><span class="s1">Button</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="nx">event</span><span class="p">)</span>
+</code></pre></div></div>
+<p>targetElement를 가져와서 addEventListener 로 ‘click’ 이벤트를 구독하였다.
+사용자가 마우스 클릭을 하기 전까지는 event function이 발생되지 않는다.</p>
+
+<p>여기서 우리는 Reactive Programming 의 개념중 하나인 Observer Pattern 을 발견할 수 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Observer pattern</code>은 객체의 상태 변화를 관찰하는 옵저버들의 목록을 객체에 등록하여 상태 변화가 있을 때마다 메서드 등을 통해 객체가 직접 목록의 각 옵저버에게 통지하도록 하는 디자인 패턴이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">addEventListener</code> 로 <code class="language-plaintext highlighter-rouge">targetElement</code>가 <code class="language-plaintext highlighter-rouge">click</code> 이벤트를 구독하도록 옵저버를 등록한후,
+click 이벤트가 발생하면 event function을 호출하여 옵저버에게 알린다.</p>
+
+<h2 id="rxjs">RxJS</h2>
+<p>비동기 코드가 많아지면 그만큼 제어의 흐름이 복잡하게 얽혀 코드를 예측하기 어려워진다.
+<code class="language-plaintext highlighter-rouge">RxJS</code> 는 <code class="language-plaintext highlighter-rouge">Javascript</code> 의 비동기 프로그래밍의 문제를 해결하는데 도움을 준다.
+<code class="language-plaintext highlighter-rouge">RxJS</code>는 <code class="language-plaintext highlighter-rouge">Observer</code> 패턴을 적용한 <code class="language-plaintext highlighter-rouge">Observable</code> 이라는 객체를 중심으로 동작한다.</p>
+
+<h2 id="rxjs-observable">RxJS Observable</h2>
+<p><code class="language-plaintext highlighter-rouge">Observable</code>은 특정 객체를 관찰하는 <code class="language-plaintext highlighter-rouge">Observer</code>에게 여러 이벤트나 값을 보내는 역할을 한다.</p>
+
+<h3 id="observer에는-3가지-메서드가-존재한다">observer에는 3가지 메서드가 존재한다.</h3>
+
+<ol>
+  <li>next : Observable 구독자에게 데이터를 전달한다.</li>
+  <li>complete : Observable 구독자에게 완료 되었음을 알린다. next는 더 이상 데이터를 전달하지 않는다.</li>
+  <li>error : Observable 구독자에게 에러를 전달한다. 이후에 next 및 complete 이벤트가 발생하지 않는다.</li>
+</ol>
+
+<h2 id="rxjs-observable-lifecycle">RxJS Observable Lifecycle</h2>
+<p>1) 생성
+<code class="language-plaintext highlighter-rouge">Observable.create()</code>
+생성시점에는 어떠한 이벤트도 발생되지 않는다.
+2) 구독
+<code class="language-plaintext highlighter-rouge">Observable.subscribe()</code>
+구독시점에 이벤트를 구독할 수 있다.
+3) 실행
+<code class="language-plaintext highlighter-rouge">observer.next()</code>
+실행시점에 이벤트를 구독하고 있는 대상에게 값을 전달한다.
+4) 구독 해제
+<code class="language-plaintext highlighter-rouge">observer.complete()</code>
+<code class="language-plaintext highlighter-rouge">Observable.unsubscribe()</code>
+구독 해제 시점에 구독하고 있는 모든 대상의 구독을 종료한다.</p>
+
+<p><a href="https://pks2974.medium.com/rxjs-%EA%B0%84%EB%8B%A8%EC%A0%95%EB%A6%AC-41f67c37e028">참고 URL</a></p>]]></content><author><name>GitHub User</name></author><category term="Rxjs" /><category term="Rxjs" /><category term="Observable" /><summary type="html"><![CDATA[RxJS란? RxJS는 Reactive Extensions For JavaScript 라이브러리이다. 여기서 Reactive Extensions 는 ReactiveX 프로젝트에서 출발한 리액티브 프로그래밍을 지원하기 위해 확장했다는 뜻이다.]]></summary></entry><entry><title type="html">[Angular / Rxjs] subscribe, unsubscribe</title><link href="/jekyll-theme-yat/angular/2025/01/08/angular-subscribe-unsubscribe-copy.html" rel="alternate" type="text/html" title="[Angular / Rxjs] subscribe, unsubscribe" /><published>2025-01-08T00:00:00+00:00</published><updated>2025-01-08T00:00:00+00:00</updated><id>/jekyll-theme-yat/angular/2025/01/08/angular-subscribe-unsubscribe%20copy</id><content type="html" xml:base="/jekyll-theme-yat/angular/2025/01/08/angular-subscribe-unsubscribe-copy.html"><![CDATA[<p><code class="language-plaintext highlighter-rouge">Rxjs</code>에서 <code class="language-plaintext highlighter-rouge">Observable</code>과 <code class="language-plaintext highlighter-rouge">asObservable</code>를 이용해 데이터를 주고 받고 변화한 값을 알아낸다.</p>
+
+<h2 id="subscribe란">subscribe란?</h2>
+<p>현재 사용하고 있는 변수의 값이 변화했는지? 변화 했다면 어떻게 변화 했는지를 알고 대응하고 싶을때 사용하는 것이 <code class="language-plaintext highlighter-rouge">subscribe</code>이다.</p>
+
+<h2 id="unsubscribe란">unsubscribe란?</h2>
+<p><code class="language-plaintext highlighter-rouge">subscribe</code>는 엄청나게 편리한 기능이다. 하지만 편리한 만큼 잘못관리한다면 성능에 엄청난 영향을 미칠 수 있다. 이유는 간단하다. subscribe(구독)을 하게되는 순간 값이 변화하게 된다면 우리가 <code class="language-plaintext highlighter-rouge">unsubscribe</code>하거나 <code class="language-plaintext highlighter-rouge">complete</code>를 하지 않는다면 계속해서 관찰(동작)하게 되고 이는 곧 메모리 낭비 또는 의도치 않은 값의 변화를 유발할 수 있다.</p>
+
+<h3 id="subscription">subscription</h3>
+<p><code class="language-plaintext highlighter-rouge">subscription</code>은 내가 구독하고 있는 <code class="language-plaintext highlighter-rouge">subscribe</code>를 관리하기 위해 만들어준 변수라고 생각하면 된다.</p>
+
+<h3 id="complete">complete</h3>
+<p><code class="language-plaintext highlighter-rouge">subscribe</code>를 구독완료 즉 앞으로 구독하지 않겠다. 내가 할 일은 완료되었다. 라는 뜻이다. <code class="language-plaintext highlighter-rouge">complete</code>를 하게되면 <code class="language-plaintext highlighter-rouge">time</code>을 다시 <code class="language-plaintext highlighter-rouge">new Subject</code>로 등록하지 않는 한 <code class="language-plaintext highlighter-rouge">time</code>이라는 <code class="language-plaintext highlighter-rouge">Subject</code> 변수는 더 이상 사용할 수 없게 된다.</p>
+
+<p><a href="https://velog.io/@leehangeul/Angular-Rxjs-subscribe-unsubscribe">참고 URL</a></p>]]></content><author><name>GitHub User</name></author><category term="Angular" /><category term="Angular" /><category term="Subscribe" /><category term="unsubscribe" /><summary type="html"><![CDATA[Rxjs에서 Observable과 asObservable를 이용해 데이터를 주고 받고 변화한 값을 알아낸다.]]></summary></entry><entry><title type="html">반응형 웹 VS 적응형 웹</title><link href="/jekyll-theme-yat/%EB%B0%98%EC%9D%91%ED%98%95/2025/01/08/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9-vs-%EC%A0%81%EC%9D%91%ED%98%95-%EC%9B%B9.html" rel="alternate" type="text/html" title="반응형 웹 VS 적응형 웹" /><published>2025-01-08T00:00:00+00:00</published><updated>2025-01-08T00:00:00+00:00</updated><id>/jekyll-theme-yat/%EB%B0%98%EC%9D%91%ED%98%95/2025/01/08/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9-vs-%EC%A0%81%EC%9D%91%ED%98%95-%EC%9B%B9</id><content type="html" xml:base="/jekyll-theme-yat/%EB%B0%98%EC%9D%91%ED%98%95/2025/01/08/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9-vs-%EC%A0%81%EC%9D%91%ED%98%95-%EC%9B%B9.html"><![CDATA[<h2 id="반응형-웹-vs-적응형-웹">반응형 웹 vs 적응형 웹</h2>
+<p>근본적으로 웹사이트가 모바일 기기와 다양한 화면 크기에서 원활한 정보를 제공하여 더 나은 모바일 사용자 경험을 제공하기 위한 방법이다.
+그러나, 적응형 웹과 반응형 웹은 사이트 설계부터 구동까지 많은 차이가 있다.</p>
+
+<p>브라우저 가로길이가 변할 때,</p>
+
+<p>어느 순간 툭 바뀐다? = 적응형.
+이미지와 그리드가 실시간 변화한다? = 반응형.</p>
+
+<p><img src="https://github.com/user-attachments/assets/9fc810a9-6da7-463c-9fdc-99dac8b0bb0d" alt="AdapativeResponsiveWeb" /></p>
+
+<p>위: 반응형, 아래: 적응형</p>
+
+<h2 id="적응형-웹-adaptive-web">적응형 웹 (Adaptive Web)</h2>
+<p>서버나 클라이언트에서 웹에 접근한 기기를 체크해 그 기기에 맞는 템플릿을 제공하는 개념이다. 모바일의 경우 모바일용 템플릿을, 데스크톱의 경우 데스크톱용 템플릿을 제공하는 식이다. 따라서 기기별로 다른 템플릿을 제작해야 할 필요가 있다.</p>
+
+<p>기존에 이미 데스크톱용 템플릿을 작성했다면, 바닥부터 재구축할 필요 없이 다른 기기용 템플릿만 따로 만들면 되어 편리하다. 또, 사용자의 기기에 맞는 템플릿 및 CSS만 다운로드 하므로 데이터 낭비가 적고 로딩 속도가 빠르다.</p>
+
+<p>다만, 각 기기별로 별로의 템플릿을 작성해야 하므로 개발이 복잡해진다.</p>
+
+<h2 id="반응형-웹-responsive-web">반응형 웹 (Responsive Web)</h2>
+<p>반응형 웹은 미디어 쿼리를 사용해 기기 화면의 크기를 확인하고 유연한 이미지와 그리드를 활용해 화면 크기 변화에 따라 페이지의 크기 및 레이아웃을 조절하는 기술을 말한다.</p>
+
+<p>하나의 템플릿만을 사용해 다양한 사용자와 기기에 대응할 수 있어 개발이 간편하다는 장점을 가진다. 다만, 사용자는 단 하나의 기기만으로 접속하지만 그 경우에도 모든 기기를 위한 CSS를 전부 다운로드 해야한다는 점에서 데이터를 낭비하고 로딩 시간을 늘리는 단점을 가진다.</p>
+
+<p>또, 기존에 이미 운영 중이었던 데스크톱용 사이트가 있었다면 사이트를 재구축해야만 한다는 점에서 불편할 수 있다.</p>
+
+<p><img src="https://github.com/user-attachments/assets/38b63643-b130-48ac-a6ca-2887b3f1ca61" alt="AdapativeResponsiveWeb2" /></p>
+
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>반응형 웹</th>
+      <th>적용형 웹</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>기기 및 화면감지 방법</td>
+      <td>미디어 쿼리로 기기 감지</td>
+      <td>서버 또는 브라우저에서 기기 감지</td>
+    </tr>
+    <tr>
+      <td>템플릿</td>
+      <td>하나의 템플릿으로 충분</td>
+      <td>기기마다 다른 템플릿 필요</td>
+    </tr>
+    <tr>
+      <td>콘텐츠</td>
+      <td>모든 콘텐츠 다운로드 필요</td>
+      <td>기기에 맞는 콘텐츠만 다운로드</td>
+    </tr>
+    <tr>
+      <td>로딩 속도</td>
+      <td>속도 느림</td>
+      <td>속도 빠름</td>
+    </tr>
+    <tr>
+      <td>기존 사이트 존재시</td>
+      <td>기존 사이트 변경 및 재구축 필요</td>
+      <td>기존 사이트 변경없이 구축 가능</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <img src="/assets/images/img/Gitblog_img/2025/AdapativeResponsiveWeb.gif"> -->
+<p><a href="https://velog.io/@dev_jihee/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9-vs-%EC%A0%81%EC%9D%91%ED%98%95-%EC%9B%B9">참고 URL</a></p>]]></content><author><name>GitHub User</name></author><category term="반응형" /><summary type="html"><![CDATA[반응형 웹 vs 적응형 웹 근본적으로 웹사이트가 모바일 기기와 다양한 화면 크기에서 원활한 정보를 제공하여 더 나은 모바일 사용자 경험을 제공하기 위한 방법이다. 그러나, 적응형 웹과 반응형 웹은 사이트 설계부터 구동까지 많은 차이가 있다.]]></summary></entry><entry><title type="html">[Angular] 기본 개념과 특징</title><link href="/jekyll-theme-yat/angular/2025/01/06/Angular.html" rel="alternate" type="text/html" title="[Angular] 기본 개념과 특징" /><published>2025-01-06T00:00:00+00:00</published><updated>2025-01-06T00:00:00+00:00</updated><id>/jekyll-theme-yat/angular/2025/01/06/Angular</id><content type="html" xml:base="/jekyll-theme-yat/angular/2025/01/06/Angular.html"><![CDATA[<h2 id="🅰️-angular-란">🅰️ Angular 란?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Angular</code>는 자바스크립트 프레임 워크로 사용 시 따라야 할 패키지와 규칙이 모였고 기능이 풍부하며 양방향적인 웹(Web) 사용자 인터페이스를 만들게 도와줍니다.
+Angular은 사용자 인터페이스를 구축하는 과정을 더 간단하고 쉽게 해줍니다.
+Angular 같은 프레임워크 없이 JavaScript를 쓰는 것보다요</p>
+
+<p>또한 도구 및 기능의 모음이기도 합니다. 예를 들어 명령줄 인터페이스는 
+Angular  프로젝트   생성을 돕고 해당 프로젝트 기타 등등 
+프레임워크와 추가 도구 기능으로 플랫폼을 만들어 기본에서 복잡한 기업 수준의 웹 응용 프로그램까지 만들 수 있다.</p>
+
+<h3 id="왜-angular-프레임워크를-쓰는가">왜 Angular 프레임워크를 쓰는가?</h3>
+
+<p>JavaScript만 쓰는 대신 특히 웹 응용 프로그램과 웹 사용자 인터페이스에 Angular 같은
+솔루션이 필요 없을 수도 있다. 그러나 Angular와 같은 프레임워크는 앱이 복잡해질수록 더욱 빛납니다. 복잡한 제작 과정을 단순화 시키고 웹 사용자 인터페이스를 만들어준다.</p>
+
+<p>Angular은 이 과정을 간소화해 줍니다. 사용할 때 유용한 특징과 규칙 개념을 
+많이 제공해줍니다. 하지만 가장 중요한 건 네가지 요소 때문일것이다.</p>
+
+<p>명령 코드 대신 선언 코드를 쓴다.</p>
+<ul>
+  <li>명령 코드 대신 선언 코드를 쓸수 있다 -&gt; 바닐라 JavaScript</li>
+</ul>
+
+<p>바닐라 자바스크립트를 이용하면 브라우저에 실행될 모든 지시를 단계별로 작성해야 합니다.
+예를 들면 DOM 요소를 확보해 어떤 조건이 맞는지 유효성을 검사해야 하고 어떤 조건이 부합되는지에 따라 DOM에서 수정할 수 있습니다. 일단 명시적으로 적고 단계별로 브라우저에 알려줘야 합니다. 앵귤러 같은 프레임워크는 변합니다.
+거기서 대신 선언 코드를 씁니다. 대상 상태나 상태를 정의한다는 뜻이죠</p>
+
+<p>마크업은 Angular로 잠금 해제된 특별 지시를 담고 바닐라 자바스크립트로는 안 됩니다.
+브라우저는  이해 못 하겠지만 Angular로 잠금 해제돼 다양한 대상 상태를 정의할 수 있습니다.
+그런 다음 논리를 써서 특정 상태를 발생에 따라 해당 상태가 활성화 되거나 해제 될 수 있게 할 수 있습니다.</p>
+
+<ol>
+  <li>
+    <p>Manage “activeTab” state property
+설명:
+“activeTab”은 현재 활성화된 탭(사용자가 선택한 탭)을 나타내는 상태(state) 속성입니다.
+이를 관리한다는 것은, JavaScript 프레임워크(예: React, Angular, Vue 등)에서 상태 관리를 통해 “어떤 탭이 활성화되었는지”를 추적하고 업데이트한다는 의미입니다.</p>
+  </li>
+  <li>
+    <p>Depending on “activeTab”, show different content
+설명: “activeTab” 값에 따라 각기 다른 콘텐츠를 화면에 표시해야 합니다.
+예를 들어, 사용자가 탭 1을 클릭하면 탭 1의 콘텐츠가 보이고, 탭 2를 클릭하면 탭 2의 콘텐츠가 보이도록 구성합니다.</p>
+  </li>
+  <li>
+    <p>Change “activeTab” upon click on tab element
+설명: 사용자가 특정 탭을 클릭하면 “activeTab” 상태가 업데이트되도록 해야 합니다.
+클릭 이벤트를 처리하여 사용자가 선택한 탭의 ID나 이름을 “activeTab” 상태로 저장하는 방식입니다.</p>
+  </li>
+</ol>
+
+<p>앵귤러는 요소라는 개념을 포용하면서 분리해서 적용할수있다.</p>
+
+<p>앵귤러 프레임워크는 전부는 아니지만 일부 객체 지향 프로그래밍 개념과 원리를 수용합니다.
+객체 지향 프로그래밍을 알 필요도 없고 전문가가 될 필요가 없습니다.</p>
+
+<h2 id="angular-typescript">Angular TypeScript</h2>
+<p>Angular 는 TypeScript를 사용합니다.
+JavaScript를 사용하면 에러 잡기가 어렵지만 TypeScript를 사용하게 되면 에러를 
+개발 프로세스 초기에 잡아낼 수 있습니다. 또한 코드 품질이 향상되고 코드에 오류가 줄어듭니다.
+그래서 Angular에서 TypeScript를 다룬다고 보면 된다.</p>]]></content><author><name>GitHub User</name></author><category term="Angular" /><category term="Angular" /><category term="JavaScript" /><summary type="html"><![CDATA[🅰️ Angular 란?]]></summary></entry><entry><title type="html">[JS] Class</title><link href="/jekyll-theme-yat/angular/2024/11/03/JS-Class.html" rel="alternate" type="text/html" title="[JS] Class" /><published>2024-11-03T00:00:00+00:00</published><updated>2024-11-03T00:00:00+00:00</updated><id>/jekyll-theme-yat/angular/2024/11/03/JS-Class</id><content type="html" xml:base="/jekyll-theme-yat/angular/2024/11/03/JS-Class.html"><![CDATA[<h2 id="class-란">Class 란?</h2>
+
+<p>JavaScript의 Class는 객체(Object)와 관련이 있다.
+객체를 직접 작성하여 정의하고 생성할 수도 있지만, 클래스로 만들어주면 여러 객체를 더 쉽게 만들 수 있다.</p>
+
+<p>Class 를 통해 원하는 구조의 객체 틀을 짜놓고, 비슷한 모양의 객체를 공장처럼 찍어낼 수 있다.</p>
+
+<p>쉽게 생각해서 클래스 = 붕어빵 기계, 그리고 객체 = 붕어빵으로 보면 된다.</p>
+
+<hr />
+
+<h3 id="1-class를-사용하는-이유는">1. Class를 사용하는 이유는?</h3>
+
+<p>JavaScript <code class="language-plaintext highlighter-rouge">prototype</code>기반의 객체지향 프로그래밍 언어이다.
+그렇다면 JS에 왜 <code class="language-plaintext highlighter-rouge">class</code>가 추가된 것이고 왜 사용하는 것일까</p>
+
+<p>ES6부터 추가된 class는가직관적으로 쉽게 코드를 읽을 수 있게 만들어 줄 뿐만 아니라, 작성하기도 쉽고 또 class 기반 언어에 익숙한 개발자가 더 빠르게 적응할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// prototype</span>
+<span class="kd">function</span> <span class="nf">Me</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+<span class="p">}</span>
+
+<span class="nx">Me</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">wow</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">WOW!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Me</span><span class="p">(</span><span class="dl">"</span><span class="s2">Jason</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">person</span><span class="p">.</span><span class="nf">wow</span><span class="p">();</span> <span class="c1">// WOW!</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//  class</span>
+
+<span class="kd">class</span> <span class="nc">Me</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nf">wow</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">WOW</span><span class="dl">"</span><span class="o">!</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Me</span><span class="p">(</span><span class="dl">"</span><span class="s2">Jason</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">person</span><span class="p">.</span><span class="nf">wow</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="2class-살펴보기">2.Class 살펴보기</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Korean</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">country</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">korea</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nf">addAge</span><span class="p">(</span><span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">+</span> <span class="nx">age</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>클래스 내부에 정의된 함수를 method 라고 부른다.</li>
+  <li>클래스를 통해 생성된 객체를 인스턴스라고 부른다.</li>
+  <li>크래스도 함수처럼 호출하기 전까지 코드가 실행되지 않는다. 단지 Korean 이라는 클래스를 정의만 했을 뿐이다. <code class="language-plaintext highlighter-rouge">new</code>키워드와 소괄호<code class="language-plaintext highlighter-rouge">()</code>를 사용하여 호출할 수 있다.</li>
+  <li>클래스 이름은 <code class="language-plaintext highlighter-rouge">korean</code>과 같이 항상 대문자로 시작한다.</li>
+  <li>constructor는 class에서 필요한 기초 정보를 세팅하는 곳이다. 객체를 <code class="language-plaintext highlighter-rouge">new</code>로 생성할 때 가장먼저 자동으로 호출된다.</li>
+  <li><code class="language-plaintext highlighter-rouge">constructor()</code> 메소드에서 <code class="language-plaintext highlighter-rouge">name</code>과 <code class="language-plaintext highlighter-rouge">age</code>, 2개의 매개변수로 korean 인스턴스의 name, age 프로퍼티에 값을 할당했다.</li>
+  <li><code class="language-plaintext highlighter-rouge">this</code>는 본인 객체를 의미한다. 클래스 내에서 메소드끼리 소통하기 위해서는 <code class="language-plaintext highlighter-rouge">this</code>가 필요하다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">kim</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">korean</span><span class="p">(</span><span class="dl">"</span><span class="s2">sungjoongYun</span><span class="dl">"</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span>
+
+<span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">sungjoongYun</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+  <span class="na">country</span><span class="p">:</span> <span class="dl">'</span><span class="s1">korea</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">addAge</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">age</span><span class="p">){</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">+</span> <span class="nx">age</span><span class="p">;</span>
+  <span class="p">}</span>  
+<span class="p">}</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">korean</code> 클래스를 이용해 <code class="language-plaintext highlighter-rouge">kim</code> 객체를 만들면 위와 같은 instance가 생성된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Cat</span> <span class="p">{</span>
+    <span class="nf">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+
+    <span class="p">}</span>
+    <span class="nf">eat</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> is eating!`</span>
+    <span class="p">}</span>
+    <span class="nf">meow</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="dl">'</span><span class="s1">MEOWWWW</span><span class="dl">'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="p">{</span>
+    <span class="nf">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nf">eat</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> is eating!`</span>
+    <span class="p">}</span>
+    <span class="nf">bark</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="dl">'</span><span class="s1">WOOF</span><span class="dl">'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>이 두 개의 클래스를 보면 살짝 다르지만 여전히 복제된 기능들이 많은데,
+JavaScript에서 가능한 옵션 중 하나가 바로 이 복제된 코드를 이 Cat이나 Dog에서 두 클래스가 모두 확장시킬 수 있는 따로 만든 별개의 클래스로 이동시키는 것이다.</p>
+
+<p>일종의 부모와 자식 관계라고 생각하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Pet</span> <span class="p">{</span>
+    <span class="nf">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nf">eat</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> is eating!`</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="nc">Pet</span> <span class="p">{</span>
+    <span class="nf">meow</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="dl">'</span><span class="s1">MEOWWWW</span><span class="dl">'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Pet</span> <span class="p">{</span>
+    <span class="nf">bark</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="dl">'</span><span class="s1">WOOF</span><span class="dl">'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>이처럼 extend 키워드를 사용하면 자식 클래스인 Dog에서 부모 클래스인 Pet의 값을 사용할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">boksil</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="p">(</span><span class="dl">"</span><span class="s2">Boksil</span><span class="dl">"</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+
+<span class="nx">boksil</span><span class="p">.</span><span class="nf">eat</span><span class="p">()</span> <span class="c1">// Boksil is eating!</span>
+</code></pre></div></div>]]></content><author><name>GitHub User</name></author><category term="Angular" /><category term="Angular" /><summary type="html"><![CDATA[Class 란?]]></summary></entry><entry><title type="html">[Android Proguard] 안드로이드 프로가드</title><link href="/jekyll-theme-yat/android/2024/09/02/Android-Proguard.html" rel="alternate" type="text/html" title="[Android Proguard] 안드로이드 프로가드" /><published>2024-09-02T00:00:00+00:00</published><updated>2024-09-02T00:00:00+00:00</updated><id>/jekyll-theme-yat/android/2024/09/02/Android-Proguard</id><content type="html" xml:base="/jekyll-theme-yat/android/2024/09/02/Android-Proguard.html"><![CDATA[<p>안녕하세요.
+오늘은 코드 난독화 및 APK 최적화를 위한 프로가드에 대해 알아보겠습니다.</p>
+
+<h2 id="1android-proguard가-필요한-이유">1.Android Proguard가 필요한 이유</h2>
+<ol>
+  <li>코드 난독화를 통해 디컴파일시 본인의 코드가 노출되는 것을 방지 할 수 있습니다.</li>
+  <li>불필요한 메서드를 제거해 멀티덱스를 피할 수 있습니다.</li>
+</ol>
+
+<h3 id="멀티덱스란">멀티덱스란?</h3>
+<p><img src="https://github.com/user-attachments/assets/aa812441-36a5-44b1-a668-0d652171ec16" alt="image" />
+안드로이드 앱을 구성하는 코드는 컴파일 되어 덱스(<code class="language-plaintext highlighter-rouge">dex</code>) 파일로 만들어지는데, 하나의 덱스(<code class="language-plaintext highlighter-rouge">dex</code>) 파일에 최대 65536개의 메소드만 참조 할 수 있습니다.
+만약 프로젝트의 코드가 65536개의 메소드를 초과하게 되면 덱스(<code class="language-plaintext highlighter-rouge">dex</code>)파일이 여러개 생성되게 됩니다.
+<img src="https://github.com/user-attachments/assets/da010fb7-b663-4f3d-90d2-a27bb5dd20b8" alt="image" />
+멀티 덱스를 사용해 컴파일 할 수 있지만, 빌드 과정에 앱 내의 파일을 여러개의 덱스파일로 나누어야 하므로 빌드 속도가 느려지고 APK의 용량이 커지게 됩니다.
+가능하다면 프로가드를 설정해 주면 좋습니다.</p>
+
+<h2 id="2프로가드의-특징">2.프로가드의 특징</h2>
+<h3 id="21-축소shrinking">2.1 축소(shrinking)</h3>
+<p>축소는 APK의 크기를 줄이는 것을 말한다. ProGuard를 사용하면 앱 내 사용되지 않는 변수, 메서드, 클래스를 탐지할 수 있다. 
+사용하지 않는 코드는 애플리케이션과 라이브러리에서 모두 제거된다. 축소는 두 단계로 이루어져 있다.</p>
+<ul>
+  <li>코드 축소 : 사용하지 않는 변수, 메소드, 클래스, 속성을 애플리케이션과 해당 라이브러리 종속성에서 제거 -&gt; “멀티덱스” 제거</li>
+  <li>리소스 축소 : 애플리케이션과 해당 라이브러리 종속성에서 사용되지 않는 리소스 파일을 제거</li>
+</ul>
+
+<h3 id="22-최적화">2.2 최적화</h3>
+<p>최적화는 바이트코드를 최적화하는 것을 말한다. 사용하지 않는 명령어는 앱 성능에 부정적인 영향을 미칠 수 있다. 
+생성된 코드의 작은 세그먼트에 있는 중복 명령어는 peephole 최적화 기술을 통해 제거된다. 
+이 단계에서 중복된 코드가 제거되고 더 짧은 명령어로 대체될 수 있는 명령어가 식별되어 제거되게 된다.</p>
+
+<h3 id="33-난독화">3.3 난독화</h3>
+
+<p>난독화는 코드를 읽게 어렵게 만드는 과정이다 무단으로 액세스 권한을 얻은 제 3자는 코드는 이해할 수 없다. 사용되지 않은 코드를 제거한 후 나머지 클래스, 필드, 메서드의 이름을 임의 문자를 사용해 변경한다. 코드 세그먼트의 원래 의도를 해커로부터 숨기기 위해 난독화가 사용된다.</p>]]></content><author><name>GitHub User</name></author><category term="android" /><category term="android" /><category term="proguard" /><summary type="html"><![CDATA[안녕하세요. 오늘은 코드 난독화 및 APK 최적화를 위한 프로가드에 대해 알아보겠습니다.]]></summary></entry><entry><title type="html">[ionic] Ionic Deeplinks 플러그인</title><link href="/jekyll-theme-yat/ionic/2024/08/20/ionic-deeplinks-plugIn.html" rel="alternate" type="text/html" title="[ionic] Ionic Deeplinks 플러그인" /><published>2024-08-20T00:00:00+00:00</published><updated>2024-08-20T00:00:00+00:00</updated><id>/jekyll-theme-yat/ionic/2024/08/20/ionic-deeplinks-plugIn</id><content type="html" xml:base="/jekyll-theme-yat/ionic/2024/08/20/ionic-deeplinks-plugIn.html"><![CDATA[<h2 id="딥-링크deep-links란">딥 링크(Deep Links)란?</h2>
+
+<p>딥 링크 플러그인은 <code class="language-plaintext highlighter-rouge">Android</code> 앱 링크와 <code class="language-plaintext highlighter-rouge">iOS</code> 유니버셜 링크 모두에 대한 딥 링크 지원을 제공합니다.
+특정 주소를 입력하면 <code class="language-plaintext highlighter-rouge">앱이 실행</code>,<code class="language-plaintext highlighter-rouge">앱 내 특정 화면으로 이동</code>시키는 링크를 말합니다.</p>
+
+<h2 id="딥링크는-3가지-방식">딥링크는 3가지 방식</h2>
+<ul>
+  <li>URI 스킴 방식 : 앱에 URI 스킴(scheme) 값을 등록해 딥링크 사용</li>
+  <li>앱링크(App Link) : Andorid 제공 - 도메인 주소를 이용한 딥링크 사용</li>
+  <li>유니버셩 링크 (Universal Link) : iOS 제공 - 도메인 주소를 이용한 딥링크 사용</li>
+</ul>
+
+<h3 id="uri-scheme-방식">URI Scheme 방식</h3>
+
+<p>가장 일반적으로 사용되는 딥링크 방식은 URI Scheme 방식입니다.
+URI 스킴을 이용한 딥링크는 앱에 Scheme값을 등록하는 형태로 앱을 구분합니다. 스킴은 앱마다 등록할 수 있는 값으로 “특정 스킴값을 호출하면 특정 앱이 오픈된다.” 라는 약속을 실행합니다. 여러분이 트위터 앱을 오픈하고자 한다면 twitter:// 라는 스킴값을 이용하면 됩니다. 이 스킴값은 앱 개발시 효율적인 앱 오픈을 위해 자체적으로 개발사에서 자신들만의 값으로 등록을 하게 됩니다.</p>
+
+<p>앱 내에서의 특정 페이지는 ‘path’ 값으로 구분합니다. 예를 들어, 트위터 앱의 회원가입 페이지를 오픈하고자 한다면 twitter://signup 이라는 값을 사용합니다.</p>
+
+<p>정리하면, URI 스킴 방식은 Scheme://Path라는 두개의 요소로 구성됩니다.</p>
+
+<ul>
+  <li>Scheme://Path</li>
+  <li>Scheme = 앱을 특정함 (트위터)</li>
+  <li>Path = 앱 내 페이지를 특정함 (트위터 내 회원가입 페이지)</li>
+  <li>안드로이드의 경우 아래와 같이 Androidmanifest.xml 이라는 파일에 스킴 값을 등록합니다.</li>
+</ul>
+
+<h3 id="javascript에서-딥링크-방법">javaScript에서 딥링크 방법</h3>
+
+<p>platform.ready 또는 deviceready event 에서 ionic deepLink 호출</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Platform</span><span class="p">,</span> <span class="nx">NavController</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ionic-angular</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Deeplinks</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@ionic-native/deeplinks/ngx</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nc">MyApp</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span>
+    <span class="kr">protected</span> <span class="nx">platform</span><span class="p">:</span> <span class="nx">Platform</span>
+    <span class="p">,</span> <span class="kr">protected</span> <span class="nx">navController</span><span class="p">:</span> <span class="nx">NavController</span>
+    <span class="p">,</span> <span class="kr">protected</span> <span class="nx">deeplinks</span><span class="p">:</span> <span class="nx">Deeplinks</span>
+    <span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">platform</span><span class="p">.</span><span class="nf">ready</span><span class="p">().</span><span class="nf">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">deeplinks</span><span class="p">.</span><span class="nf">route</span><span class="p">({</span>
+        <span class="dl">'</span><span class="s1">/about-us</span><span class="dl">'</span><span class="p">:</span> <span class="nx">HomePage</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">/products/:productId</span><span class="dl">'</span><span class="p">:</span> <span class="nx">HelpPage</span>
+      <span class="p">}).</span><span class="nf">subscribe</span><span class="p">((</span><span class="nx">match</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>  <span class="c1">// subscribe : 앱이 정의된 경로와 일치하는 딥 링크를 처리하는 곳, 딥 링크가 경로 중 하나 일치하면 첫 번째 함수 내부의 코드가 실행됩니다.</span>
+        <span class="c1">// match.$route - the route we matched, which is the matched entry from the arguments to route()</span>
+        <span class="c1">// match.$args - the args passed in the link</span>
+        <span class="c1">// match.$link - the full link data</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Successfully matched route</span><span class="dl">'</span><span class="p">,</span> <span class="nx">match</span><span class="p">);</span>
+      <span class="p">},</span>
+      <span class="p">(</span><span class="nx">nomatch</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>   <span class="c1">// 해당 링크 일치하지 않음으로 콘솔에러 메시지 </span>
+        <span class="c1">// nomatch.$link - the full link data</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Got a deeplink that didn</span><span class="se">\'</span><span class="s1">t match</span><span class="dl">'</span><span class="p">,</span> <span class="nx">nomatch</span><span class="p">);</span>
+      <span class="p">});</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>GitHub User</name></author><category term="ionic" /><category term="ionic" /><summary type="html"><![CDATA[딥 링크(Deep Links)란?]]></summary></entry><entry><title type="html">[Linux] 리눅스 Tree 명령어로 폴더 구조 보기</title><link href="/jekyll-theme-yat/linux/2024/08/14/Development-environment.html" rel="alternate" type="text/html" title="[Linux] 리눅스 Tree 명령어로 폴더 구조 보기" /><published>2024-08-14T00:00:00+00:00</published><updated>2024-08-14T00:00:00+00:00</updated><id>/jekyll-theme-yat/linux/2024/08/14/Development-environment</id><content type="html" xml:base="/jekyll-theme-yat/linux/2024/08/14/Development-environment.html"><![CDATA[<h2 id="리눅스-tree-명령어로-폴더-구조-보기">리눅스 Tree 명령어로 폴더 구조 보기</h2>
+
+<h3 id="1-tree-명령어-설치">1. tree 명령어 설치</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 리눅스에서 설치
+sudo yum install tree  
+
+# 맥에서 설치 (homebrew로 이용)
+brew install tree
+</code></pre></div></div>
+
+<h3 id="2-tree명령어">2. tree명령어</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ tree -L 2 
+$ tree -L 2 -f 
+</code></pre></div></div>
+
+<p>폴더 Level을 2depth 까지만 설정해서 보겠다는 의미</p>
+<ul>
+  <li>-f 옵션: 파일의 전체 경로를 표시</li>
+  <li>-d 옵션: 디렉토리만 표시 (파일은 제외됨)</li>
+  <li>-L 옵션: 폴더,파일 구조의 레벨 depth를 표시</li>
+</ul>
+
+<ol>
+  <li>tree 사용 예제
+특정 spring-quartz 프로젝트 파일로 이동후, tree명령어 실행</li>
+</ol>
+
+<p>$ spring-quartz tree -L 2</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── HELP.md
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── spring-quartz.iml
+├── src
+│   ├── main
+│   └── test
+└── target
+    ├── classes
+    ├── generated-sources
+    ├── generated-test-sources
+    └── test-classes
+
+8 directories, 5 files
+
+</code></pre></div></div>
+
+<ul>
+  <li>depth 2로 보여줘라</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ spring-quartz tree -L 2 -d -f 
+.
+├── ./src
+│   ├── ./src/main
+│   └── ./src/test
+└── ./target
+    ├── ./target/classes
+    ├── ./target/generated-sources
+    ├── ./target/generated-test-sources
+    └── ./target/test-classes
+</code></pre></div></div>
+
+<ul>
+  <li>depth2로 보여주고, 디렉토리만, 파일의 전체 경로를 보여줘라</li>
+</ul>]]></content><author><name>GitHub User</name></author><category term="Linux" /><category term="Linux" /><summary type="html"><![CDATA[리눅스 Tree 명령어로 폴더 구조 보기]]></summary></entry></feed>

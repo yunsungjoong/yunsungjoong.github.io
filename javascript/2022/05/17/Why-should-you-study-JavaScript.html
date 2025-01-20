@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[JavaScript] 기본 문법 정리 | Your awesome title</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="[JavaScript] 기본 문법 정리">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="JavaScript를 배워야 하는 10가지 이유">
+<meta property="og:description" content="JavaScript를 배워야 하는 10가지 이유">
+<link rel="canonical" href="/jekyll-theme-yat/javascript/2022/05/17/Why-should-you-study-JavaScript.html">
+<meta property="og:url" content="/jekyll-theme-yat/javascript/2022/05/17/Why-should-you-study-JavaScript.html">
+<meta property="og:site_name" content="Your awesome title">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-05-17T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="[JavaScript] 기본 문법 정리">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2022-05-17T00:00:00+00:00","datePublished":"2022-05-17T00:00:00+00:00","description":"JavaScript를 배워야 하는 10가지 이유","headline":"[JavaScript] 기본 문법 정리","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll-theme-yat/javascript/2022/05/17/Why-should-you-study-JavaScript.html"},"url":"/jekyll-theme-yat/javascript/2022/05/17/Why-should-you-study-JavaScript.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/jekyll-theme-yat/feed.xml" title="Your awesome title">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="Your awesome title" src="" onerror="this.style.display='none'">
+  Your awesome title
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about.html">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives.html">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories.html">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    html .page-banner {
+      background: #000;
+    }
+  </style>
+<style>html .page-banner {
+      height:  36.8vh;
+      min-height: 38vh;
+    }
+    html[data-scroll-status="top"] .page-banner {
+      height: 100vh;
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-img > *:first-child {
+      opacity: 0.618;
+    }
+
+    html[data-theme="dark"] .page-banner .page-banner-img > *:first-child {
+      opacity: 0.443724;
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-inner > *:first-child > *:nth-child(1) {
+      font-size: 3.25em; font-weight: bold; text-decoration: underline
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-inner > *:first-child > *:nth-child(2) {
+      color: gold
+    }
+  </style>
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(/jekyll-theme-yat/assets/images/banners/22/05/js.png)"></div>
+        <img class="img-placeholder" src="/jekyll-theme-yat/assets/images/banners/22/05/js.png">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner">
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">[JavaScript] 기본 문법 정리 </h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2022-05-17T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> May 17, 2022
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+  </p>
+<div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#Javascript">#Javascript</a></div></header>
+</div>
+    </div>
+  </section><script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="javascript를-배워야-하는-10가지-이유">JavaScript를 배워야 하는 10가지 이유</h2>
+
+<p>우리는 때때로 선택을 하기 어려운 두 가지 이유가 있다.
+선택할 수 있는 옵션이 너무 적거나 너무 많다는 것. 프로그래밍 언어와 관련하여 재물에 대한
+당혹감이 있으며, 이로 인해 정신적 교착 상태가 발생될 수 있다.<br>
+언어는 <code class="language-plaintext highlighter-rouge">Python</code> , <code class="language-plaintext highlighter-rouge">Java</code> , <code class="language-plaintext highlighter-rouge">JavaScript</code> , <code class="language-plaintext highlighter-rouge">C/CPP</code>, <code class="language-plaintext highlighter-rouge">PHP</code>, <code class="language-plaintext highlighter-rouge">Swift</code>, <code class="language-plaintext highlighter-rouge">C#</code> , <code class="language-plaintext highlighter-rouge">Ruby</code>, <code class="language-plaintext highlighter-rouge">Objective-C</code> , <code class="language-plaintext highlighter-rouge">SQL</code> 이 있으며
+전체 목록도 아니다. 어떻게 선택해야할까?</p>
+
+<p>이제는 프로그래머가 하는 한 너무 많은 언어를 아는 것과 같은 것은 없다는 것을 명심해야할것이다.
+많은 언어들을 이해하고 할 수 있는 능력이 된다면 그 프로그래머는 시장성이 높고 수요가 많은 프로그래머일것이다.
+기술 향상은 항상 현명한 방법인것 같다.</p>
+
+<p>그래도 우린 어딘가에서 시작해야 한다. 전례 없는 수요 증가를 겪고 잇는 가장 인기 있는 언어 중 하나가 JavaScript다.</p>
+
+<h2 id="자바스크립트란">자바스크립트란?</h2>
+
+<p>Java 와 JavaScript는 다른 언어이다.
+자바스크립트는 방문자의 행동에 반응할 수 있도록 웹 페이지를 보다 동적으로 움직여 사용자 친화적으로 만든다.
+또는 달리 표현하면 JavaScript는 웹 페이지를 대화형으로 만든다.</p>
+
+<p>JavaScript는 한때 LiveScript라고 불렀다. Java의 인기로 인해서 그 명성을 이용하기 위한 브랜드 변경 되었는데,
+새로운 언어가 떠오르는 스타에게 함께 타고 그 과정에서 수많은 추종자를 끌어들였다고 말 할 수 있다.</p>
+
+<h3 id="1-가장-대중적인-프로그래밍-언어">1) 가장 대중적인 프로그래밍 언어</h3>
+
+<p>우리는 아마도 가장 중요한 이유를 가지고 목록을 시작하고자 한다.
+<a href="https://insights.stackoverflow.com/survey/2019#technology">Stackoverflow.com</a> 에 따르면
+JavaScript는 오늘날 전문 개발자가 사용하는 가장 인기 있는 프로그래밍 언어로써 , 백엔드 개발자조차도 JavaScript 더 자주 선택합니다.</p>
+
+<h3 id="2-브라우저에-있습니다">2) 브라우저에 있습니다.</h3>
+
+<p>JavaScript는 의심할 여지 없이 인터넷의 기본 언어로 JavaScript가 개발에 사용되었을 가능성이 높기 때문에
+증거를 위해 브라우저 이상을 볼 필요가 없다. 브라우저는 모든 사용자의 온라인 경험에 필수적인 부분이므로
+JavaScript가 왜 그렇게 중요한지 쉽게 알 수 있다.</p>
+
+<h3 id="3-javascript는-인터넷-외부에도-존재한다">3) JavaScript는 인터넷 외부에도 존재한다.</h3>
+
+<p><code class="language-plaintext highlighter-rouge">JavaScript</code>는 전통적인 인터넷 역할을 넘어 많은 용도로 사용되고 있다. 몇 가지 예를 들면 스마트TV를 구동하고,
+사물 인터넷(IoT)과 함께 작동하고, IOS 및 Android용 기본 앱을 만들고, 플랫폼 간 데스크톱 앱을 빌드한다.</p>
+
+<h3 id="4-javascript는-초보자에게-이상적이다">4) JavaScript는 초보자에게 이상적이다.</h3>
+
+<p>오늘날 모든 웹 브라우저에 이미 설치되어 있기 때문에 JavaScript도 쉽게 사용할 수 있다.
+JavaScript 복잡한 세부 사항을 추상화해 초보자는 바로 뛰어들어 코딩을 시작할 수 있다.
+초보자를 위한 부가 가치인 코딩에 대한 가장 접근하기 쉬운 항목 중 하나이다.
+지원과 조언을 제공하는 대규모 온라인 커뮤니티도 있다.</p>
+
+<p>또한 JavaScript는 기술을 다른 언어로 확장하려는 초보 프로그래머를 위한 훌륭한 도구이기도 하다.
+JavaScript는 객체지향, 기능 및 명령형 프로그래밍 스타일과 같은 귀중한 기술을 지원하는데, 초보 개발자는
+차례로 Python, Java 또는 C++ 와 같이 배우고자 하는 모든 새로운 언어에 이러한 기술을 적용 할 수 있다.</p>
+
+<h3 id="5-자바스크립트는-배우기가-쉽다">5) 자바스크립트는 배우기가 쉽다.</h3>
+
+<p>사용하기 쉬운 자연어일 뿐만 아니라 JavaScript도 쉽게 사용할 수 있다. JavaScript는 복잡한 세부 사항을 추상화해
+초보자가 작업을 쉽게 수행할 수 있도록 한다. 고급 언어와 달리 JavaScript는 자연어에 가깝다.</p>
+
+<h3 id="6-시각-효과-및-기타-눈길을-끄는-미적-기능을-만들-수-있다">6) 시각 효과 및 기타 눈길을 끄는 미적 기능을 만들 수 있다.</h3>
+
+<p>웹 페이지를 구축하고 사용자의 관심을 끌고 상호 작용을 장려하는 시각적으로 매력적인 웹 페이지를 구축한다.
+JavaScript는 애니메이션, 대화형 지도 및 스크롤링 비디오 와 같은 멋진 디자인 요소를 쉽게 추가하는 데
+사용할 수 있을 정도로 다재다능하다. 조직과 클라이언트는 기술적으로 건전한 페이지를 만들 수 있을 뿐만 아니라
+방문자를 유인 할 수 있는 웹 디자이너를 원한다. JavaScript를 알면 전달할 수 있다.</p>
+
+<h3 id="7-자바스크립트는-다재다능하다">7) 자바스크립트는 다재다능하다.</h3>
+
+<p>자바스크립트는 단순한 조랑말이 아닌 프로그래머가 앱 디자인의 모든 측면을 처리할 수 있도록 지원한다.
+사용자측(프론트엔드) Angular 사용할 수 있고 , 서버 측(백엔드)에 관심이 있다면
+Node.js를 혼합해 사용할 수 있다.
+Electron, React Native 및 React를 사용해 데스크톱, 모바일 및 웹 앱을 만들 수 있다. 기계 학습에 관심이 있다면
+JavaScript도 도움이 될 것이다.</p>
+
+<h3 id="8-javascript는-빅-데이터와-클라우드에도-영향을-미친다">8) JavaScript는 빅 데이터와 클라우드에도 영향을 미친다.</h3>
+
+<p><code class="language-plaintext highlighter-rouge">JSON(javaScript Object Notation)</code>은 오늘날 인터넷에서 데이터 교환을 위한 표준이다. NoSQL 데이터베이스는
+레코드 저장을 위해 <code class="language-plaintext highlighter-rouge">JSON</code> 문서를 사용한다. <code class="language-plaintext highlighter-rouge">JSON</code>은 모든 프로그래밍 언어에서 잘 작동하지만<br>
+JavaScript에서 가장 잘 작동한다.<br>
+또한 더 많은 개발자가 수요가 많은 시장인 클라우드 기반 앱을 구축하기 위해 Node.js를 사용하고 있다.</p>
+
+<h3 id="9-게임-디자이너를-위한-귀중한-도구">9) 게임 디자이너를 위한 귀중한 도구</h3>
+
+<p>오늘날의 게임은 큰 사업이며 JavaScript를 아는 개발자라는 이점이 있다. 언어의 다재다능함 , 강력함 , 시각 효과를
+생성할 수 있는 능력은 게임 개발자에게 완벽한 언어이다.</p>
+
+<h3 id="10-경쟁-잠재력이-하늘로-치솟고-있다">10) 경쟁 잠재력이 하늘로 치솟고 있다.</h3>
+
+<p>디지털화하는 기업 및 조직의 수가 증가함에 따라 더 잘 알려진 프로그래밍 언어에 익숙한 개발자에 대한 수요도 그에 따라 증가하고 있다.
+이미 언급했듯 JavaScript이다.</p>
+
+<p>상황이 이렇다 보니 우수한 JavaScript 개발자도 부족하기 때문에 자격을 갖춘 인력 부족과 함께 수요가 증가했다.
+<a href="https://devskiller.com/technical-hiring-skills-report-2019/#Two">Devsiller.com</a> 에서 발표한 보고서에 따르면 조사 대상 기업의 70%가
+JavaScript 개발자를 고용하고 싶어한다. 또한 Python에 대한 전문 지식을 갖춘 데이터 과학자에 대한 수요가 증가하고 있다.
+데이터 과학자 및 데이터분석 시장은 2015년에서 2020년 사이에 15% 성장할 것으로 예상되고, 실제 수치로, 264,000개의 새로운 일자리를
+창출함을 의미한다. 모든 Python 웹 앱이 프론트엔드에서 JavaScript를 사용하는 방ㅅㄱ을 고려하면 언어가 필수라는 것이 분명해진다.</p>
+
+<p>JavaScript 전문가를 찾고 있는 기업 및 기타 조직도 기꺼이 비용을 지불할 것이다! <a href="https://www.indeed.com/career/javascript-developer/salaries">인디드닷컴(indeed.com)</a>
+항상 안정적인 경력이 보장되고 그에 대한 보상을 잘 받을 수 있는 프로그래머가 되고 싶다면 JavaScript를 배우고 싶을 것이다.</p>
+
+<h2 id="그렇다면-javascript를-어떻게-배울까">그렇다면 JavaScript를 어떻게 배울까?</h2>
+
+<h2 id="javascript를-배우는-가장-좋은-방법-제시">JavaScript를 배우는 가장 좋은 방법 제시</h2>
+
+<p><a href="https://blex.me/@baealex/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8javascript-%EA%B8%B0%EB%B3%B8-%EB%AC%B8%EB%B2%95-%EC%A0%95%EB%A6%AC" title="Javascript 문법정리">참고한 블로그링크 : javascript 기본 문법 정리</a></p>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/javascript/2022/05/09/JavaScript_-grammar.html" title="[JavaScript] JavaScript 란? ">[JavaScript] JavaScript 란? </a><a class="next" href="/jekyll-theme-yat/react/2024/02/02/React_Start.html" title="[React] 리엑트 시작하기 ">[React] 리엑트 시작하기 </a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/%EA%B8%B0%ED%83%80/2022/04/26/IDE_01.html" title="[React] 리엑트 시작하기 ">IDE란?</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/linux/2024/08/14/Development-environment.html" title="[React] 리엑트 시작하기 ">[Linux] 리눅스 Tree 명령어로 폴더 구조 보기</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/java/2025/01/20/Java-final.html" title="[React] 리엑트 시작하기 ">[Java] final란 ?</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/java/2025/01/20/Java-hasyMap.html" title="[React] 리엑트 시작하기 ">[Java] HashMap란 ?</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2025 GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

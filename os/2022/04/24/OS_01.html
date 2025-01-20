@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[운영체제] OS | Your awesome title</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="[운영체제] OS">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="운영체제의 개요 운영체제는 컴퓨터를 사용하기 위해 반드시 필요한 소프트웨어 중 하나이다. 컴퓨터가 사용자에게 제공하는 서비스가 다양해지고 편리해지는 만큼 사용자를 위해 컴퓨터 내에서 이루어져야 하는 자원의 관리나 활용이 효율적으로 동작해야하는데, 운영체제는 그 근간을 이루는 핵심적인 시스템 소프트웨어이다. 이번 강의에서는 운영체제에 대한 기본적인 이해와 운영체제를 구성하는 기본적인 요소인 프로세스 관리자, 메모리관리자, 파일 관리자의 역할에 대하여 개략적으로 학습하고, 운영체제의 유형과 발전 과정을 살펴보자. ***">
+<meta property="og:description" content="운영체제의 개요 운영체제는 컴퓨터를 사용하기 위해 반드시 필요한 소프트웨어 중 하나이다. 컴퓨터가 사용자에게 제공하는 서비스가 다양해지고 편리해지는 만큼 사용자를 위해 컴퓨터 내에서 이루어져야 하는 자원의 관리나 활용이 효율적으로 동작해야하는데, 운영체제는 그 근간을 이루는 핵심적인 시스템 소프트웨어이다. 이번 강의에서는 운영체제에 대한 기본적인 이해와 운영체제를 구성하는 기본적인 요소인 프로세스 관리자, 메모리관리자, 파일 관리자의 역할에 대하여 개략적으로 학습하고, 운영체제의 유형과 발전 과정을 살펴보자. ***">
+<link rel="canonical" href="/jekyll-theme-yat/os/2022/04/24/OS_01.html">
+<meta property="og:url" content="/jekyll-theme-yat/os/2022/04/24/OS_01.html">
+<meta property="og:site_name" content="Your awesome title">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-04-24T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="[운영체제] OS">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2022-04-24T00:00:00+00:00","datePublished":"2022-04-24T00:00:00+00:00","description":"운영체제의 개요 운영체제는 컴퓨터를 사용하기 위해 반드시 필요한 소프트웨어 중 하나이다. 컴퓨터가 사용자에게 제공하는 서비스가 다양해지고 편리해지는 만큼 사용자를 위해 컴퓨터 내에서 이루어져야 하는 자원의 관리나 활용이 효율적으로 동작해야하는데, 운영체제는 그 근간을 이루는 핵심적인 시스템 소프트웨어이다. 이번 강의에서는 운영체제에 대한 기본적인 이해와 운영체제를 구성하는 기본적인 요소인 프로세스 관리자, 메모리관리자, 파일 관리자의 역할에 대하여 개략적으로 학습하고, 운영체제의 유형과 발전 과정을 살펴보자. ***","headline":"[운영체제] OS","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll-theme-yat/os/2022/04/24/OS_01.html"},"url":"/jekyll-theme-yat/os/2022/04/24/OS_01.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/jekyll-theme-yat/feed.xml" title="Your awesome title">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="Your awesome title" src="" onerror="this.style.display='none'">
+  Your awesome title
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about.html">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives.html">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories.html">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    html .page-banner {
+      background: #000;
+    }
+  </style>
+<style>html .page-banner {
+      height:  36.8vh;
+      min-height: 38vh;
+    }
+    html[data-scroll-status="top"] .page-banner {
+      height: 100vh;
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-img > *:first-child {
+      opacity: 0.618;
+    }
+
+    html[data-theme="dark"] .page-banner .page-banner-img > *:first-child {
+      opacity: 0.443724;
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-inner > *:first-child > *:nth-child(1) {
+      font-size: 3.25em; font-weight: bold; text-decoration: underline
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-inner > *:first-child > *:nth-child(2) {
+      color: gold
+    }
+  </style>
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(/jekyll-theme-yat/assets/images/banners/22/04/OS.png)"></div>
+        <img class="img-placeholder" src="/jekyll-theme-yat/assets/images/banners/22/04/OS.png">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner">
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">[운영체제] OS  </h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2022-04-24T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Apr 24, 2022
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Programming">#Programming</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#OS">#OS</a>
+</div></header>
+</div>
+    </div>
+  </section><script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="운영체제의-개요">운영체제의 개요</h2>
+<p>운영체제는 컴퓨터를 사용하기 위해 반드시 필요한 소프트웨어 중 하나이다.<br>
+컴퓨터가 사용자에게 제공하는 서비스가 다양해지고 편리해지는 만큼<br>
+사용자를 위해 컴퓨터 내에서 이루어져야 하는 자원의 관리나 활용이 효율적으로<br>
+동작해야하는데, 운영체제는 그 근간을 이루는 핵심적인 시스템 소프트웨어이다.<br>
+이번 강의에서는 운영체제에 대한 기본적인 이해와 운영체제를 구성하는<br>
+기본적인 요소인 프로세스 관리자, 메모리관리자, 파일 관리자의 역할에 대하여<br>
+개략적으로 학습하고, 운영체제의 유형과 발전 과정을 살펴보자.
+***</p>
+
+<h2 id="01-컴퓨터-시스템의-구성">01. 컴퓨터 시스템의 구성</h2>
+<hr>
+<p>(1) 컴퓨터 시스템의 구성 : 사용자 ,응용 소프트웨어 , 시스템 소프트웨어 , 하드웨어 
+(2) 운영체제란 : 컴퓨터의 하드웨어 자원을 관리하고 컴퓨터프로그램이 동작하기
+위해 서비스를 제공하는 시스템 소프트웨어를 말한다.</p>
+
+<h2 id="02-운영체제의-역할">02. 운영체제의 역할</h2>
+<hr>
+<p>1) 컴퓨터 시스템의 운영</p>
+<ul>
+  <li>컴퓨터 시스템의 자원을 제어 및 관리</li>
+  <li>응용프로그램들의 실행을 도와주는 소프트웨어</li>
+</ul>
+
+<p>2) 사용자 지원</p>
+<ul>
+  <li>사용자의 명령을 해석하여 실행</li>
+  <li>사용자와 하드웨어 사이의 매게체 역할수행한다.</li>
+</ul>
+
+<h2 id="03-컴퓨터-시스템과-운영체제">03. 컴퓨터 시스템과 운영체제</h2>
+<hr>
+<h3 id="1-운영체제가-없던-초기의-컴퓨터-시스템">1) 운영체제가 없던 초기의 컴퓨터 시스템</h3>
+<ul>
+  <li>응용 프로그램 개발자는 하드웨어 제어 방법을 잘 알아야 한다.</li>
+  <li>여러 응용 프로그램이 하드웨어를 공유하는 경우 자원 분할이 어렵다.</li>
+  <li>운영체제가 하드웨어와 응용 프로그램 사이에 위치</li>
+</ul>
+
+<h3 id="2-운영체제가-하드웨어와-응용-프로그램-사이에-위치">2) 운영체제가 하드웨어와 응용 프로그램 사이에 위치</h3>
+<ul>
+  <li>하드웨어에 대한 제어는 운영체제만 함</li>
+  <li>응용 ❖프로그램은 운옃제제를 통해서만 하드웨어 이용</li>
+</ul>
+
+<h3 id="3-cpu의-동작-모드">3) CPU의 동작 모드</h3>
+<p>(1) 슈퍼바이저 모드</p>
+<ul>
+  <li>운영체제의 커널이 동작되는 모드</li>
+  <li>하드웨어를 직접 제어할 수 있는 CPU 명령어 사용가능</li>
+</ul>
+
+<p>(2) 보호모드(사용자 모드)</p>
+<ul>
+  <li>응용 프로그램이 동작되는 모드</li>
+  <li>하드웨어를 직접 제어할 수 있는 CPU 명령어 사용 불가능하다.</li>
+</ul>
+
+<p>(3) 시스템 호출</p>
+<ul>
+  <li>응용 프로그램이 운영체제에게 서비스를 요청하는 매커니즘</li>
+  <li>시스템 호출 -&gt; 보호모드에서 슈퍼바이저 모드로 변경 -&gt; 커널동작 -&gt; 하드웨어 제어</li>
+</ul>
+
+<h3 id="4-커널kernel">4) 커널(Kernel)</h3>
+<p>❖ 운영체제의 핵심요소<br>
+❖ 응용프로그램과 하드웨어 수준의 처리 사이의 가교 역할<br>
+❖ 대표적인 구성 방식 : 일체형 커널 , 마이크로 커널</p>
+
+<p>(1) 일체형 커널(monolithic hernel)</p>
+<ul>
+  <li>운영체제의 모든 서비스가 커널 내에 포함됨 
+  ㄴ 장점 : 커널 내부 요소들이 서로 효율적으로 상호작용을 할 수 있다.</li>
+  <li>한 요소에 있는 오류로 인해 시스템 전체에 장애가 발생할 수 있음
+  ㄴ 단점 : 한 요소에 있는 오류료 인해 시스템 전체에 장애가 발생할 수 있음
+(2) 마이크로 커널(microkernel)</li>
+  <li>운영체제의 대부분의 요소들을 커널 외부로 분리</li>
+  <li>커널 내에는 메모리 관리, 멀티테스킹 , 프로세스 간 통신(IPC) 등 최소한의 요소들만 남김</li>
+</ul>
+
+<p>❖ 장점</p>
+<ul>
+  <li>새로운 서비스를 추가하여 운영체제를 확장하기 쉬움</li>
+  <li>유지보수가 용이하며 안정성이 우수함
+❖ 단점</li>
+  <li>커널 외부 요소들 사이는 IPC를 통해야만 하므로 성능 저하가 발생함</li>
+</ul>
+
+<h2 id="04운영체제의-구성">04.운영체제의 구성</h2>
+<hr>
+
+<h3 id="1-프로세스-관리자">1) 프로세스 관리자</h3>
+<p>(1) 프로세스를 생성, 삭제, CPU 할당을 위한 스케줄 결정<br>
+(2) 프로세스의 상태를 관리하며 상태 전이를 처리<br>
+ex) 프로그램 파일(브라우저,문서편집) -&gt; 실행중인 프로그램(프로세스/메모리)</p>
+
+<h3 id="2-메모리-관리">2) 메모리 관리</h3>
+<ul>
+  <li>메모리(주기억장치) 공간에 대한 요구의 유효성 체크</li>
+  <li>메모리 할당 및 회수</li>
+  <li>메모리 공간 보호</li>
+</ul>
+
+<h3 id="3-장치-관리자">3) 장치 관리자</h3>
+<ul>
+  <li>컴퓨터 시스템의 모든 장치를 관리</li>
+  <li>시스템의 장치를 할당, 작동 시작, 반환<br>
+❖ ex) 비디오 디스플레이, 키보드 , 프린터, 디스크 드라이브, 네트워크 장치 등등</li>
+</ul>
+
+<h3 id="4-파일-관리자">4) 파일 관리자</h3>
+<ul>
+  <li>컴퓨터 시스템의 모든 파일을 관리</li>
+  <li>파일의 접근 제한 관리</li>
+  <li>파일을 열어 지원을 할당하거나 파일을 닫아 지원을 회수<br>
+❖ ex) 파일 (문서파일 , 문서편집기) , 컴파일러 , 응용 프로그램, 데이터 파일 등)</li>
+</ul>
+
+<h2 id="05-운영체제의-유형">05. 운영체제의 유형</h2>
+<hr>
+<h3 id="1-일괄처리batch-processing-운영체제">1) 일괄처리(batch processing) 운영체제</h3>
+<p>(1) 작업을 모아서 처리<br>
+(2) 사용자와 상호작용 없이 순차적으로 실행
+(3) 효율성 평가 :</p>
+<ul>
+  <li>처리량 : 주어진 시간 안에 처리된 작업의수</li>
+  <li>반환시간 : 작업의 생성 시점부터 종료 시점까지의 소요시간 
+❖ ex) OMR 카드</li>
+</ul>
+
+<h3 id="2-대화형interactive-운영체제">2) 대화형(interactive) 운영체제</h3>
+<ul>
+  <li>시분할 운영체제라고도 함</li>
+  <li>일괄처리 운영체제보다 빠르지만 실시간 운영체제보다는 느린 응답시간</li>
+  <li>이용자에게 즉각적인 피드백을 제공<br>
+❖ 응답시간 : 요청한 시점부터 반응이 시작되는 시점까지의 소요시간</li>
+</ul>
+
+<h3 id="3-실시간real-time-운영체제">3) 실시간(real-time) 운영체제</h3>
+<ul>
+  <li>가장 빠른 응답시간</li>
+  <li>처리의 결과가 현재의 결정에 영향을 주는 환경에서 사용</li>
+  <li>우주선 비행 시스템, 미사일 제어, 증권거래 관리 시스템,<br>
+은행 입출금 시스템 등에 사용</li>
+</ul>
+
+<h3 id="4-하이브리드hybird-운영체제">4) 하이브리드(hybird) 운영체제</h3>
+<ul>
+  <li>일괄처리 운영체제와 대화형 운영체제의 결합.</li>
+  <li>이용자는 터미널을 통해 접속하고 빠른 응답시간을 얻음</li>
+  <li>대화형 작업이 많지 않을 경우 백그라운드에서 배치 프로그램 실행</li>
+  <li>현재 사용되고 이쓴ㄴ 대부분의 대형 컴퓨터 시스템은 하이브리드 운영체제</li>
+</ul>
+
+<h2 id="06-운영체제의-역사">06. 운영체제의 역사</h2>
+<h3 id="1-1940년대--1950년대">1) 1940년대 ~ 1950년대</h3>
+<p>(1) 1940년대 : 초기 전자식 디지털 컴퓨터</p>
+<ul>
+  <li>운영체제가 존재하지 않음</li>
+  <li>기계적 스위치에 의해 작동</li>
+</ul>
+
+<p>(2) 1950년대 : 단순 순차처리 및 단일흐름 일괄처리</p>
+<ul>
+  <li>한 번에 오직 하나의 작업만을 수행</li>
+  <li>최초의 운영체제 등장(IBM7이용)</li>
+</ul>
+
+<p>(3) 1960년대 : 멀티프로그래밍</p>
+<ul>
+  <li>멀티프로그래밍, 사분할 처리 개념</li>
+  <li>다중 대화식 사용자 지원</li>
+</ul>
+
+<p>(4) 1970년대 : 멀티모드 시분할</p>
+<ul>
+  <li>일괄처리, 시분할 처리, 실시간 처리를 지원하는 멀티모드 시분할의 보편화</li>
+  <li>근거리 지역 네트워크(LAN)의 실용화</li>
+  <li>정보보호 및 보안문제의 증대로 암호화의 중요성 대두</li>
+</ul>
+
+<p>(5) 1980년대 : 분산 네트워크</p>
+<ul>
+  <li>운영체제 기능이 하드웨어 자체에 포함된 팜웨어 개념의 대두</li>
+  <li>2개 이상의 프로세서를 이용하는 멀티프로세서 환경</li>
+  <li>네트워크의 대두와 함께 클라이언트 / 서버 모델 확산</li>
+</ul>
+
+<p>(6) 1990년대 : 벙렬처리 및 분산처리</p>
+<ul>
+  <li>순차처리를 벗어나 분산 및 병렬 처리 발전</li>
+  <li>그래픽 사용자 인터페이스(GUI)의 강화</li>
+  <li>선점형 멀티태스킹, 멀티쓰레딩, 가상 메모리 보편화</li>
+</ul>
+
+<p>(7) 2000년대 이후 : 모바일 및 임베디드 운영체제</p>
+<ul>
+  <li>시스템은 고속화, 고기능화, 경량화 방향으로 발전</li>
+  <li>다양한 통신망의 확대와 개방형 시스템의 발달</li>
+  <li>운영체제는 다양한 기능 지원, 확장성과 호환성 극대화, 사용자 편의성 높임</li>
+  <li>네트워크 기반의 분산 및 병렬 운영체제의 보편화</li>
+  <li>클라우드 환경의 운영체제</li>
+  <li>64bit CPU에 호환되는 64비트용 운영체제</li>
+  <li>PDA , PMP, 스마트폰, 태블릿 등의 모바일 장치 대중화로 
+모바일 운영체제 보편화</li>
+  <li>가전제품을 위한 임베디드 운영체제의 보편화</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">구분</th>
+      <th style="text-align: center">운영체제</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">범용 메인프레임</td>
+      <td style="text-align: center">VSE(Virual Storage Extended)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">중형 컴퓨터</td>
+      <td style="text-align: center">UNIX, Linux, IRIX, AIX, HP-UX</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">소형 컴퓨터</td>
+      <td style="text-align: center">Window XP/Vista/7/8/8.1/10 / Mac OS X</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">임베디드</td>
+      <td style="text-align: center">Embeded Linux, pSoS, VxWORKS, VRTX</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">모바일</td>
+      <td style="text-align: center">Android , iOS , windows CE/Phone/10</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="정리">정리</h4>
+
+<hr>
+<ul>
+  <li>운영체제는 컴퓨터 시스템의 자원을 관리하고 컴퓨터 프로그램이 동작하기 위한<br>
+서비스를 제공하는 시스템 소프트웨어이다.</li>
+  <li>응용 프로그램은 하드웨어 자원을 직접 엑세스할 수 없으며, 시스템 호출이라는<br>
+절차를 통해 필요한 서비스를 운영체제에게 요청하여야 한다.</li>
+  <li>커널은 응용 프로그램과 하드웨어 수준의 처리 사이의 가교 역할을 하는 운영체제의<br>
+핵심 요소로, 대표적인 두 가지 일체형 커널과 마이크로 커널이 있다.</li>
+  <li>운영체제의 주요 구성 요소에는 프로세스 관리자, 메모리 관리자, 장치 관리자, 파일 관리자가 있다.</li>
+  <li>운영체제의 유형은 크게 일괄처리 운영체제 , 대화형 운영체제, 실시간 운영체제,<br>
+그리고 하이브리드 운영체제로 분류된다.</li>
+</ul>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/doker/2022/04/22/docker_01.html" title="[Doker] Doker 란 ?  ">[Doker] Doker 란 ?  </a><a class="next" href="/jekyll-theme-yat/os/2022/04/25/OS_02.html" title="[운영체제] 프로세스(Process)  ">[운영체제] 프로세스(Process)  </a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/angular/2024/06/17/angular.html" title="[운영체제] 프로세스(Process)  ">[Angular] 디렉티브란?</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/java/2025/01/20/Java-final.html" title="[운영체제] 프로세스(Process)  ">[Java] final란 ?</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/ionic/2024/06/24/ionic-Add-a-new-component.html" title="[운영체제] 프로세스(Process)  ">[Ionic] 컴포넌트 생성</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/react/font%20awesome/2024/03/26/Font-Awesome.html" title="[운영체제] 프로세스(Process)  ">[React] React에서 Font Awesome 사용하기</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2025 GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[Redux] Redux란? | Your awesome title</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="[Redux] Redux란?">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="오늘은 Redux에 대해 알아보자">
+<meta property="og:description" content="오늘은 Redux에 대해 알아보자">
+<link rel="canonical" href="/jekyll-theme-yat/react/2024/05/01/redux.html">
+<meta property="og:url" content="/jekyll-theme-yat/react/2024/05/01/redux.html">
+<meta property="og:site_name" content="Your awesome title">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2024-05-01T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="[Redux] Redux란?">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2024-05-01T00:00:00+00:00","datePublished":"2024-05-01T00:00:00+00:00","description":"오늘은 Redux에 대해 알아보자","headline":"[Redux] Redux란?","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll-theme-yat/react/2024/05/01/redux.html"},"url":"/jekyll-theme-yat/react/2024/05/01/redux.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/jekyll-theme-yat/feed.xml" title="Your awesome title">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="Your awesome title" src="" onerror="this.style.display='none'">
+  Your awesome title
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about.html">ABOUT</a><a class="page-link" href="/jekyll-theme-yat/archives.html">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories.html">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    html .page-banner {
+      background: #000;
+    }
+  </style>
+<style>html .page-banner {
+      height:  36.8vh;
+      min-height: 38vh;
+    }
+    html[data-scroll-status="top"] .page-banner {
+      height: 100vh;
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-img > *:first-child {
+      opacity: 0.618;
+    }
+
+    html[data-theme="dark"] .page-banner .page-banner-img > *:first-child {
+      opacity: 0.443724;
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-inner > *:first-child > *:nth-child(1) {
+      font-size: 3.25em; font-weight: bold; text-decoration: underline
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-inner > *:first-child > *:nth-child(2) {
+      color: gold
+    }
+  </style>
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(/jekyll-theme-yat/assets/images/banners/2024/0201/React.jpeg)"></div>
+        <img class="img-placeholder" src="/jekyll-theme-yat/assets/images/banners/2024/0201/React.jpeg">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner">
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">[Redux] Redux란?</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2024-05-01T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> May 01, 2024
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#React">#React</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#JavaScript">#JavaScript</a>
+</div></header>
+</div>
+    </div>
+  </section><script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h1 id="오늘은-redux에-대해-알아보자"><center><b>오늘은 Redux에 대해 알아보자</b></center></h1>
+
+<p><img src="https://ko.redux.js.org/assets/images/ReduxDataFlowDiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif" alt="he"></p>
+
+<h2 id="redux란">Redux란?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Redux</code> 리덕스란 <code class="language-plaintext highlighter-rouge">JavaScript</code> 상태관리 라이브러리이다.</p>
+
+<p>여기서 말하는 상태<code class="language-plaintext highlighter-rouge">State</code>란 간단하게 말하자면 데이터를 말한다. 
+덧붙이자면 상태는 컴포넌트 내부에서 사용하는 데이터라 할 수 있다.</p>
+
+<p>요즘 웹 사이트를 구성할 때, 사용자에게 보이는 UI들을 하나의 파일로 몽땅 구현하지 않고, 
+요소요소들을 컴포넌트 단위로 구성하여 조합하는 식으로 만드는 추세이다.</p>
+
+<h2 id="redux의-3가지-원칙">Redux의 3가지 원칙</h2>
+
+<ol>
+  <li>진실은 하나의 근원으로부터
+    <ul>
+      <li>동일한 데이터는 항상 같은 곳에서 가져온다.</li>
+      <li>즉, <code class="language-plaintext highlighter-rouge">Store</code> 스토어라는 하나뿐인 데이터 공간을 만들어 State를 관리한다는 의미이다.</li>
+      <li>언제든 어디서든 <code class="language-plaintext highlighter-rouge">Store</code>에 저장된 State를 가져다 쓸 수 있다.
+<br>
+</li>
+    </ul>
+  </li>
+  <li>상태는 읽기 전용이다.
+    <ul>
+      <li>리액트에서 setState 메소드를 활용해야만 상태 변경이 가능하다.</li>
+      <li>리덕스에서도 액션이라는 객체를 통해서만 상태를 변경할 수 있다.
+<br>
+</li>
+    </ul>
+  </li>
+  <li>변화는 순수 함수로 작성되어야 한다.
+    <ul>
+      <li>변경하는 순수 함수로만 가능하다.</li>
+      <li>이는 리듀서와 연관되는 개념이다.</li>
+      <li>`Store(스토어) - Action(액션) - Reducer(리듀서)</li>
+    </ul>
+  </li>
+</ol>
+
+<p><br></p>
+
+<h2 id="store-action-reducer의-의미와-특징">Store, Action, Reducer의 의미와 특징</h2>
+
+<p><img src="https://blog.kakaocdn.net/dn/cmOg19/btsbMmKCGoJ/LfEvFAIcGHAvXkVafT311K/img.png" alt="img"></p>
+
+<h3 id="-store스토어">💡 Store(스토어)</h3>
+
+<p>Store는 상태가 관리되는 하나의 공간이다.</p>
+<ul>
+  <li>컴포넌트와는 별개로 스토어라는 공간이 있어서 그 스토어 안에 앱에서 필요한 상태를 담는다.</li>
+  <li>컴포넌트에서 상태 정보가 필요할 때 스토어에 접근한다.</li>
+</ul>
+
+<h3 id="-action액션">💡 Action(액션)</h3>
+
+<ul>
+  <li>Action은 앱에서 스토어에 운반할 데이터를 말한다. (주문서와 같다)</li>
+  <li>Action은 자바스크립트 객체 형식으로 되어 있다.</li>
+</ul>
+
+<h3 id="-reducer리듀서">💡 Reducer(리듀서)</h3>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">Action</code>을 <code class="language-plaintext highlighter-rouge">Store</code>에 바로 전달하는 것이 아닌, <code class="language-plaintext highlighter-rouge">Reducer</code>에 전달해야 한다.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Reducer</code>가 주문을 보고 <code class="language-plaintext highlighter-rouge">Store</code>의 상태를 업데이트하는 것이다.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Action</code>을 <code class="language-plaintext highlighter-rouge">Reducer</code>에 전달하기 위해서는 <code class="language-plaintext highlighter-rouge">dispatch()</code>메서드를 사용한다.</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">reducer</code>함수는 기존의 <code class="language-plaintext highlighter-rouge">state</code>와 <code class="language-plaintext highlighter-rouge">action</code>을 받아서 새로운 state을 받아서 새로운 state를 만들어내는 함수이다.
+이벤트 리스너라고 생각하면 된다. 리듀서는 순수함수로서 몇 가지 규칙을 가진다.</p>
+
+<h4 id="root-reducer-살펴보기">root reducer 살펴보기</h4>
+<p>리듀서는 하나의 리듀서만이 존재한다. 실무에서는 유지 보수를 위해 
+여러 개의 리듀서를 만든 뒤에 하나의 루트 리듀서로 병합한다. 
+실제로 어떤 모습을 가지고 있는지 살펴보자</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">user</span><span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">sungjoong</span><span class="dl">"</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">post</span><span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">post1</span><span class="dl">"</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>리덕스의 combinedReducer api를 활용해 리듀서들을 합친다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">combined</span> <span class="o">=</span> <span class="nf">combineReducer</span><span class="p">({</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">post</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<p>이렇게 합쳐진 combined 이라는 루트 리듀서는 아래와 같은 모습을 가집니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">combined</span><span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{},</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">user</span><span class="p">:</span> <span class="nf">user</span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">user</span><span class="p">,</span> <span class="nx">action</span><span class="p">),</span>
+    <span class="na">post</span><span class="p">:</span> <span class="nf">post</span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">post</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>즉, 우리가 dispatch를 통해 루트 리듀서를 호출하면 각각의 리듀서 함수가 실행되고 action이 존재하는 리듀서만이 새로운 상태를 반환 되는데. 눈 여겨볼 점은 combined 함수의 첫번째 인자로 넘긴 state 이고. 현재 초기값이 {}이기 때문에 각각의 리듀서 함수의 첫번째 인자로 넘겨진 state.a와 state.b는 undefined .</p>
+
+<p>만약 초기 상태를 설정하고 싶다면 createStore api에서 2번째 인자인 preloadedState를 넘겨주면 된다.
+<br></p>
+
+<h3 id="-dispatch디스패치">💡 Dispatch(디스패치)</h3>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">Dispatch</code>는 <code class="language-plaintext highlighter-rouge">store</code>의 내장 함수 중 하나로써, <code class="language-plaintext highlighter-rouge">action</code>을 발생시킨다.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">action</code>을 파라미터로 전달하고 <code class="language-plaintext highlighter-rouge">reducer</code>를 호출한다</li>
+</ul>
+
+<p><br></p>
+
+<h3 id="-subscribe-구독">💡 Subscribe (구독)</h3>
+
+<ul>
+  <li>Subscribe는 <code class="language-plaintext highlighter-rouge">sotre</code>의 내장 함수 중 하나로, 특정 함수를 전달해주면 <code class="language-plaintext highlighter-rouge">action</code>이 <code class="language-plaintext highlighter-rouge">dispatch</code> 되었을 때마다 전달된 함수가 호출된다.</li>
+</ul>
+
+<p>&lt;/br &gt;</p>
+
+<p><b><code class="language-plaintext highlighter-rouge">Action</code> 객체가 <code class="language-plaintext highlighter-rouge">dispatch()</code> 메서드에 전달 -&gt; <code class="language-plaintext highlighter-rouge">dispatch()</code>를 통해 Reducer를 호출 -&gt; <code class="language-plaintext highlighter-rouge">Reducer</code>는 새로운 Store를 생성</b></p>
+
+<p><img src="https://blog.kakaocdn.net/dn/cfDokx/btsbFGQTNwl/H0AjNMhKz8p2hgnGhvxD6k/img.gif" alt="he"></p>
+
+<h2 id="redux의-장점">Redux의 장점</h2>
+
+<h3 id="장점">장점</h3>
+
+<ul>
+  <li>순수 함수를 사용해 상태를 예측 가능하게 만든다.</li>
+  <li>유지보수에 용이하다</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">redux dv tool</code>이 있어 디버깅에 유리하다.</li>
+  <li>비동기를 지원하는 <code class="language-plaintext highlighter-rouge">Redux Saga, Redux Thunk</code> 등 다양한 미들웨어가 존재한다.</li>
+</ul>
+
+<h3 id="리덕스는-언제-쓰는게-좋을까">리덕스는 언제🤔 쓰는게 좋을까?</h3>
+
+<ul>
+  <li>전역 상태가 필요하다고 느껴질 때</li>
+  <li>상태들이 자주 업데이트 될 때</li>
+  <li>상태를 업데이트 하는 로직이 복잡할 때</li>
+  <li>앱이 크고 많은 사람들에 의해 코드가 관리될 때</li>
+  <li>상태가 업데이트되는 시점을 관찰할 필요가 있을 때</li>
+</ul>
+
+<h2 id="redux-thunk-란">Redux Thunk 란?</h2>
+
+<p>리덕스 창시자인 댄 아브라모프가 만든 가장 많이 사용되는 비동기 작업 미들웨어다. 
+이 미들웨어를 사용하면 액션 객체가 아닌 함수를 디스패치 할 수 있다.</p>
+
+<p><img src="https://redux.js.org/assets/images/ReduxAsyncDataFlowDiagram-d97ff38a0f4da0f327163170ccc13e80.gif" alt="he"></p>
+
+<h3 id="미들웨어middleware란">미들웨어(middleware)란?</h3>
+
+<p>리덕스에서 미들웨어는 주로 비동기 처리 할 때 사용한다.
+리듀서에서 발생한 예외를 서버로 전송하는 등의 목적으로 미들웨어를 활용할 수 있다.</p>
+
+<p>미들웨어는 리듀서가 액션을 처리하기 전에 실행되는 함수로 액션과 리듀서 사이의 중간자라고 (이미지참고) 볼 수 있다.</p>
+
+<p>리덕스 미들웨어 라이브러리 <code class="language-plaintext highlighter-rouge">redux-thunk</code>, <code class="language-plaintext highlighter-rouge">redux-saga</code>, <code class="language-plaintext highlighter-rouge">redux-observable</code>, <code class="language-plaintext highlighter-rouge">redux-promise-middleware</code> 등을 서치해 사용할 수 있고, 만들어서 사용할 수도 있다.
+실제 프로젝트를 작업 할 때에는, 미들웨어를 직접 만들어서 사용하는 경우는 그렇게 많지 않다.</p>
+
+<p>redux-thunk는 결국 액션을 자바스크립트 객체뿐 아닌 함수로 보내는 것인데, 
+액션으로 함수를 보냈을때 이를 실행하는 것이다. 직접 구현하면서 이를 이해해보자</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">createThunkMiddleware</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return </span><span class="p">({</span><span class="nx">dispatch</span><span class="p">,</span> <span class="nx">getState</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="nx">next</span> <span class="o">=&gt;</span> <span class="nx">action</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="k">typeof</span> <span class="nx">action</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">function</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nf">action</span><span class="p">(</span><span class="nx">dispatch</span><span class="p">,</span> <span class="nx">getState</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nf">next</span><span class="p">(</span><span class="nx">action</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>위 함수에서 리턴되는 함수가 결국 <code class="language-plaintext highlighter-rouge">thunk middleware</code> 함수로, 이 함수는 <code class="language-plaintext highlighter-rouge">redux store</code>에서 
+<code class="language-plaintext highlighter-rouge">dispatch</code>, <code class="language-plaintext highlighter-rouge">getState</code> api를 받고 , 다음 미들웨어로 액션을 보내는 <code class="language-plaintext highlighter-rouge">next</code>를 받는다.
+결국 마지막 함수로 우리 <code class="language-plaintext highlighter-rouge">dispatch</code>할 액션을 인자로 받는다.</p>
+
+<p>우리가 함수를 <code class="language-plaintext highlighter-rouge">dispatch</code>하게 되면 <code class="language-plaintext highlighter-rouge">action</code>으로 받고 타입에 따라서 다르게 처리하는 것을 확인 할 수 있다. 따라서 우리가 <code class="language-plaintext highlighter-rouge">thunk middleware</code>에 보낼 함수를 작성할때는 아래와 같이 작성한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getUser</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">dispatch</span><span class="p">,</span> <span class="nx">getState</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// 비동기 로직</span>
+	<span class="nf">getState</span><span class="p">(</span><span class="nx">something</span><span class="p">);</span>
+    <span class="nf">dispatch</span><span class="p">(</span><span class="nx">something</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>dispatch할 때는 아래와 같이 함수를 실행해서 보내주면 되고, 그럼 dispatch와 getState를 인자로
+받는 함수 자체를 thunk middleware로 넘기게 된다.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">dispatch</span><span class="p">(</span><span class="nf">getUser</span><span class="p">(</span><span class="nx">args</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h1 id="정리">정리</h1>
+<ul>
+  <li>리덕스의 동작원리는 액션, 디스패치, 리듀서로 이루어진다.</li>
+  <li>리듀서는 순수함수로서 side effect를 발생시키면 안된다.</li>
+  <li>비동기 로직을 처리하기 위해 리덕스 미들웨어를 사용한다.</li>
+  <li>redux-thunk는 함수를 액션으로 보냈을때 처리하기 위함이다.</li>
+</ul>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/api/json-server/2024/03/27/json-server.html" title="[API] json server를 사용해보자">[API] json server를 사용해보자</a><a class="next" href="/jekyll-theme-yat/ionic/2024/05/30/ionic.html" title="[ionic] ionic">[ionic] ionic</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/rxjs/2025/01/09/Rxjs-Observable.html" title="[ionic] ionic">[Rxjs] Observable</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/linux/2024/08/14/Development-environment.html" title="[ionic] ionic">[Linux] 리눅스 Tree 명령어로 폴더 구조 보기</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/android%20studio/2024/07/02/Installing-a-Previous-Version-of-AndroidStudio.html" title="[ionic] ionic">[Android Studio] 구 버전 다운로드 받는 방법 </a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/ionic/2024/06/24/ionic-Add-a-new-component.html" title="[ionic] ionic">[Ionic] 컴포넌트 생성</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2025 GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
